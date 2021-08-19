@@ -16,7 +16,7 @@ const Home = (props) => {
     },[])
 
     return (
-        <h1>Hello world</h1>
+        <h1 className="text-danger">Hello world</h1>
     )
 }
 

@@ -6,6 +6,7 @@ import configStore from "./Storages/index"
 import { persistStore } from "redux-persist"
 import { Provider } from "react-redux"
 import { PersistGate } from "redux-persist/integration/react"
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 const store = configStore()
 const persistor = persistStore(store)
