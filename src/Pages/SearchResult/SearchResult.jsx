@@ -1,4 +1,4 @@
-import SearchFlight from '../../Components/Modals/SearchFlight';
+import SearchFlight from '../../Components/Explore/SearchFlight';
 import NavbarHeader from '../../Components/Navbar/NavbarHeader';
 
 const SearchResult = () => {

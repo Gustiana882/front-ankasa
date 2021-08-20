@@ -1,6 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.css';
 import { Navbar, Container } from 'react-bootstrap';
-import './style/NavbarHeader.scoped.scss';
+import './style/NavbarHeader.scoped.css';
 import Tools from './Tools';
 import MenusAfterLogin from './MenusAfterLogin';
 import { Link } from 'react-router-dom';

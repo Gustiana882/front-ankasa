@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useEffect } from 'react';
 import { Container, Nav } from 'react-bootstrap';
 import { FaShoppingCart, FaBell, FaEnvelope } from 'react-icons/fa';
-import './style/MenusAfterLogin.scoped.scss';
+import './style/MenusAfterLogin.scoped.css';
 import { useDispatch } from 'react-redux';
 // import { logout } from '../Logins/loginSlice';
 import { Dropdown } from 'react-bootstrap';

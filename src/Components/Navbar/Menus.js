@@ -1,4 +1,4 @@
-import './style/Menus.scoped.scss';
+import './style/Menus.scoped.css';
 import { Container, Button, Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
@@ -18,8 +18,8 @@ const Menus = () => {
 						<Button className="menu-button">My Booking</Button>
 					</li>
 				</ul>
-				{/* <SignupButton /> */}
-				<MenusAfterLogin />
+				<SignupButton />
+				{/* <MenusAfterLogin /> */}
 			</Nav>
 		</div>
 	);

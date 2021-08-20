@@ -6,7 +6,7 @@ import SearchResult from './Pages/SearchResult/SearchResult';
 function App() {
 	return (
 		<div>
-			<SearchResult />
+			<Explore />
 		</div>
 	);
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Dropdown } from 'react-bootstrap';
 import { FaFilter, FaSearch } from 'react-icons/fa';
-import './style/Tools.scoped.scss';
+import './style/Tools.scoped.css';
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 import { searchSuccess } from './searchSlice';
