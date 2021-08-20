@@ -129,3 +129,15 @@ You will also see any lint errors in the console.
 }
   
 ```
+
+### standar response destination
+```bash
+[
+  {
+    "id": 1,
+    "city": "Jakarta",
+    "country": "Indonesia",
+    "image": "image"
+   }
+]
+```
