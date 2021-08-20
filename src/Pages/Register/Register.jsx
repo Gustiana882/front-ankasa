@@ -1,9 +1,9 @@
 import React from "react";
-import "./style/style.scoped.css";
+import "./Register.scoped.css"
 import { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 
-export default function Index() {
+const Register = () => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -153,3 +153,5 @@ export default function Index() {
     </body>
   );
 }
+
+export default Register
