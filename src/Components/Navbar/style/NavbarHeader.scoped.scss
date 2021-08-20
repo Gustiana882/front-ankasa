@@ -1,14 +1,17 @@
 .navbar {
 	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: 100%;
-	background-color: white;
+	justify-content: space-around;
 	z-index: 9999;
-
+	height: 158px;
 	position: fixed; /* Set the navbar to fixed position */
 	top: 0; /* Position the navbar at the top of the page */
 	width: 100%; /* Full width */
+	font-style: normal;
+	font-weight: 600;
+	font-size: 24px;
+	color: #414141;
+	margin-top: 6px;
+
 	.navbar-inside {
 		display: flex;
 		flex-direction: row;

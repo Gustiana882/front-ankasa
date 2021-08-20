@@ -1,13 +1,12 @@
-import NavbarHeader from './Components/Navbar/NavbarHeader';
-import SearchFlight from './Components/Modals/SearchFlight';
 import './app.scoped.css';
-import SearchFlightSummary from './Components/Navbar/SearchFlightSummary';
+
 import Explore from './Pages/Explore/Explore';
+import SearchResult from './Pages/SearchResult/SearchResult';
 
 function App() {
 	return (
 		<div>
-			<Explore />
+			<SearchResult />
 		</div>
 	);
 }

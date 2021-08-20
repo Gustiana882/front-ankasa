@@ -23,7 +23,7 @@ const Tools = () => {
 					>
 						<input
 							type="text"
-							placeholder="Where you want to go?"
+							placeholder="Where do you want to go?"
 							className="search"
 							aria-label="Search"
 							{...register('search')}

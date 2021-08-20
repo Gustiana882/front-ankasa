@@ -29,11 +29,17 @@
 		background: white;
 		border: none;
 		color: black;
+		font-style: normal;
+		font-weight: bold;
+
+		color: #414141;
 	}
 	.menu {
 		display: flex;
 		justify-content: center;
 		margin-top: 20px;
+
+		margin-right: 300px;
 		li {
 			list-style: none;
 			margin-right: 20px;
