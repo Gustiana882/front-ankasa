@@ -45,11 +45,13 @@ export default function TrendingCarousel() {
 				<Slider {...settings}>
 					<div>
 						<div className="card">
-							<div className="location">
-								<p>Tokyo</p>
-								<p>Japan</p>
+							<div className="title">
+								<div className="location">
+									<p>Tokyo</p>
+									<p>Japan</p>
+								</div>
+								<FaAngleRight />
 							</div>
-							<FaAngleRight />
 						</div>
 					</div>
 					<div>

@@ -13,8 +13,15 @@
 	border-radius: 20px;
 	display: flex;
 	flex-direction: row;
+	justify-content: space-between;
 }
 
 .title {
 	display: flex;
+	margin-top: auto;
+	width: 100%;
+	justify-content: space-between;
+	align-items: center;
+	padding-left: 20px;
+	padding-right: 20px;
 }
