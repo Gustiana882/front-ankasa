@@ -14,25 +14,26 @@ const NavbarHeader = () => {
 
 	return (
 		<div>
-			<div className="navbar">
-				<Navbar expand="lg">
-					<Navbar.Brand className="brand">
-						<img
-							src="https://res.cloudinary.com/calvin-cloud/image/upload/v1629405150/Ankasa/logo_ankasa_xc7uai.svg"
-							alt=""
-						/>
-						Ankasa
-					</Navbar.Brand>
+			<Container>
+				<div className="navbar">
+					<Navbar>
+						<Navbar.Brand className="brand">
+							<img
+								src="https://res.cloudinary.com/calvin-cloud/image/upload/v1629405150/Ankasa/logo_ankasa_xc7uai.svg"
+								alt=""
+							/>
+							Ankasa
+						</Navbar.Brand>
 
-					<Navbar.Toggle aria-controls="navbar-collapse" />
-					<Container className="navbar-inside">
-						<Navbar.Collapse className="basic-navbar" id="basic-navbar-nav">
-							<Tools />
-							<Menus />
-						</Navbar.Collapse>
-					</Container>
-				</Navbar>
-			</div>
+						<Container className="navbar-inside">
+							<Navbar className="basic-navbar" id="basic-navbar-nav">
+								<Tools />
+								<Menus />
+							</Navbar>
+						</Container>
+					</Navbar>
+				</div>
+			</Container>
 		</div>
 	);
 };

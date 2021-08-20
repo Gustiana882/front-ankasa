@@ -66,8 +66,10 @@ export default function TrendingCarousel() {
 					<div>
 						<div className="card">
 							<div className="title">
-								<p>Tokyo</p>
-								<p>Japan</p>
+								<div className="location">
+									<p>Tokyo</p>
+									<p>Japan</p>
+								</div>
 								<FaAngleRight />
 							</div>
 						</div>
@@ -75,8 +77,10 @@ export default function TrendingCarousel() {
 					<div>
 						<div className="card">
 							<div className="title">
-								<p>Tokyo</p>
-								<p>Japan</p>
+								<div className="location">
+									<p>Tokyo</p>
+									<p>Japan</p>
+								</div>
 								<FaAngleRight />
 							</div>
 						</div>
@@ -84,8 +88,10 @@ export default function TrendingCarousel() {
 					<div>
 						<div className="card">
 							<div className="title">
-								<p>Tokyo</p>
-								<p>Japan</p>
+								<div className="location">
+									<p>Tokyo</p>
+									<p>Japan</p>
+								</div>
 								<FaAngleRight />
 							</div>
 						</div>
@@ -93,8 +99,10 @@ export default function TrendingCarousel() {
 					<div>
 						<div className="card">
 							<div className="title">
-								<p>Tokyo</p>
-								<p>Japan</p>
+								<div className="location">
+									<p>Tokyo</p>
+									<p>Japan</p>
+								</div>
 								<FaAngleRight />
 							</div>
 						</div>
