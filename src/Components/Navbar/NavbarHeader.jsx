@@ -16,7 +16,7 @@ const NavbarHeader = () => {
 		<div>
 			<Container>
 				<div className="navbar">
-					<Navbar expand="md">
+					<Navbar>
 						<Navbar.Brand className="brand">
 							<img
 								src="https://res.cloudinary.com/calvin-cloud/image/upload/v1629405150/Ankasa/logo_ankasa_xc7uai.svg"
