@@ -23,7 +23,6 @@
 	border: none;
 	width: 150px;
 	height: 50px;
-	margin-left: 137px;
 }
 .menu-button {
 	background: white;
@@ -31,15 +30,14 @@
 	color: black;
 	font-style: normal;
 	font-weight: bold;
-
+	width: 120px;
+	height: 24px;
 	color: #414141;
 }
 .menu {
 	display: flex;
-	justify-content: center;
 	margin-top: 10px;
 	align-items: center;
-	margin-right: 250px;
 }
 
 .menu li {

@@ -9,7 +9,7 @@ import MenusAfterLogin from './MenusAfterLogin';
 const Menus = () => {
 	return (
 		<div>
-			<Nav className="me-auto menu-before-login d-flex">
+			<Nav className="menu-before-login">
 				<ul className="menu">
 					<li>
 						<Button className="menu-button">Find Ticket</Button>

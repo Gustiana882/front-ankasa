@@ -15,7 +15,7 @@ const Tools = () => {
 	};
 	return (
 		<div>
-			<Container className="tools">
+			<Container className="tools d-flex">
 				<Container className="search-bar">
 					<form
 						className="d-flex search-box bg-transparent "
