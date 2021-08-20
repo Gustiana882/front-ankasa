@@ -1,14 +1,28 @@
-.SearchFlight {
-	margin-top: 120px;
+.wrapper {
+	width: 100vw;
+}
+
+.title-hero {
 	display: flex;
-	justify-content: flex-end;
-	margin-right: 100px;
-	width: 100%;
+	width: 700px;
+	height: 175px;
+
+	align-items: center;
+}
+
+.SearchFlight {
+	margin-top: 150px;
+	display: flex;
+	justify-content: space-between;
+	padding-left: 120px;
+	background-image: url('https://res.cloudinary.com/calvin-cloud/image/upload/v1629472892/Ankasa/image-hero_jh4pqz.svg');
+
+	background-repeat: no-repeat;
 }
 
 @media screen and (min-width: 1327px) {
 	.SearchFlight {
-		padding-right: 200px;
+		padding-right: 250px;
 	}
 }
 
@@ -23,8 +37,6 @@
 .title-trending {
 	display: flex;
 	justify-content: space-between;
-	width: 60%;
-	background-color: lightblue;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -36,7 +48,75 @@
 	width: 100%;
 }
 
-@media screen and(max-width:1639px) {
-	.title-trending {
-	}
+.black {
+	font-weight: 600;
+	font-size: 54px;
+}
+.blue {
+	color: #2395ff;
+}
+.bottom {
+	font-size: 16px;
+	color: #979797;
+}
+
+.trending-text {
+	font-weight: 500;
+	font-size: 14px;
+
+	letter-spacing: 0.3em;
+
+	color: #2395ff;
+}
+
+.trending-dest-text {
+	font-style: normal;
+	font-weight: 600;
+	font-size: 24px;
+	line-height: 36px;
+	/* identical to box height */
+
+	color: #000000;
+}
+
+.view-text {
+	margin-top: 30px;
+	align-items: center;
+	font-weight: 600;
+	font-size: 16px;
+
+	color: #2395ff;
+}
+
+.trending-carousel {
+	margin-top: 50px;
+}
+
+.top-dest-box {
+	height: 342px;
+	width: 60%;
+	background-color: rgba(35, 149, 255, 1);
+	border-radius: 60px;
+	margin-top: 150px;
+	background-image: url('https://res.cloudinary.com/calvin-cloud/image/upload/v1629475658/Ankasa/big-plane_pcbxzw.svg');
+	background-repeat: no-repeat;
+	background-position: left;
+	display: flex;
+	justify-content: center;
+}
+
+.top10-title {
+	font-weight: 500;
+	font-size: 14px;
+
+	letter-spacing: 0.3em;
+
+	color: #ffffff;
+}
+
+.top10-dest {
+	font-weight: 600;
+	font-size: 24px;
+
+	color: #ffffff;
 }

@@ -6,26 +6,44 @@ import './Explore.scoped.css';
 
 const Explore = () => {
 	return (
-		<div>
-			<div className="navbar-header">
+		<div className="wrapper">
+			<div>
 				<NavbarHeader />
 			</div>
 
 			<div className="SearchFlight">
+				<div className="title-hero">
+					<p>
+						<span className="black">
+							Find your <span className="blue">Flight</span>
+						</span>
+						<br /> <span className="bottom">and explore the world with us</span>
+					</p>
+				</div>
 				<SearchFlight />
 			</div>
 			<div className="trending-box">
-				<div className="title-trending">
-					<div className="left">
-						<p>TRENDING</p>
-						<p>Trending destinations</p>
+				<Container>
+					<div className="title-trending">
+						<div className="left">
+							<p className="trending-text">TRENDING</p>
+							<p className="trending-dest-text">Trending destinations</p>
+						</div>
+						<div className="right">
+							<p className="view-text">View all</p>
+						</div>
 					</div>
-					<div className="right">
-						<p>View all</p>
-					</div>
+				</Container>
+				<div className="trending-carousel">
+					<TrendingCarousel />
 				</div>
-				{/* <TrendingCarousel /> */}
 			</div>
+			<Container className="top-dest-box">
+				<p className="top10-title">
+					TOP 10 <br />
+				</p>
+				<p className="top10-dest"> Top 10 destinations</p>
+			</Container>
 		</div>
 	);
 };

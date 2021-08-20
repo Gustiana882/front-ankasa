@@ -1,7 +1,9 @@
 .carousel-box {
-	width: 1158px;
+	width: 100%;
+	max-width: 1150px;
 	height: 262px;
-
+	display: flex;
+	flex-direction: column;
 	margin-left: auto;
 	margin-right: auto;
 }
