@@ -11,6 +11,8 @@
 	width: 206px;
 	background-color: lightblue;
 	border-radius: 20px;
+	display: flex;
+	flex-direction: row;
 }
 
 .title {
