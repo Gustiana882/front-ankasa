@@ -3,6 +3,7 @@ import { connect } from "react-redux"
 import { bindActionCreators } from "redux"
 import ActionsUsers from "../../Storages/Actions/Users"
 import PagesAuth from "../../Utils/PagesAuth"
+import Footer from "../../Components/Footer/Footer"
 
 const Home = (props) => {
 
@@ -16,7 +17,10 @@ const Home = (props) => {
     },[])
 
     return (
-        <h1 className="text-danger">Hello world</h1>
+        <>
+            <h1 className="text-danger">Hello world</h1>
+            <Footer />
+        </>
     )
 }
 

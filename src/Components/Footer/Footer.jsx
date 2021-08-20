@@ -1,4 +1,4 @@
-import './Footer.css'
+import './Footer.scoped.css'
 import logo from '../../Assets/logo.svg'
 import appStore from '../../Assets/app-store.svg'
 import googleStore from '../../Assets/google-play.svg'
