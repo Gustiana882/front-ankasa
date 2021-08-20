@@ -10,10 +10,10 @@
 	font-weight: 600;
 	font-size: 24px;
 	color: #414141;
-	margin-top: 6px;
 	padding-left: 130px;
 	padding-right: 130px;
 	background-color: white;
+	margin-top: 0px;
 }
 .navbar-inside {
 	display: flex;
