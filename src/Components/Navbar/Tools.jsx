@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container, Dropdown } from 'react-bootstrap';
 import { FaFilter, FaSearch } from 'react-icons/fa';
-import './style/Tools.scoped.scss';
+import './style/Tools.scoped.css';
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
 import { searchSuccess } from './searchSlice';
@@ -23,7 +23,7 @@ const Tools = () => {
 					>
 						<input
 							type="text"
-							placeholder="Where you want to go?"
+							placeholder="Where do you want to go?"
 							className="search"
 							aria-label="Search"
 							{...register('search')}
