@@ -10,6 +10,7 @@
 	display: flex;
 	align-items: center;
 	width: 16vw;
+	min-width: 250px;
 }
 .search-box {
 	border: 0;

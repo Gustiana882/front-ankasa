@@ -1,8 +1,12 @@
 .wrapper {
-	width: 100%;
+	width: 100vw;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	z-index: 9999;
+	height: 100px;
+	position: fixed; /* Set the navbar to fixed position */
+	top: 0; /* Position the navbar at the top of the page */
 }
 
 .navbar {
@@ -18,5 +22,6 @@
 	font-size: 24px;
 	color: #414141;
 	background-color: white;
+
 	margin-top: 0px;
 }
