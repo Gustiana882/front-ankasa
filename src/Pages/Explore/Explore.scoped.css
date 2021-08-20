@@ -1,7 +1,42 @@
-.wrapper {
+.SearchFlight {
+	margin-top: 120px;
+	display: flex;
+	justify-content: flex-end;
+	margin-right: 100px;
+	width: 100%;
 }
 
-.SearchFlight {
-	margin-top: 150px;
-	margin-left: 53em;
+@media screen and (min-width: 1327px) {
+	.SearchFlight {
+		padding-right: 200px;
+	}
+}
+
+.trending-box {
+	margin-top: 195px;
+	display: flex;
+	flex-direction: column;
+	width: 100vw;
+	justify-content: center;
+}
+
+.title-trending {
+	display: flex;
+	justify-content: space-between;
+	width: 60%;
+	background-color: lightblue;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.navbar-header {
+	display: flex;
+	margin-right: auto;
+	align-items: center;
+	width: 100%;
+}
+
+@media screen and(max-width:1639px) {
+	.title-trending {
+	}
 }

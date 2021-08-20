@@ -5,6 +5,10 @@
 	padding: 40px;
 	padding-top: 30px;
 	border-radius: 12px;
+	display: flex;
+	flex-direction: column;
+
+	justify-content: center;
 }
 .title {
 	width: 232px;

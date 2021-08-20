@@ -1,27 +1,12 @@
-.wrapper {
-	width: 100vw;
+.header {
 	display: flex;
-	justify-content: center;
-	align-items: center;
-	z-index: 9999;
-	height: 100px;
-	position: fixed; /* Set the navbar to fixed position */
-	top: 0; /* Position the navbar at the top of the page */
-}
 
-.navbar {
+	width: 100vw;
+
 	display: flex;
 	justify-content: space-around;
 	z-index: 9999;
-	height: 100px;
 	position: fixed; /* Set the navbar to fixed position */
 	top: 0; /* Position the navbar at the top of the page */
-	width: 70%; /* Full width */
-	font-style: normal;
-	font-weight: 600;
-	font-size: 24px;
-	color: #414141;
 	background-color: white;
-
-	margin-top: 0px;
 }
