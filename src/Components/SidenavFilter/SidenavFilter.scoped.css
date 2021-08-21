@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+
+.card-filter {
+    width: 280px;
+}
+
+
+.side-filter {
+    font-family: 'Poppins', sans-serif;
+}
+
+.rounded-15 {
+    border-top-left-radius: 15px !important;
+    border-top-right-radius: 15px !important;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.lable {
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+}
+
+.line {
+    margin: auto;
+    width: 80%;
+    border-bottom: 1px #E5E5E5 solid;
+}
