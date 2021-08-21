@@ -1,5 +1,4 @@
 .wrapper {
-<<<<<<< HEAD
 	width: 100vw;
 }
 
@@ -9,13 +8,10 @@
 	height: 175px;
 
 	align-items: center;
-=======
->>>>>>> cd9c56accfe066871a48c107831c0078209d50f1
 }
 
 .SearchFlight {
 	margin-top: 150px;
-<<<<<<< HEAD
 	display: flex;
 	justify-content: space-between;
 	padding-left: 120px;
@@ -147,7 +143,4 @@
 
 .footer {
 	margin-top: 150px;
-=======
-	margin-left: 53em;
->>>>>>> cd9c56accfe066871a48c107831c0078209d50f1
 }

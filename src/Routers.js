@@ -1,5 +1,5 @@
 import {BrowserRouter, Switch, Route} from 'react-router-dom'
-import Login from "./Pages/Register/Register.jsx"
+import Login from "./Pages/Explore/Explore.jsx"
 
 function Routers() {
     return (

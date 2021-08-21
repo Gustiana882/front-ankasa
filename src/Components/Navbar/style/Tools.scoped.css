@@ -1,10 +1,6 @@
 .tools {
 	display: flex;
 	align-items: center;
-<<<<<<< HEAD
-=======
-	margin-left: 129px;
->>>>>>> cd9c56accfe066871a48c107831c0078209d50f1
 }
 .search-bar {
 	border: 1px solid #8e8e93;
@@ -13,10 +9,7 @@
 	display: flex;
 	align-items: center;
 	width: 16vw;
-<<<<<<< HEAD
 	min-width: 250px;
-=======
->>>>>>> cd9c56accfe066871a48c107831c0078209d50f1
 }
 .search-box {
 	border: 0;

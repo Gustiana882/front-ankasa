@@ -15,11 +15,7 @@ const Tools = () => {
 	};
 	return (
 		<div>
-<<<<<<< HEAD
 			<Container className="tools d-flex">
-=======
-			<Container className="tools">
->>>>>>> cd9c56accfe066871a48c107831c0078209d50f1
 				<Container className="search-bar">
 					<form
 						className="d-flex search-box bg-transparent "

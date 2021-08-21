@@ -5,13 +5,10 @@
 	padding: 40px;
 	padding-top: 30px;
 	border-radius: 12px;
-<<<<<<< HEAD
 	display: flex;
 	flex-direction: column;
 	background-color: white;
 	justify-content: center;
-=======
->>>>>>> cd9c56accfe066871a48c107831c0078209d50f1
 }
 .title {
 	width: 232px;
@@ -162,29 +159,16 @@
 }
 
 .date-box {
-<<<<<<< HEAD
 	width: 100%;
-=======
-	width: 319px;
->>>>>>> cd9c56accfe066871a48c107831c0078209d50f1
 	height: 55px;
 	display: flex;
 	align-items: center;
 	border: 1px solid #dddddd;
 	box-sizing: border-box;
 	border-radius: 6px;
-<<<<<<< HEAD
 	display: flex;
 	justify-content: center;
 	padding-left: 30px;
-=======
-}
-
-.DatePicker {
-	width: 100%;
-	padding-left: 21px;
-	padding-right: 21px;
->>>>>>> cd9c56accfe066871a48c107831c0078209d50f1
 }
 
 .person-box {
