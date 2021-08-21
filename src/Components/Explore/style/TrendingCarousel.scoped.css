@@ -1,0 +1,27 @@
+.carousel-box {
+	width: 1158px;
+	height: 262px;
+
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.card {
+	height: 262px;
+	width: 206px;
+	background-color: lightblue;
+	border-radius: 20px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.title {
+	display: flex;
+	margin-top: auto;
+	width: 100%;
+	justify-content: space-between;
+	align-items: center;
+	padding-left: 20px;
+	padding-right: 20px;
+}
