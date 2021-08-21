@@ -79,9 +79,15 @@ function Flight(props) {
                 </div>
             </div>
         </div>
+<<<<<<< HEAD
         <div className="footer">
 				<Footer />
 			</div>
+=======
+            <footer>
+				<Footer />
+			</footer>
+>>>>>>> origin/routing
         </div>
         
     )

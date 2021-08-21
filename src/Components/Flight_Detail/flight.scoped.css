@@ -8,6 +8,10 @@
 	font-family: Poppins-reguler;
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/routing
 .poppins-bold {
     font-family: Poppins-bold;
 }
@@ -38,6 +42,37 @@ body {
     background-color: lightgray;
 }
 
+<<<<<<< HEAD
+=======
+
+.user-box {
+    position: relative;
+  }
+    .user-box input {
+    font-size: 16px;
+    border: none;
+    border-bottom: 1px solid rgba(210, 194, 255, 0.68);
+    outline: none;
+    background: transparent;
+  }
+    .user-box label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 15px;
+    color: #9b96ab;
+    pointer-events: none;
+    transition: 0.5s;
+  }
+    .user-box input:focus ~ label,
+    .user-box input:valid ~ label {
+    top: -20px;
+    left: 0;
+    font-size: 10px;
+  }
+
+>>>>>>> origin/routing
 .search-box {
     border-bottom: 3px solid #D2C2FFAD;
     border-left: unset;

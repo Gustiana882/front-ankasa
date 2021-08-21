@@ -8,6 +8,61 @@ function Cards(props) {
 
     return (
         <div className="mt-4 card p-4">
+<<<<<<< HEAD
+=======
+            <div className="user-box">
+            <input
+              type="username"
+              name="username"
+              required
+            />
+            <label>Full Name</label>
+          </div>
+          
+          <div className="input-group mb-3">
+  <button
+    className="btn btn-outline-secondary dropdown-toggle"
+    type="button"
+    data-bs-toggle="dropdown"
+    aria-expanded="false"
+  >
+    Dropdown
+  </button>
+  <ul className="dropdown-menu">
+    <li>
+      <a className="dropdown-item" href="#">
+        Action
+      </a>
+    </li>
+    <li>
+      <a className="dropdown-item" href="#">
+        Another action
+      </a>
+    </li>
+    <li>
+      <a className="dropdown-item" href="#">
+        Something else here
+      </a>
+    </li>
+    <li>
+      <hr className="dropdown-divider" />
+    </li>
+    <li>
+      <a className="dropdown-item" href="#">
+        Separated link
+      </a>
+    </li>
+  </ul>
+  <input
+    type="text"
+    className="form-control"
+    aria-label="Text input with dropdown button"
+  />
+</div>
+
+
+
+>>>>>>> origin/routing
             <div className="d-grid">
                 <h6 className="m-0 poppins-reguler p-1">Full Name</h6>
                 <input type="text" className="search-box p-1 poppins-bold" placeholder="Nama Lengkap" />

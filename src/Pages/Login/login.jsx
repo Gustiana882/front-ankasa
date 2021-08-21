@@ -1,6 +1,10 @@
 import React, { useState } from "react"
 // import { useForm } from "react-hook-form"
 import "./login.scoped.css"
+<<<<<<< HEAD
+=======
+import { Link } from "react-router-dom"
+>>>>>>> origin/routing
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { faEye,faEyeSlash } from "@fortawesome/free-solid-svg-icons";
 // const eye = <FontAwesomeIcon icon={faEye} />;
