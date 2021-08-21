@@ -71,66 +71,108 @@ export default function TrendingCarousel() {
 			<div className="carousel-box">
 				<Slider {...settings}>
 					<div>
-						<div className="card">
+						<div
+							className="card"
+							style={{
+								backgroundImage: `url(https://res.cloudinary.com/calvin-cloud/image/upload/v1629502768/Ankasa/Paris_uqckxq.jpg)`,
+								backgroundSize: ' 100% 100%',
+								backgroundRepeat: 'no-repeat',
+							}}
+						>
 							<div className="title">
 								<div className="location">
-									<p>Tokyo</p>
-									<p>Japan</p>
+									<h1>Tokyo</h1>
+									<h2>Japan</h2>
 								</div>
 								<FaAngleRight />
 							</div>
 						</div>
 					</div>
 					<div>
-						<div className="card">
+						<div
+							className="card"
+							style={{
+								backgroundImage: `url(https://res.cloudinary.com/calvin-cloud/image/upload/v1629502768/Ankasa/Paris_uqckxq.jpg)`,
+								backgroundSize: ' 100% 100%',
+								backgroundRepeat: 'no-repeat',
+							}}
+						>
 							<div className="title">
 								<div className="location">
-									<p>Tokyo</p>
-									<p>Japan</p>
+									<h1>Tokyo</h1>
+									<h2>Japan</h2>
 								</div>
 								<FaAngleRight />
 							</div>
 						</div>
 					</div>
 					<div>
-						<div className="card">
+						<div
+							className="card"
+							style={{
+								backgroundImage: `url(https://res.cloudinary.com/calvin-cloud/image/upload/v1629502768/Ankasa/Paris_uqckxq.jpg)`,
+								backgroundSize: ' 100% 100%',
+								backgroundRepeat: 'no-repeat',
+							}}
+						>
 							<div className="title">
 								<div className="location">
-									<p>Tokyo</p>
-									<p>Japan</p>
+									<h1>Tokyo</h1>
+									<h2>Japan</h2>
 								</div>
 								<FaAngleRight />
 							</div>
 						</div>
 					</div>
 					<div>
-						<div className="card">
+						<div
+							className="card"
+							style={{
+								backgroundImage: `url(https://res.cloudinary.com/calvin-cloud/image/upload/v1629502768/Ankasa/Paris_uqckxq.jpg)`,
+								backgroundSize: ' 100% 100%',
+								backgroundRepeat: 'no-repeat',
+							}}
+						>
 							<div className="title">
 								<div className="location">
-									<p>Tokyo</p>
-									<p>Japan</p>
+									<h1>Tokyo</h1>
+									<h2>Japan</h2>
 								</div>
 								<FaAngleRight />
 							</div>
 						</div>
 					</div>
 					<div>
-						<div className="card">
+						<div
+							className="card"
+							style={{
+								backgroundImage: `url(https://res.cloudinary.com/calvin-cloud/image/upload/v1629502768/Ankasa/Paris_uqckxq.jpg)`,
+								backgroundSize: ' 100% 100%',
+								backgroundRepeat: 'no-repeat',
+							}}
+						>
 							<div className="title">
 								<div className="location">
-									<p>Tokyo</p>
-									<p>Japan</p>
+									<h1>Tokyo</h1>
+									<h2>Japan</h2>
 								</div>
 								<FaAngleRight />
 							</div>
 						</div>
 					</div>
 					<div>
-						<div className="card">
+						<div
+							className="card"
+							style={{
+								backgroundImage: `url(https://res.cloudinary.com/calvin-cloud/image/upload/v1629502768/Ankasa/Paris_uqckxq.jpg)`,
+								backgroundSize: ' 100% 100%',
+								backgroundRepeat: 'no-repeat',
+							}}
+						>
 							<div className="title">
 								<div className="location">
-									<p>Tokyo</p>
-									<p>Japan</p>
+									<h1>Tokyo</h1>
+									<h2>Japan</h2>
 								</div>
 								<FaAngleRight />
 							</div>

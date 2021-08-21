@@ -1,5 +1,6 @@
 import { Container } from 'react-bootstrap';
 import SearchFlight from '../../Components/Explore/SearchFlight';
+import TopDestCarousel from '../../Components/Explore/TopDestCarousel';
 import TrendingCarousel from '../../Components/Explore/TrendingCarousel';
 import NavbarHeader from '../../Components/Navbar/NavbarHeader';
 import './Explore.scoped.css';
@@ -39,10 +40,16 @@ const Explore = () => {
 				</div>
 			</div>
 			<Container className="top-dest-box">
-				<p className="top10-title">
-					TOP 10 <br />
-				</p>
-				<p className="top10-dest"> Top 10 destinations</p>
+				<div className="top10-title-box">
+					<p className="top10-title">
+						<span className="title">TOP 10</span> <br />
+						<span className="desc">Top 10 destinations</span>
+					</p>
+				</div>
+
+				<div className="top-dest-carousel">
+					<TopDestCarousel />
+				</div>
 			</Container>
 		</div>
 	);

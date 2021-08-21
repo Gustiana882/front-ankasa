@@ -7,7 +7,7 @@
 	border-radius: 12px;
 	display: flex;
 	flex-direction: column;
-
+	background-color: white;
 	justify-content: center;
 }
 .title {

@@ -93,24 +93,24 @@
 }
 
 .top-dest-box {
-	height: 342px;
-	width: 60%;
+	height: 550px;
+	width: 70%;
+	min-width: 800px;
 	background-color: rgba(35, 149, 255, 1);
 	border-radius: 60px;
 	margin-top: 150px;
-	background-image: url('https://res.cloudinary.com/calvin-cloud/image/upload/v1629475658/Ankasa/big-plane_pcbxzw.svg');
+	background-image: url('https://res.cloudinary.com/calvin-cloud/image/upload/v1629500250/Ankasa/jumbo_plane_xec8wu.svg');
 	background-repeat: no-repeat;
-	background-position: left;
-	display: flex;
-	justify-content: center;
+	background-position: 0% 100%;
+	padding-top: 67px;
 }
 
 .top10-title {
 	font-weight: 500;
 	font-size: 14px;
-
+	margin-top: 67px;
 	letter-spacing: 0.3em;
-
+	text-align: center;
 	color: #ffffff;
 }
 
@@ -119,4 +119,24 @@
 	font-size: 24px;
 
 	color: #ffffff;
+}
+
+.title {
+	font-weight: 500;
+	font-size: 14px;
+
+	letter-spacing: 0.3em;
+
+	color: #ffffff;
+}
+
+.desc {
+	font-weight: 600;
+	font-size: 24px;
+
+	color: #ffffff;
+}
+
+.top-dest-carousel {
+	margin-top: 20px;
 }
