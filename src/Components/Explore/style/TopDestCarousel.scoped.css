@@ -1,0 +1,51 @@
+.carousel-box {
+	width: 100%;
+	max-width: 870px;
+	display: flex;
+	flex-direction: column;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.circle {
+	height: 125px;
+	width: 125px;
+
+	border-radius: 20px;
+	border-radius: 50%;
+}
+
+.circle img {
+	height: 100%;
+	width: auto;
+	clip-path: circle();
+	margin-right: 200px;
+}
+
+.title {
+	display: flex;
+	margin-top: auto;
+	width: 100%;
+	justify-content: space-between;
+	align-items: center;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.card-box {
+	height: 180px;
+	width: 182px;
+	align-items: center;
+	margin-top: 50px;
+}
+
+p {
+	text-align: center;
+	margin-top: 20px;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 18px;
+	text-transform: uppercase;
+
+	color: #ffffff;
+}

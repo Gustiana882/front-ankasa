@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+.footer {
+    font-family: 'Poppins', sans-serif;
+    padding: 50px 100px;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.img-logo {
+    display: flex;
+}
+
+.img-logo h3 {
+    margin-left: 15px;
+}
+
+.about p {
+    font-size: 14px;
+    font-weight: 400;
+    color: #6B6B6B;
+}
+
+
+.features ul li {
+    list-style: none;
+    color: #6B6B6B;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.follow span {
+    margin-right: 20px;
+}
+
+.download {
+    padding-left: 20px;
+}
+
+.follow {
+    padding-left: 20px;
+}
+
+.copyright {
+    display: flex;
+    justify-content: space-between;
+}
+
+.country{
+    display: flex;
+    align-items: center;
+}
+
+ /* Small devices (landscape phones, 576px and up) */
+@media only screen and (max-width: 576px) {
+    .footer {
+        font-family: 'Poppins', sans-serif;
+        padding: 50px 30px;
+    }
+    
+    .content {
+        display: flex;
+        flex-flow: wrap;
+    }
+
+    .about {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding-bottom: 15px;
+        width: 100vw;
+    }
+
+    .features ul {
+        padding-left: 0;
+        padding-bottom: 20px;
+    }
+
+    .follow {
+        padding-bottom: 20px;
+        padding-left: 20px;
+    }
+
+    .download {
+        padding-left: 20px;
+    }
+}
+
+ /* Medium devices (tablets, 768px and up) */
+@media only screen and (max-width: 768px) {
+    .footer {
+        font-family: 'Poppins', sans-serif;
+        padding: 50px 30px;
+    }
+    
+    .content {
+        display: flex;
+        flex-flow: wrap;
+    }
+
+    .about {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding-bottom: 15px;
+        width: 100vw;
+    }
+
+    .features ul {
+        padding-left: 0;
+        padding-bottom: 20px;
+    }
+
+    .follow {
+        padding-bottom: 20px;
+        padding-left: 20px;
+    }
+
+    .download {
+        padding-left: 20px;
+    }
+}
+
+ /* Large devices (desktops, 992px and up) */
+@media (max-width: 992px) {
+    .footer {
+        font-family: 'Poppins', sans-serif;
+        padding: 50px 30px;
+    }
+    
+    .content {
+        display: flex;
+        flex-flow: wrap;
+    }
+
+    .about {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding-bottom: 15px;
+        width: 100vw;
+    }
+
+    .features ul {
+        padding-left: 0;
+        padding-bottom: 20px;
+    }
+
+    .follow {
+        padding-bottom: 20px;
+        padding-left: 20px;
+    }
+
+    .download {
+        padding-left: 20px;
+    }
+}
