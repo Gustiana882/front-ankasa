@@ -12,8 +12,23 @@
     background-color: #F5F6FA;
 }
 
+.pict-airplane-bg{
+    background-color: #2395FF;
+   position: absolute;
+   width: 94vw;
+   height: 35vh;
+   border-bottom-left-radius: 50px;
+   border-bottom-right-radius: 50px;
+}
+
+.pict-airplane{
+    float: left;
+}
+
 .content{
-    margin:10vw;
+    margin-top: 8vw;
+    padding-bottom: 10vw;
+    z-index: 6;
 }
 
 .poppins-bold {

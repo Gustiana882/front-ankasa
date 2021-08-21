@@ -6,11 +6,13 @@ import Home from "./Pages/Home/Home"
 import SearchResult from "./Pages/SearchResult/SearchResult.jsx"
 import FlightDetail from "./Pages/Flight_Detail/FlightDetails"
 import Explore from "./Pages/Explore/Explore"
+import Profile from "./Pages/Profile/Profile.jsx"
 
 function Routers() {
     return (
         <BrowserRouter>
             <Switch>
+                <Route exact path="/profile" component={Profile} />
                 <Route exact path="/explore" component={Explore} />
                 <Route exact path="/flightdetail" component={FlightDetail} />
                 <Route exact path="/search" component={SearchResult} />
