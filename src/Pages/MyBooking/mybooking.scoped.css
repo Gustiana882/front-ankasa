@@ -2,29 +2,7 @@
     font-family: Poppins;
     src: url(../../Assets/Fonts/Poppins/OFL.txt) 
 } 
-
-.text-up span {
-    font-family: Poppins;
-    font-size: 14px;
-    color: #2395FF;
-    line-height: 21px;
-    letter-spacing: 0.3em;
-}
-
-.text-row1 span {
-    font-family: Poppins;
-    font-size: 24px;
-    color: #000000;
-    line-height: 36px;
-}
-.text-row2 span {
-    font-family: Poppins;
-    font-size: 16px;
-    color: #2395FF;
-    line-height: 24px;
-    float: right;
-}
-.card {
+.card-mod {
     position: relative;
     display: flex;
     -ms-flex-direction: column;
@@ -35,14 +13,7 @@
     border: none !important;
     border-radius: 15px !important;
     background-color: #fff;
-    box-shadow: 0px 8px 25px rgba(35, 149, 255, 1);
+    box-shadow: 0px 8px 25px rgb(209, 211, 214);
     margin-top: 20px;
     padding: 30px 30px 30px 30px;
-  }
-  .status {
-    background: #FF7F23;
-    border-radius: 6px;
-    padding: 10px;
-    margin-left: 30px;
-    color: white;
-  }
+}

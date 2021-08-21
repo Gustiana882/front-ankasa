@@ -6,7 +6,7 @@ const mbCard = () => {
     return (
         <div>
         <Container fluid>
-            <Col sm={9}>
+            <Col>
             <Card className="card">
                 <Card.Text className="text-up"><span>MY BOOKING </span></Card.Text>
                     <Row>
@@ -20,7 +20,7 @@ const mbCard = () => {
                 </Card>
             </Col>
 
-            <Col sm={9}>
+            <Col>
             <Card className="card">
                 <Card.Text><span>Monday, 20 July '20' - 12:33</span></Card.Text>
                 <Card.Text className="text-row1"><span><b>FROM   
@@ -39,10 +39,10 @@ const mbCard = () => {
                         <Col sm={3}>
                             <Card.Text><span><b>Status</b></span></Card.Text>
                         </Col>
-                        <Col sm={3}>
+                        <Col sm={5}>
                             <span className="status">Waiting for payment</span>
                         </Col>
-                         <Col sm={6}>
+                         <Col sm={4}>
                          <Dropdown >
                             <Dropdown.Toggle 
                             style={{
