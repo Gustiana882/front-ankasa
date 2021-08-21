@@ -2,10 +2,12 @@ import React from 'react';
 import { FaAngleRight } from 'react-icons/fa';
 import './style/SearchFlight.scoped.css';
 import { Controller, useForm } from 'react-hook-form';
-import DatePicker from 'react-date-picker';
 import { useState } from 'react';
 import 'react-calendar/dist/Calendar.css';
 import { Dropdown } from 'react-bootstrap';
+import 'react-datepicker/dist/react-datepicker.css';
+
+import DatePicker from 'react-datepicker';
 
 const SearchFlight = () => {
 	const {
@@ -14,6 +16,7 @@ const SearchFlight = () => {
 		formState: { errors },
 		control,
 	} = useForm();
+	const [startDate, setStartDate] = useState(new Date());
 
 	const [value, onChange] = useState(new Date());
 	return (
@@ -75,9 +78,12 @@ const SearchFlight = () => {
 					<p>Departure</p>
 					<div className="date-box">
 						<DatePicker
-							className="DatePicker"
-							onChange={onChange}
-							value={value}
+							selected={startDate}
+							onChange={(date) => setStartDate(date)}
+							dateFormat="dd MMMM yyyy"
+							className="datePicker"
+							minDate={new Date()}
+							customStyles={{ dateInput: { borderWidth: 0 } }}
 						/>
 					</div>
 				</div>
