@@ -5,6 +5,10 @@
 	padding: 40px;
 	padding-top: 30px;
 	border-radius: 12px;
+	display: flex;
+	flex-direction: column;
+	background-color: white;
+	justify-content: center;
 }
 .title {
 	width: 232px;
@@ -155,19 +159,16 @@
 }
 
 .date-box {
-	width: 319px;
+	width: 100%;
 	height: 55px;
 	display: flex;
 	align-items: center;
 	border: 1px solid #dddddd;
 	box-sizing: border-box;
 	border-radius: 6px;
-}
-
-.DatePicker {
-	width: 100%;
-	padding-left: 21px;
-	padding-right: 21px;
+	display: flex;
+	justify-content: center;
+	padding-left: 30px;
 }
 
 .person-box {

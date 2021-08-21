@@ -1,7 +1,24 @@
-.carousel-box {
-	width: 1158px;
-	height: 262px;
+h1 {
+	font-style: normal;
+	font-weight: 600;
+	font-size: 14px;
 
+	color: #ffffff;
+}
+h2 {
+	font-style: normal;
+	font-weight: 600;
+	font-size: 24px;
+
+	color: #ffffff;
+}
+
+.carousel-box {
+	width: 100%;
+	max-width: 1150px;
+	height: 262px;
+	display: flex;
+	flex-direction: column;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -11,9 +28,8 @@
 	width: 206px;
 	background-color: lightblue;
 	border-radius: 20px;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .title {
