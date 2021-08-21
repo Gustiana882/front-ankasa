@@ -20,7 +20,7 @@ const Home = (props) => {
     return (
         <>
         <Navbar />
-        {/* <Footer /> */}
+        <Footer />
         </>
     )
 }
