@@ -2,12 +2,19 @@ import React from 'react';
 import { FaAngleRight } from 'react-icons/fa';
 import './style/SearchFlight.scoped.css';
 import { Controller, useForm } from 'react-hook-form';
+<<<<<<< HEAD
 import { useState } from 'react';
 import 'react-calendar/dist/Calendar.css';
 import { Dropdown } from 'react-bootstrap';
 import 'react-datepicker/dist/react-datepicker.css';
 
 import DatePicker from 'react-datepicker';
+=======
+import DatePicker from 'react-date-picker';
+import { useState } from 'react';
+import 'react-calendar/dist/Calendar.css';
+import { Dropdown } from 'react-bootstrap';
+>>>>>>> cd9c56accfe066871a48c107831c0078209d50f1
 
 const SearchFlight = () => {
 	const {
@@ -16,7 +23,10 @@ const SearchFlight = () => {
 		formState: { errors },
 		control,
 	} = useForm();
+<<<<<<< HEAD
 	const [startDate, setStartDate] = useState(new Date());
+=======
+>>>>>>> cd9c56accfe066871a48c107831c0078209d50f1
 
 	const [value, onChange] = useState(new Date());
 	return (
@@ -78,12 +88,18 @@ const SearchFlight = () => {
 					<p>Departure</p>
 					<div className="date-box">
 						<DatePicker
+<<<<<<< HEAD
 							selected={startDate}
 							onChange={(date) => setStartDate(date)}
 							dateFormat="dd MMMM yyyy"
 							className="datePicker"
 							minDate={new Date()}
 							customStyles={{ dateInput: { borderWidth: 0 } }}
+=======
+							className="DatePicker"
+							onChange={onChange}
+							value={value}
+>>>>>>> cd9c56accfe066871a48c107831c0078209d50f1
 						/>
 					</div>
 				</div>

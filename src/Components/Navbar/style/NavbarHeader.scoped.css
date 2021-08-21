@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .header {
 	display: flex;
 
@@ -9,4 +10,41 @@
 	position: fixed; /* Set the navbar to fixed position */
 	top: 0; /* Position the navbar at the top of the page */
 	background-color: white;
+=======
+.navbar {
+	display: flex;
+	justify-content: center;
+	z-index: 9999;
+	height: 100px;
+	position: fixed; /* Set the navbar to fixed position */
+	top: 0; /* Position the navbar at the top of the page */
+	width: 100%; /* Full width */
+	font-style: normal;
+	font-weight: 600;
+	font-size: 24px;
+	color: #414141;
+	padding-left: 130px;
+	padding-right: 130px;
+	background-color: white;
+	margin-top: 0px;
+}
+.navbar-inside {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+
+	justify-content: space-between;
+	margin: 0;
+	padding: 0;
+}
+@media all and (max-width: '989px') {
+	.navbar-inside {
+		display: none;
+	}
+}
+@media all and (min-width: '989px') {
+	.navbar-mobile {
+		display: none;
+	}
+>>>>>>> cd9c56accfe066871a48c107831c0078209d50f1
 }

@@ -13,7 +13,10 @@
     "react": "^17.0.2",
     "react-bootstrap": "^1.6.1",
     "react-date-picker": "^8.3.2",
+<<<<<<< HEAD
     "react-datepicker": "^4.2.1",
+=======
+>>>>>>> cd9c56accfe066871a48c107831c0078209d50f1
     "react-dom": "^17.0.2",
     "react-hook-form": "^7.12.2",
     "react-icons": "^4.2.0",
