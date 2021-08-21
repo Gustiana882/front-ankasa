@@ -8,6 +8,32 @@
 	font-family: Poppins-reguler;
 }
 
+<<<<<<< HEAD
+=======
+.color{
+    background-color: #F5F6FA;
+}
+
+.pict-airplane-bg{
+    background-color: #2395FF;
+   position: absolute;
+   width: 94vw;
+   height: 35vh;
+   border-bottom-left-radius: 50px;
+   border-bottom-right-radius: 50px;
+}
+
+.pict-airplane{
+    float: left;
+}
+
+.content{
+    margin-top: 8vw;
+    padding-bottom: 10vw;
+    z-index: 6;
+}
+
+>>>>>>> 431aaf1ed2b887e081a72ca9934e9ee6fd214a4f
 .poppins-bold {
     font-family: Poppins-bold;
 }
