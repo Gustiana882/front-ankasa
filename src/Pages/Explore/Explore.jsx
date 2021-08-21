@@ -2,6 +2,7 @@ import { Container } from 'react-bootstrap';
 import SearchFlight from '../../Components/Explore/SearchFlight';
 import TopDestCarousel from '../../Components/Explore/TopDestCarousel';
 import TrendingCarousel from '../../Components/Explore/TrendingCarousel';
+import Footer from '../../Components/Footer/Footer';
 import NavbarHeader from '../../Components/Navbar/NavbarHeader';
 import './Explore.scoped.css';
 
@@ -51,6 +52,9 @@ const Explore = () => {
 					<TopDestCarousel />
 				</div>
 			</Container>
+			<div className="footer">
+				<Footer />
+			</div>
 		</div>
 	);
 };

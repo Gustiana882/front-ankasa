@@ -14,7 +14,7 @@ const Home = (props) => {
 		props.UserSet([{ name: 'user', email: 'user@gmail.com' }]);
 	}, []);
 
-	return <h1 className="text-danger" />;
+	return <h1 className="text-danger">Hello world</h1>;
 };
 
 // get redux
