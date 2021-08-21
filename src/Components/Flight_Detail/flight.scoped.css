@@ -1,0 +1,75 @@
+@font-face {
+	src: url("https://res.cloudinary.com/dyli6i0pw/raw/upload/v1629425952/Assets%20Ticket/Poppins/Poppins-Bold_mtbzst.ttf");
+	font-family: Poppins-bold;
+}
+
+@font-face {
+	src: url("https://res.cloudinary.com/dyli6i0pw/raw/upload/v1629425953/Assets%20Ticket/Poppins/Poppins-ExtraLight_y9rt52.ttf");
+	font-family: Poppins-reguler;
+}
+
+.poppins-bold {
+    font-family: Poppins-bold;
+}
+
+.poppins-reguler {
+    font-family: Poppins-reguler;
+}
+
+.card {
+    border-radius: 15px;
+}
+
+span {
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    margin: 0;
+}
+
+.color-blue{
+    color: #2395FF;
+}
+
+body {
+    background-color: lightgray;
+}
+
+.search-box {
+    border-bottom: 3px solid #D2C2FFAD;
+    border-left: unset;
+    border-right: unset;
+    border-top: unset;
+}
+
+.trust-box {
+    background: rgba(242, 69, 69, 0.1);
+    flex-direction: row;
+}
+
+.img-danger {
+    width: 22px;
+    height: 20px;
+}
+
+.pass-details-box {
+    background: rgba(35, 149, 255, 0.1);
+    flex-direction: row;
+}
+
+.form-check {
+    min-height: unset;
+}
+
+.btn-pay {
+    background: #2395FF;
+    box-shadow: 0px 8px 10px rgba(35, 149, 255, 0.3);
+    border-radius: 10px;
+}
+
+.font-mini {
+    font-size: 10px;
+}

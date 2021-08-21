@@ -14,10 +14,17 @@ const withAuth = (WrappedComponent) => {
             return null
         }
 
+<<<<<<< HEAD
         if (!accessToken && !urlAuth.find((val, i)=> Url === val)) {
             Router.push("/login")
             return null
         }
+=======
+        // if (!accessToken && !urlAuth.find((val, i)=> Url === val)) {
+        //     Router.push("/login")
+        //     return null
+        // }
+>>>>>>> a6141ae07b413b7b3166e3e1d8629e3a09867c8c
 
         return <WrappedComponent {...props} />
     }

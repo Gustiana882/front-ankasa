@@ -21,8 +21,14 @@
 	box-shadow: 0px 8px 10px rgba(35, 149, 255, 0.3);
 	border-radius: 10px;
 	border: none;
+<<<<<<< HEAD
+
+	height: 50px;
+=======
 	width: 150px;
 	height: 50px;
+	margin-left: 137px;
+>>>>>>> cd9c56accfe066871a48c107831c0078209d50f1
 }
 .menu-button {
 	background: white;
@@ -30,17 +36,31 @@
 	color: black;
 	font-style: normal;
 	font-weight: bold;
+<<<<<<< HEAD
 	width: 120px;
 	height: 24px;
+=======
+
+>>>>>>> cd9c56accfe066871a48c107831c0078209d50f1
 	color: #414141;
 }
 .menu {
 	display: flex;
+<<<<<<< HEAD
 	margin-top: 10px;
 	align-items: center;
+=======
+	justify-content: center;
+	margin-top: 10px;
+	align-items: center;
+	margin-right: 250px;
+>>>>>>> cd9c56accfe066871a48c107831c0078209d50f1
 }
 
 .menu li {
 	list-style: none;
+<<<<<<< HEAD
+=======
 	margin-right: 20px;
+>>>>>>> cd9c56accfe066871a48c107831c0078209d50f1
 }

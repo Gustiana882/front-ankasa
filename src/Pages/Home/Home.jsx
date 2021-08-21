@@ -3,8 +3,11 @@ import { connect } from "react-redux"
 import { bindActionCreators } from "redux"
 import ActionsUsers from "../../Storages/Actions/Users"
 import PagesAuth from "../../Utils/PagesAuth"
+<<<<<<< HEAD
 import Navbar from "../../Components/Navbar/NavbarHeader"
 import Footer from "../../Components/Footer/Footer"
+=======
+>>>>>>> a6141ae07b413b7b3166e3e1d8629e3a09867c8c
 
 const Home = (props) => {
 
@@ -18,10 +21,14 @@ const Home = (props) => {
     },[])
 
     return (
+<<<<<<< HEAD
         <>
         <Navbar />
         <Footer />
         </>
+=======
+        <h1 className="text-danger">Hello world</h1>
+>>>>>>> a6141ae07b413b7b3166e3e1d8629e3a09867c8c
     )
 }
 

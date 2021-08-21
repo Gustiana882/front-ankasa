@@ -1,7 +1,153 @@
 .wrapper {
+<<<<<<< HEAD
+	width: 100vw;
+}
+
+.title-hero {
+	display: flex;
+	width: 700px;
+	height: 175px;
+
+	align-items: center;
+=======
+>>>>>>> cd9c56accfe066871a48c107831c0078209d50f1
 }
 
 .SearchFlight {
 	margin-top: 150px;
+<<<<<<< HEAD
+	display: flex;
+	justify-content: space-between;
+	padding-left: 120px;
+	background-image: url('https://res.cloudinary.com/calvin-cloud/image/upload/v1629472892/Ankasa/image-hero_jh4pqz.svg');
+
+	background-repeat: no-repeat;
+}
+
+@media screen and (min-width: 1327px) {
+	.SearchFlight {
+		padding-right: 250px;
+	}
+}
+
+.trending-box {
+	margin-top: 195px;
+	display: flex;
+	flex-direction: column;
+	width: 100vw;
+	justify-content: center;
+}
+
+.title-trending {
+	display: flex;
+	justify-content: space-between;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.navbar-header {
+	display: flex;
+	margin-right: auto;
+	align-items: center;
+	width: 100%;
+}
+
+.black {
+	font-weight: 600;
+	font-size: 54px;
+}
+.blue {
+	color: #2395ff;
+}
+.bottom {
+	font-size: 16px;
+	color: #979797;
+}
+
+.trending-text {
+	font-weight: 500;
+	font-size: 14px;
+
+	letter-spacing: 0.3em;
+
+	color: #2395ff;
+}
+
+.trending-dest-text {
+	font-style: normal;
+	font-weight: 600;
+	font-size: 24px;
+	line-height: 36px;
+	/* identical to box height */
+
+	color: #000000;
+}
+
+.view-text {
+	margin-top: 30px;
+	align-items: center;
+	font-weight: 600;
+	font-size: 16px;
+
+	color: #2395ff;
+}
+
+.trending-carousel {
+	margin-top: 50px;
+}
+
+.top-dest-box {
+	height: 550px;
+	width: 70%;
+	min-width: 800px;
+	background-color: rgba(35, 149, 255, 1);
+	border-radius: 60px;
+	margin-top: 150px;
+	background-image: url('https://res.cloudinary.com/calvin-cloud/image/upload/v1629500250/Ankasa/jumbo_plane_xec8wu.svg');
+	background-repeat: no-repeat;
+	background-position: 0% 100%;
+	padding-top: 67px;
+}
+
+.top10-title {
+	font-weight: 500;
+	font-size: 14px;
+	margin-top: 67px;
+	letter-spacing: 0.3em;
+	text-align: center;
+	color: #ffffff;
+}
+
+.top10-dest {
+	font-weight: 600;
+	font-size: 24px;
+
+	color: #ffffff;
+}
+
+.title {
+	font-weight: 500;
+	font-size: 14px;
+
+	letter-spacing: 0.3em;
+
+	color: #ffffff;
+}
+
+.desc {
+	font-weight: 600;
+	font-size: 24px;
+
+	color: #ffffff;
+}
+
+.top-dest-carousel {
+	margin-top: 20px;
+}
+
+.footer {
+	margin-top: 150px;
+=======
 	margin-left: 53em;
+>>>>>>> cd9c56accfe066871a48c107831c0078209d50f1
 }
