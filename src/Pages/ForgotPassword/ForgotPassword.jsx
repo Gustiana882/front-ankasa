@@ -21,14 +21,14 @@ const ForgotPassword = () => {
                     <img src={ilustration} alt="" />
                 </div>
                 <div className="content-wrap">
-                    <div className="card">
+                    <div className="card border-0">
                         <div className="logo">
                             <img src={logo} alt="logo.svg" />
                             <h3>Ankasa</h3>
                         </div>
-                        <h1 className="card-title text-center">Forgot Password</h1>
+                        <h1 className="text-black text-center mb-3">Forgot Password</h1>
                         <div className="form-input">
-                            <input className="input-email" placeholder="email" type="email" onChange={(e) => sethandleChange(e.target.value)}/>
+                            <input className="input-email" placeholder="Email" type="email" onChange={(e) => sethandleChange(e.target.value)}/>
                         </div>
                         <button className="btn-send" onClick={send}>Send</button>
                         <div className="text-center">

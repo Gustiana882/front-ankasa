@@ -7,12 +7,14 @@ import MyBooking from "./Pages/MyBooking/mybooking.jsx"
 import ForgotPassword from "./Pages/ForgotPassword/ForgotPassword.jsx"
 import Register from "./Pages/Register/Register.jsx"
 import Profile from "./Pages/Profile/Profile.jsx"
+import Notification from "./Pages/Notification/Notification"
 
 function Routers() {
     return (
         <BrowserRouter>
             <Switch>
                 <Route exact path="/mybooking" component={MyBooking} />
+                <Route exact path="/notification" component={Notification} />
                 <Route exact path="/profile" component={Profile} />
                 <Route exact path="/flightdetail" component={FlightDetail} />
                 <Route exact path="/search" component={SearchResult} />

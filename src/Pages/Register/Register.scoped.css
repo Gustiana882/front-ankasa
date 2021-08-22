@@ -4,95 +4,6 @@ body {
     display: flex;
   }
 
-  
-  @media screen and (max-width: 414px) {
-    .register{
-      padding-top: 20vw;
-    }
-  
-    .user-box{
-      margin-top: 3vw;
-      margin-bottom: 3vw;
-    }
-  
-    .register-button-signup{
-      margin-bottom: 5vw;
-    }
-  
-    .register-checkbox-layout{
-      margin-top: 15px;
-    }
-  
-    .register-button-signup{
-      padding-left: 50%;
-      padding-right: 50%;
-      padding-bottom: 6px;
-      padding-top: 2vw;
-      padding-bottom: 7vw;
-    }
-  
-    .register-button-signin{
-      padding-left: 50%;
-      padding-right: 50%;
-      padding-bottom: 6px;
-      padding-top: 2vw;
-      padding-bottom: 7vw;
-      line-height: 12px;
-    }
-  
-    .register-logo{
-      margin: 0;
-      padding: 0;
-      display: none;
-      visibility: hidden;
-      position: absolute;
-    }
-  
-    .register-pict-airplane-up{
-      margin: 0;
-      padding: 0;
-      display: none;
-      visibility: hidden;
-      position: absolute;
-    }
-    
-    .register-pict-airplane-bottom{
-      margin: 0;
-      padding: 0;
-      display: none;
-      visibility: hidden;
-      position: absolute;
-    }
-    
-    .register-pict-airplane-right{
-      margin: 0;
-      padding: 0;
-      display: none;
-      visibility: hidden;
-      position: absolute
-    }
-  
-    .register-pict {
-      width: 0;
-      height: 0;
-      margin: 0;
-      padding: 0;
-      display: none;
-      position: absolute;
-      visibility: hidden;
-    }
-    
-    .register-pict-airplane-up{
-      position: absolute;
-      margin: 0;
-      padding: 0;
-      width: 0;
-      height: 0;
-      display: none;
-      visibility: hidden;
-    }
-  }
-
     .user-box {
     position: relative;
   }
@@ -211,8 +122,42 @@ body {
   .register-font15{
     font-size: 15px;
   }
+
+  .register-font21{
+    font-size: 21px;
+  }
   
   .register-signin{
     line-height: 6px;
   }
   
+
+  @media only screen and (max-width: 768px) {
+    .register-pict {
+        display: none;
+    }
+
+    .register-layout {
+        width: 100%;
+    }
+
+    .user-box{
+      line-height: 50px;
+      padding-bottom: 3vw;
+    }
+
+    .eye-pass{
+      padding-top: 2vw;
+    }
+
+    .register-button-signup{
+      height: 10vw;
+      width: 51vw;
+      margin-bottom: 5vw;
+    }
+
+    .register-button-signin{
+      height: 10vw;
+      width: 51vw;
+    }
+}

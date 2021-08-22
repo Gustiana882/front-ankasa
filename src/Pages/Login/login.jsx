@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 // import { useForm } from "react-hook-form"
-import "./login.scoped.css"
-import { Link } from "react-router-dom"
+import "./login.scoped.css";
+import ilustration from "../../Assets/illustration.png";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -38,12 +39,9 @@ const Login = () => {
   // }, []);
 
   return (
-    <div>
-      <div className="blueBanner">
-        <img
-          src="https://res.cloudinary.com/rizkazn/image/upload/v1629439835/ankasaBanner_kmjq8m.jpg"
-          alt=""
-        />
+    <div className="d-flex">
+      <div className="baground-img">
+        <img className="img-airplane" src={ilustration} alt="" />
       </div>
             <aside>
               <div className="formBanner">
