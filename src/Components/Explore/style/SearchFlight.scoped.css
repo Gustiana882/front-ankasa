@@ -1,6 +1,6 @@
 .wrapper {
 	width: 400px;
-	height: 760px;
+	height: 790px;
 	box-shadow: 0px 8px 27px 0px rgba(14, 63, 108, 0.19);
 	padding: 40px;
 	padding-top: 30px;
@@ -38,7 +38,7 @@
 	font-weight: bold;
 }
 .recent-search {
-	margin-top: 20px;
+	margin-top: 38px;
 	display: flex;
 	width: 319px;
 	justify-content: space-between;
