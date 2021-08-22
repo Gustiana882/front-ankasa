@@ -11,6 +11,7 @@ import SidenavFilter from "../../Components/SidenavFilter/SidenavFilter"
 import Card from "../../Components/CardSearch/CardSearch"
 import standarResponApi from "./standarResponApi"
 import { useState, useEffect } from "react"
+import { Link } from "react-router-dom"
 
 const SearchResult = () => {
 
@@ -157,7 +158,6 @@ const SearchResult = () => {
 					</div>
 				</div>
 			</div>
-			
 			<Footer />
 		</div>
 	);
