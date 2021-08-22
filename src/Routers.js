@@ -7,11 +7,13 @@ import SearchResult from "./Pages/SearchResult/SearchResult.jsx"
 import FlightDetail from "./Pages/Flight_Detail/FlightDetails"
 import Explore from "./Pages/Explore/Explore"
 import Profile from "./Pages/Profile/Profile.jsx"
+import Notification from "./Pages/Notification/Notification"
 
 function Routers() {
     return (
         <BrowserRouter>
             <Switch>
+                <Route exact path="/notification" component={Notification} />
                 <Route exact path="/profile" component={Profile} />
                 <Route exact path="/explore" component={Explore} />
                 <Route exact path="/flightdetail" component={FlightDetail} />
