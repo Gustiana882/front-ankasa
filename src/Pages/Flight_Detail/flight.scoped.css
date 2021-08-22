@@ -15,7 +15,7 @@
 .pict-airplane-bg{
     background-color: #2395FF;
    position: absolute;
-   width: 94vw;
+   /* width: 94vw; */
    height: 35vh;
    border-bottom-left-radius: 50px;
    border-bottom-right-radius: 50px;

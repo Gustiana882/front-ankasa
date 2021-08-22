@@ -38,8 +38,6 @@ body {
     background-color: lightgray;
 }
 
-<<<<<<< HEAD
-=======
 
 .user-box {
     position: relative;
@@ -68,7 +66,6 @@ body {
     font-size: 10px;
   }
 
->>>>>>> origin/routing
 .search-box {
     border-bottom: 3px solid #D2C2FFAD;
     border-left: unset;

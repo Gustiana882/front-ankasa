@@ -14,12 +14,12 @@ function Flight(props) {
       <div>
         <NavbarHeader />
       </div>
-      <div className="container">
-        <div className="row justify-content-between mt-5">
-          <div className="pict-airplane-bg">
+      <div>
+        <div className="d-flex justify-content-evenly mt-5">
+          <div className="pict-airplane-bg vw-100">
             <img className="pict-airplane" src="https://res.cloudinary.com/dvehyvk3d/image/upload/v1629563652/tiketing/vector_3_xgesw0.png" alt="" />
           </div>
-          <div className="col-8 content">
+          <div className="col-6 content">
             <h5 className="m-0 poppins-bold text-white">Contact Person Details</h5>
             <ContactDetail />
             <h5 className="mt-5 poppins-bold">Passenger Details</h5>
