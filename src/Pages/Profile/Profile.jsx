@@ -3,23 +3,17 @@ import { useState } from "react";
 import FormData from "form-data";
 import Sidenav from "../../Components/Sidenav/sidenav";
 import Footer from "../../Components/Footer/Footer";
-<<<<<<< HEAD
-=======
 import Menu from "../../Components/Navbar/MenusAfterLogin"
 import Header from "../../Components/Navbar/NavbarHeader"
->>>>>>> 431aaf1ed2b887e081a72ca9934e9ee6fd214a4f
 import axios from 'axios'
 
 const Profile = () => {
   const [getImage, setImage] = useState([]);
   return (
     <body>
-<<<<<<< HEAD
-      <header />
-=======
       <Header />
       <Menu />
->>>>>>> 431aaf1ed2b887e081a72ca9934e9ee6fd214a4f
+      <header />
       <section>
         <h6 className="color-blue">P R O F I L E</h6>
         <h1>Profile</h1>
