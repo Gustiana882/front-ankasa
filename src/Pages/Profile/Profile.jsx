@@ -11,9 +11,9 @@ const Profile = () => {
   const [getImage, setImage] = useState([]);
   return (
     <body>
+      <header />
       <Header />
       <Menu />
-      <header />
       <section>
         <h6 className="color-blue">P R O F I L E</h6>
         <h1>Profile</h1>

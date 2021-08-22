@@ -1,41 +1,50 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react";
 // import { useForm } from "react-hook-form"
 import "./login.scoped.css"
-import { Link, useHistory } from "react-router-dom"
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faEye,faEyeSlash } from "@fortawesome/free-solid-svg-icons";
-// const eye = <FontAwesomeIcon icon={faEye} />;
+import { Link } from "react-router-dom"
 
 const Login = () => {
-  const [username, setUsername] = useState ('')
-  const [password, setPassword] = useState ('')
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
-const handleChange = (e) => {
-  const {name, value} = e.target
+  const handleChange = (e) => {
+    const { name, value } = e.target;
 
-  switch (name) {
-    case "username":
-      setUsername(value)
-      break
-    case "password":
-      setPassword(value)
-      break
-    default:
-      break
-  }
-}
+    switch (name) {
+      case "username":
+        setUsername(value);
+        break;
+      case "password":
+        setPassword(value);
+        break;
+      default:
+        break;
+    }
+  };
 
-const handleSubmit = (e) => {
-  e.preventDefault()
-}
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
 
+  // useEffect(() => {
+  //   const togglePassword = document.querySelector("#togglePassword");
+  //   const password = document.querySelector("#password");
+  //     // toggle the type attribute
+  //     const type =
+  //       password.getAttribute("type") === "password" ? "text" : "password";
+  //     password.setAttribute("type", type);
+  //     // toggle the eye / eye slash icon
+  //     this.classList.toggle("bi-eye");
+  // }, []);
 
-    return (
-      <>
-          <div className="container">
-            <div className="blueBanner">
-              <img src="https://res.cloudinary.com/rizkazn/image/upload/v1629439835/ankasaBanner_kmjq8m.jpg" alt="" />
-            </div>
+  return (
+    <div>
+      <div className="blueBanner">
+        <img
+          src="https://res.cloudinary.com/rizkazn/image/upload/v1629439835/ankasaBanner_kmjq8m.jpg"
+          alt=""
+        />
+      </div>
             <aside>
               <div className="formBanner">
                 <div className="formTitle">
@@ -93,8 +102,6 @@ const handleSubmit = (e) => {
                 </div>
             </aside>
           </div>
-        </>
 )}
 
-export default Login
-     
+export default Login;
