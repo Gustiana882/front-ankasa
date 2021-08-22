@@ -1,12 +1,13 @@
 import './style/Menus.scoped.css';
 import { Container, Button, Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-
+import { useSelector } from 'react-redux';
 import React from 'react';
 import SignupButton from './SignupButton';
 import MenusAfterLogin from './MenusAfterLogin';
 
 const Menus = () => {
+	const { isAuth } = useSelector((state) => state.loginReducer);
 	return (
 		<div>
 			<Nav className="menu-before-login">
@@ -18,8 +19,7 @@ const Menus = () => {
 						<Button className="menu-button">My Booking</Button>
 					</li>
 				</ul>
-				<SignupButton />
-				{/* <MenusAfterLogin /> */}
+				{isAuth ? <MenusAfterLogin /> : <SignupButton />}
 			</Nav>
 		</div>
 	);

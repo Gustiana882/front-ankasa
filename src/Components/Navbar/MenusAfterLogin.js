@@ -4,15 +4,18 @@ import { Container, Nav } from 'react-bootstrap';
 import { FaShoppingCart, FaBell, FaEnvelope } from 'react-icons/fa';
 import './style/MenusAfterLogin.scoped.css';
 import { useDispatch } from 'react-redux';
+import { logout } from '../../Storages/Slices/loginSlice';
 // import { logout } from '../Logins/loginSlice';
 import { Dropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import axios from 'axios';
+import { useHistory } from 'react-router';
 const MenusAfterLogin = () => {
 	const [user, setUser] = useState('');
-
 	const dispatch = useDispatch();
+	const { email } = useSelector((state) => state.loginReducer);
+	const history = useHistory();
 	// useEffect(() => {
 	// 	axios.get(urlUser).then((res) => {
 	// 		console.log(res.data);
@@ -50,7 +53,9 @@ const MenusAfterLogin = () => {
 						</Dropdown.Toggle>
 					</Nav>
 					<Dropdown.Menu>
-						<Dropdown.Item>Logout</Dropdown.Item>
+						<Dropdown.Item onClick={() => dispatch(logout())}>
+							Logout
+						</Dropdown.Item>
 						<Dropdown.Item>User</Dropdown.Item>
 					</Dropdown.Menu>
 				</Dropdown>
