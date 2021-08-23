@@ -1,0 +1,30 @@
+body{
+    background-color: #F5F6FA;
+}
+
+.content{
+    position:relative;
+    top: 10vw;
+    padding: 2vw;
+    border-radius: 20px;
+    width: 71vw;
+}
+
+.pointer{
+    cursor: pointer;
+}
+
+.text-blue{
+    color: #2395FF;
+}
+
+.bg-blue{
+    background-color: #F6FBFF;
+    border-color: #2395FF;
+    line-height: 30px;
+}
+
+footer{
+    margin-top: 20vw;
+    background-color: white;
+}

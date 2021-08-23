@@ -1,0 +1,45 @@
+.menu-before-login {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 50vw;
+	margin-left: auto;
+}
+.cart-icon {
+	margin-top: auto;
+	margin-bottom: auto;
+	font-size: 20px;
+	color: #8e8e93;
+}
+
+.login-button {
+	width: 100px;
+	border-radius: 25px;
+}
+.signup-button {
+	background: #2395ff;
+	box-shadow: 0px 8px 10px rgba(35, 149, 255, 0.3);
+	border-radius: 10px;
+	border: none;
+
+	height: 50px;
+}
+.menu-button {
+	background: white;
+	border: none;
+	color: black;
+	font-style: normal;
+	font-weight: bold;
+	width: 120px;
+	height: 24px;
+	color: #414141;
+}
+.menu {
+	display: flex;
+	margin-top: 10px;
+	align-items: center;
+}
+
+.menu li {
+	list-style: none;
+}

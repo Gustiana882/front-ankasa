@@ -1,0 +1,142 @@
+@font-face {
+    font-family: Poppins;
+    src: url('../../Assets/Fonts/Poppins/OFL.txt') 
+} 
+  body {
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .blueBanner {   
+    width: 70%;;
+    float: left;
+  }
+  .blueBanner img {
+    width: 55vw;
+    height: 100vh;
+    padding-top: 0px;
+    padding-left: 0px;
+  }
+  .text-logo {
+    font-size:20px; 
+  }
+
+  .baground-img {
+    background-color: #2395FF;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    width: 57.54vw;
+}
+  .img-airplane{
+    padding-left: 11vw;
+  }
+
+  aside {
+    margin-left: 7vw;
+  }
+  .formTitle {
+    font-family: Poppins;
+    padding-top: 25px;
+    float: left;
+  }
+  .formTitle img {
+    width: 50px;
+    height: 34px;  
+  }
+  .container  {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  .SignIn {
+    color: #fff;
+    border: 1px solid #2395ff;
+    background: #2395ff;
+    box-shadow: 0px 8px 10px rgba(35, 149, 255, 0.3);
+    border-radius: 10px;
+    padding: 10px;
+    width: 300px;
+  }
+  .SignIn:hover {
+    background: #fff;
+    box-shadow: 0px 8px 10px rgba(35, 149, 255, 0.3);
+    color: #2395ff;
+    border: 1px solid #2395ff;
+  }
+  .login-box {
+    font-family: Poppins;
+    padding-right: 5px;
+    padding-left: 5px;
+    padding-top: 80px;
+    text-align: center;
+    box-sizing: border-box;
+  }
+  .login-box h4 {
+    font-size: 30px;
+  }
+  .formRegis {
+    padding-top: none;
+  }
+  .login-box h4 {
+    margin: 0 0 20px;
+    padding: 0;
+    color: #000000;
+    text-align: left;
+  }
+  .login-box .user-box {
+    position: relative;
+  }
+  .login-box .user-box input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid rgba(210, 194, 255, 0.68);
+    outline: none;
+    background: transparent;
+  }
+  .login-box .user-box label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 15px;
+    color: #9b96ab;
+    pointer-events: none;
+    transition: 0.5s;
+  }
+  .login-box .user-box input:focus ~ label,
+  .login-box .user-box input:valid ~ label {
+    top: -20px;
+    left: 0;
+    font-size: 10px;
+  }
+ 
+  .btn-google {
+    background: #fff;
+    border: 1px solid #2395FF;
+  }
+  .btn-google img {
+    width: 24px;
+    height: 24px;
+  }
+  .btn-facebook{
+    background: #fff;
+    border: 1px solid #2395FF;
+  }
+  .btn-facebook img {
+    width: 24px;
+    height: 24px;
+  }
+
+  @media only screen and (max-width: 768px) {
+    .baground-img {
+        display: none;
+    }
+
+    .formBanner {
+        width: 100%;
+    }
+}
