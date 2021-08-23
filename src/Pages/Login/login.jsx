@@ -45,8 +45,8 @@ const Login = () => {
 					dispatch(getEmail(email));
 					history.push('/home');
 					console.log(msg);
-				} else {
-					dispatch(loginFail('invalid password or email'));
+				} else if (msg === 'wrong password or email') {
+					dispatch(loginFail('wrong password or email'));
 				}
 			});
 		} catch (error) {

@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import Menus from './Menus';
 import { useLocation } from 'react-router';
+import { useHistory } from 'react-router';
 
 const NavbarHeader = () => {
 	// const location = useLocation();
@@ -15,13 +16,15 @@ const NavbarHeader = () => {
 	return (
 		<div>
 			<Navbar expand="sm" className="header">
-				<Navbar.Brand className="brand">
-					<img
-						src="https://res.cloudinary.com/calvin-cloud/image/upload/v1629405150/Ankasa/logo_ankasa_xc7uai.svg"
-						alt=""
-					/>
-					<span>Ankasa</span>
-				</Navbar.Brand>
+				<Link to="/home" style={{ textDecoration: 'none' }}>
+					<Navbar.Brand className="brand">
+						<img
+							src="https://res.cloudinary.com/calvin-cloud/image/upload/v1629405150/Ankasa/logo_ankasa_xc7uai.svg"
+							alt=""
+						/>
+						<span>Ankasa</span>
+					</Navbar.Brand>
+				</Link>
 
 				<div className="navbar-inside">
 					<Navbar className="basic-navbar" id="basic-navbar-nav">

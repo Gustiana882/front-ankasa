@@ -6,10 +6,12 @@ import users from './Reducers/Users';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import logger from 'redux-logger';
 import loginReducer from '../Storages/Slices/loginSlice';
+import profileReducer from '../Storages/Slices/profileSlice';
 
 const reducer = combineReducers({
 	users,
 	loginReducer,
+	profileReducer,
 });
 
 const persistConfig = {

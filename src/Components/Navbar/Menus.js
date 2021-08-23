@@ -16,7 +16,9 @@ const Menus = () => {
 						<Button className="menu-button">Find Ticket</Button>
 					</li>
 					<li>
-						<Button className="menu-button">My Booking</Button>
+						<Link to="/mybooking" style={{ textDecoration: 'none' }}>
+							<Button className="menu-button">My Booking</Button>
+						</Link>
 					</li>
 				</ul>
 				{isAuth ? <MenusAfterLogin /> : <SignupButton />}

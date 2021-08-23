@@ -16,19 +16,21 @@ const MenusAfterLogin = () => {
 	const dispatch = useDispatch();
 	const { email } = useSelector((state) => state.loginReducer);
 	const history = useHistory();
-	// useEffect(() => {
-	// 	axios.get(urlUser).then((res) => {
-	// 		console.log(res.data);
+	const url = `${process.env.REACT_APP_API}/user/${email}`;
+	const [image, setImage] = useState('');
+	const { token } = useSelector((state) => state.loginReducer);
 
-	// 		const { data } = res.data;
-	// 		const value = [];
-	// 		data.map((val) => {
-	// 			return value.push(val);
-	// 		});
-
-	// 		if (value) setUser(value);
-	// 	});
-	// }, [urlUser]);
+	useEffect(() => {
+		axios
+			.get(url, {
+				headers: {
+					token: token,
+				},
+			})
+			.then((res) => {
+				setImage(res.data.result[0].image);
+			});
+	}, [url, token]);
 
 	return (
 		<div>
@@ -46,17 +48,23 @@ const MenusAfterLogin = () => {
 				<Dropdown>
 					<Nav className="photo-box">
 						<Dropdown.Toggle variant="none">
-							<img
-								src="https://res.cloudinary.com/calvin-cloud/image/upload/v1627339637/Front%20End/profile_yzozml.jpg"
-								alt="profile"
-							/>
+							<img src={image} alt="profile" />
 						</Dropdown.Toggle>
 					</Nav>
+
 					<Dropdown.Menu>
 						<Dropdown.Item onClick={() => dispatch(logout())}>
 							Logout
 						</Dropdown.Item>
-						<Dropdown.Item>User</Dropdown.Item>
+
+						<Dropdown.Item>
+							<Link
+								to="/profile"
+								style={{ textDecoration: 'none', color: 'black' }}
+							>
+								My Profile
+							</Link>
+						</Dropdown.Item>
 					</Dropdown.Menu>
 				</Dropdown>
 			</Nav>
