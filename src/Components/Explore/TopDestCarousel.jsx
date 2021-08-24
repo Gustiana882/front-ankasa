@@ -2,7 +2,8 @@ import './style/TopDestCarousel.scoped.css';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import { useState } from 'react';
+import axios from 'axios'
+import { useState, useEffect } from 'react';
 import { FaAngleRight } from 'react-icons/fa';
 
 const TopDestCarousel = () => {
@@ -41,30 +42,25 @@ const TopDestCarousel = () => {
 		],
 	};
 
-	const cities = [
-		{
-			city: 'Tokyo',
-			country: 'Japan',
-		},
-		{
-			city: 'Tokyo',
-			country: 'Japan',
-		},
-		{
-			city: 'Tokyo',
-			country: 'Japan',
-		},
-		{
-			city: 'Tokyo',
-			country: 'Japan',
-		},
-		{
-			city: 'Tokyo',
-			country: 'Japan',
-		},
-	];
+	const [city, setCity] = useState([])
+	const [image, setImage] = useState([])
 
-	const [destination, setDestination] = useState([]);
+	useEffect(() => {
+		axios.get(`${process.env.REACT_APP_API}/destination/all`)
+		.then((res) => {
+			const { result } = res.data
+			console.log(result)
+
+			let arrayCity = [];
+				result.forEach(datum => arrayCity.push(datum.city))
+			if (arrayCity) setCity(arrayCity)
+
+			let arrayImg = [];
+				result.forEach(datum => arrayImg.push(datum.image))
+			if (arrayImg) setImage(arrayImg)
+		});
+	}, []);
+
 	return (
 		<div>
 			<div>
@@ -74,66 +70,110 @@ const TopDestCarousel = () => {
 							<div className="card-box">
 								<div className="circle">
 									<img
-										src="https://res.cloudinary.com/calvin-cloud/image/upload/v1629502768/Ankasa/Paris_uqckxq.jpg"
+										src={image[0]}
 										alt=""
 									/>
 								</div>
-								<p>paris</p>
+								<p>{city[0]}</p>
 							</div>
 						</div>
 						<div>
 							<div className="card-box">
 								<div className="circle">
 									<img
-										src="https://res.cloudinary.com/calvin-cloud/image/upload/v1629502768/Ankasa/Paris_uqckxq.jpg"
+										src={image[1]}
 										alt=""
 									/>
 								</div>
-								<p>paris</p>
+								<p>{city[1]}</p>
 							</div>
 						</div>
 						<div>
 							<div className="card-box">
 								<div className="circle">
 									<img
-										src="https://res.cloudinary.com/calvin-cloud/image/upload/v1629502768/Ankasa/Paris_uqckxq.jpg"
+										src={image[2]}
 										alt=""
 									/>
 								</div>
-								<p>paris</p>
+								<p>{city[2]}</p>
 							</div>
 						</div>
 						<div>
 							<div className="card-box">
 								<div className="circle">
 									<img
-										src="https://res.cloudinary.com/calvin-cloud/image/upload/v1629502768/Ankasa/Paris_uqckxq.jpg"
+										src={image[3]}
 										alt=""
 									/>
 								</div>
-								<p>paris</p>
+								<p>{city[3]}</p>
 							</div>
 						</div>
 						<div>
 							<div className="card-box">
 								<div className="circle">
 									<img
-										src="https://res.cloudinary.com/calvin-cloud/image/upload/v1629502768/Ankasa/Paris_uqckxq.jpg"
+										src={image[4]}
 										alt=""
 									/>
 								</div>
-								<p>paris</p>
+								<p>{city[4]}</p>
 							</div>
 						</div>
 						<div>
 							<div className="card-box">
 								<div className="circle">
 									<img
-										src="https://res.cloudinary.com/calvin-cloud/image/upload/v1629502768/Ankasa/Paris_uqckxq.jpg"
+										src={image[5]}
 										alt=""
 									/>
 								</div>
-								<p>paris</p>
+								<p>{city[5]}</p>
+							</div>
+						</div>
+						<div>
+							<div className="card-box">
+								<div className="circle">
+									<img
+										src={image[6]}
+										alt=""
+									/>
+								</div>
+								<p>{city[6]}</p>
+							</div>
+						</div>
+						<div>
+							<div className="card-box">
+								<div className="circle">
+									<img
+										src={image[7]}
+										alt=""
+									/>
+								</div>
+								<p>{city[7]}</p>
+							</div>
+						</div>
+						<div>
+							<div className="card-box">
+								<div className="circle">
+									<img
+										src={image[8]}
+										alt=""
+									/>
+								</div>
+								<p>{city[8]}</p>
+							</div>
+						</div>
+						<div>
+							<div className="card-box">
+								<div className="circle">
+									<img
+										src={image[9]}
+										alt=""
+									/>
+								</div>
+								<p>{city[9]}</p>
 							</div>
 						</div>
 					</Slider>

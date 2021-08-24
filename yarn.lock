@@ -1157,11 +1157,7 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
-<<<<<<< HEAD
 "@babel/runtime@^7.1.2", "@babel/runtime@^7.10.2", "@babel/runtime@^7.10.5", "@babel/runtime@^7.11.2", "@babel/runtime@^7.12.1", "@babel/runtime@^7.12.5", "@babel/runtime@^7.13.8", "@babel/runtime@^7.14.0", "@babel/runtime@^7.5.5", "@babel/runtime@^7.6.3", "@babel/runtime@^7.7.2", "@babel/runtime@^7.8.4", "@babel/runtime@^7.8.7", "@babel/runtime@^7.9.2":
-=======
-"@babel/runtime@^7.1.2", "@babel/runtime@^7.10.2", "@babel/runtime@^7.11.2", "@babel/runtime@^7.12.1", "@babel/runtime@^7.12.5", "@babel/runtime@^7.13.8", "@babel/runtime@^7.14.0", "@babel/runtime@^7.5.5", "@babel/runtime@^7.6.3", "@babel/runtime@^7.7.2", "@babel/runtime@^7.8.4", "@babel/runtime@^7.8.7", "@babel/runtime@^7.9.2":
->>>>>>> 1724c1f863095d8725fe96316c13e2743d5e1878
   version "7.15.3"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.15.3.tgz#2e1c2880ca118e5b2f9988322bd8a7656a32502b"
   integrity sha512-OvwMLqNXkCXSz1kSm58sEsNuhqOx/fKpnUnKnFB5v8uDda5bLNEHNgKPvhDN6IU0LDcnHQ90LlJ0Q6jnyBSIBA==
@@ -1280,14 +1276,11 @@
   dependencies:
     "@hapi/hoek" "^8.3.0"
 
-<<<<<<< HEAD
 "@hookform/resolvers@^2.8.0":
   version "2.8.0"
   resolved "https://registry.yarnpkg.com/@hookform/resolvers/-/resolvers-2.8.0.tgz#32e82b072ff71c71e62fb2901b129642a0c5897e"
   integrity sha512-ALlr0Bg6zDHdRsdqkwfWGPMnIxP4hqMRPvFDHp7lWXQeA7rKykto3cWqQQh1s0PzX043RHwMB6OHVPMwFJqwxg==
 
-=======
->>>>>>> 1724c1f863095d8725fe96316c13e2743d5e1878
 "@humanwhocodes/config-array@^0.5.0":
   version "0.5.0"
   resolved "https://registry.yarnpkg.com/@humanwhocodes/config-array/-/config-array-0.5.0.tgz#1407967d4c6eecd7388f83acf1eaf4d0c6e58ef9"
@@ -9507,11 +9500,7 @@ react-fit@^1.0.3:
     detect-element-overflow "^1.2.0"
     prop-types "^15.6.0"
 
-<<<<<<< HEAD
 react-hook-form@^7.13.0:
-=======
-react-hook-form@^7.12.2:
->>>>>>> 1724c1f863095d8725fe96316c13e2743d5e1878
   version "7.13.0"
   resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-7.13.0.tgz#af451e4771af2ddcb4ccb2f6a11eeb191c66bbdc"
   integrity sha512-ofjzl78xNTRmBHFZ/gOn65HDiqM/LHxbVMlaFoemyMQIDFTR4aG4h2CpCG/N0TbW5IQbh21hBYUvvmqK0ByEhg==
@@ -9952,14 +9941,11 @@ requires-port@^1.0.0:
   resolved "https://registry.yarnpkg.com/requires-port/-/requires-port-1.0.0.tgz#925d2601d39ac485e091cf0da5c6e694dc3dcaff"
   integrity sha1-kl0mAdOaxIXgkc8NpcbmlNw9yv8=
 
-<<<<<<< HEAD
 reselect@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/reselect/-/reselect-4.0.0.tgz#f2529830e5d3d0e021408b246a206ef4ea4437f7"
   integrity sha512-qUgANli03jjAyGlnbYVAV5vvnOmJnODyABz51RdBN7M4WaVu8mecZWgyQNkG8Yqe3KRGRt0l4K4B3XVEULC4CA==
 
-=======
->>>>>>> 1724c1f863095d8725fe96316c13e2743d5e1878
 resize-observer-polyfill@^1.5.0:
   version "1.5.1"
   resolved "https://registry.yarnpkg.com/resize-observer-polyfill/-/resize-observer-polyfill-1.5.1.tgz#0e9020dd3d21024458d4ebd27e23e40269810464"
@@ -11172,14 +11158,11 @@ toidentifier@1.0.0:
   resolved "https://registry.yarnpkg.com/toidentifier/-/toidentifier-1.0.0.tgz#7e1be3470f1e77948bc43d94a3c8f4d7752ba553"
   integrity sha512-yaOH/Pk/VEhBWWTlhI+qXxDFXlejDGcQipMlyxda9nthulaxLZUNcUqFxokp0vcYnvteJln5FNQDRrxj3YcbVw==
 
-<<<<<<< HEAD
 toposort@^2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/toposort/-/toposort-2.0.2.tgz#ae21768175d1559d48bef35420b2f4962f09c330"
   integrity sha1-riF2gXXRVZ1IvvNUILL0li8JwzA=
 
-=======
->>>>>>> 1724c1f863095d8725fe96316c13e2743d5e1878
 tough-cookie@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/tough-cookie/-/tough-cookie-4.0.0.tgz#d822234eeca882f991f0f908824ad2622ddbece4"

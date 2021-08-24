@@ -2,10 +2,11 @@ import './style/TrendingCarousel.scoped.css';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { FaAngleRight } from 'react-icons/fa';
+import axios from 'axios'
 
-export default function TrendingCarousel() {
+const TrendingCarousel = () => {
 	const settings = {
 		dots: true,
 		infinite: true,
@@ -41,30 +42,29 @@ export default function TrendingCarousel() {
 		],
 	};
 
-	const cities = [
-		{
-			city: 'Tokyo',
-			country: 'Japan',
-		},
-		{
-			city: 'Tokyo',
-			country: 'Japan',
-		},
-		{
-			city: 'Tokyo',
-			country: 'Japan',
-		},
-		{
-			city: 'Tokyo',
-			country: 'Japan',
-		},
-		{
-			city: 'Tokyo',
-			country: 'Japan',
-		},
-	];
+	const [city, setCity] = useState([])
+	const [country, setCountry] = useState([])
+	const [image, setImage] = useState([])
+	
+	useEffect(() => {
+		axios.get(`${process.env.REACT_APP_API}/destination/all`)
+		.then((res) => {
+			const { result } = res.data
+			console.log(result)
 
-	const [destination, setDestination] = useState([]);
+			let arrayCity = [];
+				result.forEach(datum => arrayCity.push(datum.city))
+			if (arrayCity) setCity(arrayCity)
+
+			let arrayCount = [];
+				result.forEach(datum => arrayCount.push(datum.country))
+			if (arrayCount) setCountry(arrayCount)
+
+			let arrayImg = [];
+				result.forEach(datum => arrayImg.push(datum.image))
+			if (arrayImg) setImage(arrayImg)
+		});
+	}, []);
 
 	return (
 		<div>
@@ -74,15 +74,15 @@ export default function TrendingCarousel() {
 						<div
 							className="card"
 							style={{
-								backgroundImage: `url(https://res.cloudinary.com/calvin-cloud/image/upload/v1629502768/Ankasa/Paris_uqckxq.jpg)`,
+								backgroundImage: `url(${image[0]})`,
 								backgroundSize: ' 100% 100%',
 								backgroundRepeat: 'no-repeat',
 							}}
 						>
 							<div className="title">
 								<div className="location">
-									<h1>Tokyo</h1>
-									<h2>Japan</h2>
+									<h1>{city[0]}</h1>
+									<h2>{country[0]}</h2>
 								</div>
 								<FaAngleRight />
 							</div>
@@ -92,15 +92,15 @@ export default function TrendingCarousel() {
 						<div
 							className="card"
 							style={{
-								backgroundImage: `url(https://res.cloudinary.com/calvin-cloud/image/upload/v1629502768/Ankasa/Paris_uqckxq.jpg)`,
+								backgroundImage: `url(${image[1]})`,
 								backgroundSize: ' 100% 100%',
 								backgroundRepeat: 'no-repeat',
 							}}
 						>
 							<div className="title">
 								<div className="location">
-									<h1>Tokyo</h1>
-									<h2>Japan</h2>
+									<h1>{city[1]}</h1>
+									<h2>{country[1]}</h2>
 								</div>
 								<FaAngleRight />
 							</div>
@@ -110,15 +110,15 @@ export default function TrendingCarousel() {
 						<div
 							className="card"
 							style={{
-								backgroundImage: `url(https://res.cloudinary.com/calvin-cloud/image/upload/v1629502768/Ankasa/Paris_uqckxq.jpg)`,
+								backgroundImage: `url(${image[2]})`,
 								backgroundSize: ' 100% 100%',
 								backgroundRepeat: 'no-repeat',
 							}}
 						>
 							<div className="title">
 								<div className="location">
-									<h1>Tokyo</h1>
-									<h2>Japan</h2>
+									<h1>{city[2]}</h1>
+									<h2>{country[2]}</h2>
 								</div>
 								<FaAngleRight />
 							</div>
@@ -128,15 +128,15 @@ export default function TrendingCarousel() {
 						<div
 							className="card"
 							style={{
-								backgroundImage: `url(https://res.cloudinary.com/calvin-cloud/image/upload/v1629502768/Ankasa/Paris_uqckxq.jpg)`,
+								backgroundImage: `url(${image[3]})`,
 								backgroundSize: ' 100% 100%',
 								backgroundRepeat: 'no-repeat',
 							}}
 						>
 							<div className="title">
 								<div className="location">
-									<h1>Tokyo</h1>
-									<h2>Japan</h2>
+									<h1>{city[3]}</h1>
+									<h2>{country[3]}</h2>
 								</div>
 								<FaAngleRight />
 							</div>
@@ -146,15 +146,15 @@ export default function TrendingCarousel() {
 						<div
 							className="card"
 							style={{
-								backgroundImage: `url(https://res.cloudinary.com/calvin-cloud/image/upload/v1629502768/Ankasa/Paris_uqckxq.jpg)`,
+								backgroundImage: `url(${image[4]})`,
 								backgroundSize: ' 100% 100%',
 								backgroundRepeat: 'no-repeat',
 							}}
 						>
 							<div className="title">
 								<div className="location">
-									<h1>Tokyo</h1>
-									<h2>Japan</h2>
+									<h1>{city[4]}</h1>
+									<h2>{country[4]}</h2>
 								</div>
 								<FaAngleRight />
 							</div>
@@ -164,15 +164,15 @@ export default function TrendingCarousel() {
 						<div
 							className="card"
 							style={{
-								backgroundImage: `url(https://res.cloudinary.com/calvin-cloud/image/upload/v1629502768/Ankasa/Paris_uqckxq.jpg)`,
+								backgroundImage: `url(${image[5]})`,
 								backgroundSize: ' 100% 100%',
 								backgroundRepeat: 'no-repeat',
 							}}
 						>
 							<div className="title">
 								<div className="location">
-									<h1>Tokyo</h1>
-									<h2>Japan</h2>
+									<h1>{city[5]}</h1>
+									<h2>{country[5]}</h2>
 								</div>
 								<FaAngleRight />
 							</div>
@@ -183,3 +183,5 @@ export default function TrendingCarousel() {
 		</div>
 	);
 }
+
+export default TrendingCarousel

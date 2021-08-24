@@ -10,14 +10,13 @@
 .circle {
 	height: 125px;
 	width: 125px;
-
 	border-radius: 20px;
 	border-radius: 50%;
 }
 
 .circle img {
 	height: 100%;
-	width: auto;
+	width: 100%;
 	clip-path: circle();
 	margin-right: 200px;
 }
@@ -36,6 +35,7 @@
 	height: 180px;
 	width: 182px;
 	align-items: center;
+	align-content: center;
 	margin-top: 50px;
 }
 
