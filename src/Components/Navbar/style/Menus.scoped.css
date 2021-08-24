@@ -1,3 +1,10 @@
+.menu-before-login {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 50vw;
+	margin-left: auto;
+}
 .cart-icon {
 	margin-top: auto;
 	margin-bottom: auto;

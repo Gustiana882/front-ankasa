@@ -5,31 +5,30 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
 
 function Cards(props) {
+  const [allData, setAllData] = useState({});
+
+  function handleChange (e) {
+    let name = e.target.name;
+    let value = e.target.value
+    const q = { ...allData, ...{ [name]:value }} 
+    setAllData(q)
+    props.callback(allData)
+  }
+
+
   return (
     <div className="mt-4 card p-4">
-      <div className="d-grid">
-        <h6 className="m-0 poppins-reguler p-1">Full Name</h6>
-        <input
-          type="text"
-          className="search-box p-1 poppins-bold"
-          placeholder="Nama Lengkap"
-        />
+      <div className="user-box d-grid pt-2 m-2">
+        <input type="text" name="namePerson" onChange={handleChange} required />
+        <label>Full Name</label>
       </div>
-      <div className="d-grid mt-5">
-        <h6 className="m-0 poppins-reguler p-1">Email</h6>
-        <input
-          type="text"
-          className="search-box p-1 poppins-bold"
-          placeholder="Email Pengguna"
-        />
+      <div className="user-box d-grid pt-2 mt-3 m-2">
+        <input type="email" name="emailPerson" onChange={handleChange} required />
+        <label>Email</label>
       </div>
-      <div className="d-grid mt-5">
-        <h6 className="m-0 poppins-reguler p-1">Phone Number</h6>
-        <input
-          type="text"
-          className="search-box p-1 poppins-bold"
-          placeholder="Phone Number"
-        />
+      <div className="user-box d-grid pt-2 mt-3 m-2">
+        <input type="number" name="phonePerson" onChange={handleChange} min="0" required />
+        <label>Phone Number</label>
       </div>
       <div className="mt-5 card trust-box p-3 align-items-center">
         <img

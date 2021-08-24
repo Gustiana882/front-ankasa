@@ -1,14 +1,47 @@
 import "./flight.scoped.css";
 import React, { useState } from "react";
-// import { Link } from "react-router-dom"
 import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
 import Footer from "../../Components/Footer/Footer";
 import NavbarHeader from "../../Components/Navbar/NavbarHeader";
 import ContactDetail from "../../Components/Flight_Detail/Contact_Detail";
 import PassengerDetail from "../../Components/Flight_Detail/Passenger_Details";
+import { set } from "react-hook-form";
 
 function Flight(props) {
+  const [allData, setAllData] = useState({
+    idSchedule : '1',
+                  namePerson: '',
+                  emailPerson: '',
+                  phonePerson: '',
+                  namePassenger: '',
+                  nationality: 'KK',
+                  totalPrice: 22,
+                  insurance: true
+  });
+  const [allPass, setPass] = useState({});
+
+  let token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiYWRtaW5AbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2Mjk3Nzg4NTksImV4cCI6MTYyOTg2NTI1OX0.E2HHKy4hH4I7SylLRkhKd5bqVnZ5QyXMi1_Imvy6eIQ'
+
+  const onSubmit = () => {
+		
+			axios({
+        method: 'POST',
+        url: `http://44.195.208.127:8000/booking`,
+        headers: {'token': token},
+        data: allData
+      }).then(
+        (res) => {
+          console.log(res)
+        }
+      ).catch(
+        (err) => {
+          console.log(err)
+        }
+      )
+	};
+  console.log(allData)
+
   return (
     <div className="color">
       <div>
@@ -21,9 +54,23 @@ function Flight(props) {
           </div>
           <div className="col-6 content">
             <h5 className="m-0 poppins-bold text-white">Contact Person Details</h5>
-            <ContactDetail />
+
+            <ContactDetail 
+              callback = {
+                (e) => {
+                  setAllData({ ...allData, ...e})
+                }
+              }
+            />
             <h5 className="mt-5 poppins-bold">Passenger Details</h5>
-            <PassengerDetail />
+
+            <PassengerDetail 
+              callback = {
+                (e) => {
+                  setAllData({ ...allData, ...e})
+                }
+              }
+            />
             <h5 className="mt-5 poppins-bold">Passenger Details</h5>
             <div className="mt-4 card p-4">
               <div className="d-flex justify-content-between">
@@ -42,7 +89,7 @@ function Flight(props) {
                   </label>
                 </div>
                 <h6 className="m-0 poppins-reguler">
-                  <span className="poppins-bold color-blue">$ 2,00</span> /pax
+                  <span className="poppins-bold color-blue" name="insurance">$ 2,00</span> /pax
                 </h6>
               </div>
               <div className="d-grid mt-2">
@@ -51,11 +98,11 @@ function Flight(props) {
                 </h6>
               </div>
             </div>
-            <div className="col-4 btn-pay mx-auto text-center mt-5">
+            <button className="col-4 btn-pay mx-auto text-center mt-5" onClick={onSubmit}>
               <h6 className="btn m-0 poppins-bold p-3 text-white">
                 Proceed to Payment
               </h6>
-            </div>
+            </button>
           </div>
           <div className="col-4 content">
             <div className="d-flex justify-content-between align-items-center">
@@ -111,7 +158,7 @@ function Flight(props) {
               </div>
               <div className="d-flex align-items-center mt-4 justify-content-between">
                 <h6 className="m-0 poppins-bold">Total Payment</h6>
-                <h6 className="m-0 poppins-bold color-blue">$ 145,00</h6>
+                <h6 className="m-0 poppins-bold color-blue" name="totalPrice">$ 145,00</h6>
               </div>
             </div>
           </div>

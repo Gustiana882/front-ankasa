@@ -1,35 +1,26 @@
 import React from "react";
 import "./Register.scoped.css"
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import ilustration from "../../Assets/illustration.png";
+import { useForm } from 'react-hook-form';
+import axios from 'axios'
+
+const baseUrl = `${process.env.REACT_APP_API}/register`
 
 const Register = () => {
-  const [username, setUsername] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const { register, handleSubmit } = useForm();
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-
-    switch (name) {
-      case "username":
-        setUsername(value);
-        break;
-      case "email":
-        setEmail(value);
-        break;
-      case "password":
-        setPassword(value);
-        break;
-      default:
-        break;
-    }
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  };
+  const onSubmit = (data) => {
+    console.log(data)
+		try {
+			axios.post(baseUrl, data).then((res) => {
+				console.log(res.data);
+			});
+		} catch (error) {
+			console.log(error)
+		}
+	};
 
   const history = useHistory();
 
@@ -64,15 +55,14 @@ const Register = () => {
           />
           <b className="register-font21">Ankasa</b>
         </div>
-        <div className="register d-flex flex-column">
+        <div className="register d-flex flex-column w-100">
           <h3 className="fw-bold">Register</h3>
-          <form action="">
+          <form onSubmit={handleSubmit(onSubmit)}>
           <div className="user-box">
             <input
               type="username"
               name="username"
-              value={username}
-              onChange={handleChange}
+              {...register('name')}
               required
             />
             <label>Full Name</label>
@@ -81,8 +71,7 @@ const Register = () => {
             <input
               type="email"
               name="email"
-              value={email}
-              onChange={handleChange}
+              {...register('email')}
               required
             />
             <label>Email</label>
@@ -93,8 +82,7 @@ const Register = () => {
                 type="password"
                 name="password"
                 id="password"
-                value={password}
-                onChange={handleChange}
+                {...register('password')}
                 required
               />
               <label>Password</label>

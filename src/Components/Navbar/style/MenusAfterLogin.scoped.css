@@ -12,12 +12,14 @@
 	color: #9b9b9b;
 }
 .photo-box {
+	height: 30px;
+	width: 30px;
 	display: flex;
 	align-items: center;
 	border-radius: 50%;
 }
 
 img {
-	width: 50px;
+	width: 30px;
 	clip-path: circle();
 }
