@@ -3,21 +3,25 @@ import iBurger from "../../Assets/Vector.svg"
 import iWifi from "../../Assets/Vector-2.svg"
 import { Card } from 'react-bootstrap'
 import "./CardSearch.scoped.css"
-
+import { useHistory } from 'react-router-dom'
 const CardSearch = (props) => {
 	const data = props.data
+	const history = useHistory()
+	const clickSelect = () => {
+		history.push('/flightdetail')
+	}
     return (
         <Card className="card-box border-0 my-3 p-3">
 			<Card.Body>
 				<div className="d-flex align-items-center">
-					<img src={data.image} alt="maskapai.png" />
-					<h6 className="ms-4 text-secondary">{data.maskapai}</h6>
+					<img src={data.Maskapai.image} alt="maskapai.png" />
+					<h6 className="ms-4 text-secondary">{data.Maskapai.nameMaskapai}</h6>
 				</div>
 				<div className="d-flex align-items-center justify-content-between flex-wrap">
-					<div className="d-flex align-items-center justify-content-between me-4 mt-3">
+					<div className="d-flex align-items-center justify-content-between me-4 mt-3" style={{width: '128px'}}>
 						<div className="dest">
-							<h5 className="m-0 dest mt-2">{data.from}</h5>
-							<p className="m-0"><small className="time">{data.time.depature}</small></p>
+							<h5 className="m-0 dest mt-2">{data.tujuanAkhir.negara}</h5>
+							<p className="m-0"><small className="time">{data.times.berangkat}:00</small></p>
 						</div>
 						<svg width={20} height={18} viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg" className="mx-3">
 							<path
@@ -26,13 +30,13 @@ const CardSearch = (props) => {
 							/>
 						</svg>
 						<div className="dest">
-							<h5 className="m-0 dest mt-2">{data.to}</h5>
-							<p className="m-0"><small className="time">{data.time.arrived}</small></p>
+							<h5 className="m-0 dest mt-2">{data.tujuanAwal.negara}</h5>
+							<p className="m-0"><small className="time">{data.times.tiba}:00</small></p>
 						</div>
 					</div>
 					<div className="me-4 text-center mt-3">
 							<p className="text-muted m-0">3 hours 11 minutes</p>
-							<p className="m-0"><small className="time">({data.time.transit} transit)</small></p>
+							<p className="m-0"><small className="time">({data.times.transit} transit)</small></p>
 					</div>
 					<div className="d-flex align-items-center justify-content-between mt-3">
 						<div className="me-4">
@@ -42,10 +46,10 @@ const CardSearch = (props) => {
 						</div>
 					</div>
 					<div className="d-flex me-4 mt-3">
-						<p className="text-primary dest m-0">$ {data.price.adult},00</p><span className="text-secondary"> /pax</span>
+						<p className="text-primary dest m-0">$ {data.price.dewasa},00</p><span className="text-secondary"> /pax</span>
 					</div>
 					<div className="ms-auto me-4 mt-3">
-						<button className="btn-select ms-auto">Select</button>
+						<button className="btn-select ms-auto" onClick={() => clickSelect(data)}>Select</button>
 					</div>
 				</div>
 			</Card.Body>

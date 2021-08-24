@@ -12,12 +12,17 @@ const SidenavFilter = (props) => {
         airlines: [],
     })
 
+    // const handelChange = (e) => {
+    //     const name = e.target.name 
+    //     const value = e.target.value
+    //     const data = filter[name]
+    //     data.push(value)
+    //     setFilter({...filter, ...{ [name]: data }})
+    // }
     const handelChange = (e) => {
         const name = e.target.name 
         const value = e.target.value
-        const data = filter[name]
-        data.push(value)
-        setFilter({...filter, ...{ [name]: data }})
+        setFilter({...filter, ...{ [name]: value }})
     }
     props.change(filter)
 

@@ -12,7 +12,7 @@ import {
 import storage from 'redux-persist/lib/storage';
 import { combineReducers } from 'redux';
 import userReducer from '../components/Home/userSlice';
-import searchReducer from '../components/Navbar/searchSlice';
+import searchReducer from '../Storages/Slices/flashData';
 const reducers = combineReducers({
 	login: loginReducer,
 	user: userReducer,

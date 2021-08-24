@@ -11,47 +11,84 @@ import SidenavFilter from "../../Components/SidenavFilter/SidenavFilter"
 import Card from "../../Components/CardSearch/CardSearch"
 import standarResponApi from "./standarResponApi"
 import { useState, useEffect } from "react"
-import { Link } from "react-router-dom"
+import { Link, useHistory } from "react-router-dom"
+import { useSelector, useDispatch } from 'react-redux';
+import axios from "axios"
 
-const SearchResult = () => {
+const SearchResult = (props) => {
 
+	const history = useHistory()
 	const [dataApi, setDataApi] =useState([])
 	const [dataTicketFilter, setDataTicketFilter] = useState([])
 	const [filter, setFilter] = useState({
-		transit: [],
-		facilities: [],
-		departure: [],
-		arrived: [],
-		airlines: [],
+		transit: "",
+		facilities: "",
+		departure: "0-0",
+		arrived: "0-0",
+		airlines: "",
 	})
 
+
+
 	const loadData = () => {
-		if (filter.transit.length > 0) {
-			let arr = []
-			for (let i = 0; i < filter.transit.length; i++) {
-				const result = dataApi.filter((ticket) => ticket.time.transit === filter.transit[i])
-				const pus = dataTicketFilter
-				console.log(result[0])
-				arr.push(result[0])
-			}
-			setDataTicketFilter(arr)
+		if (filter.transit !== "") {
+			const result = dataApi.filter((ticket) => String(ticket.times.transit).toLocaleLowerCase() === String(filter.transit).toLocaleLowerCase())
+			setDataTicketFilter(result)
+			// console.log("data", dataTicketFilter)
+			// console.log("transit",result)
 			
 		}
+		else if (filter.departure !== "0-0") {
+			const start = String(filter.departure).split('-')
+			const end = String(filter.departure).split('-')
+			const result = dataApi.filter((ticket) => Number(ticket.times.berangkat) > Number(start[0]) && Number(ticket.times.berangkat) >= Number(end[0]))
+			setDataTicketFilter(result)
+			// console.log("depature",result)
+			
+		}
+		else if (filter.arrived !== "0-0") {
+			const start = String(filter.arrived).split('-')
+			const end = String(filter.arrived).split('-')
+			const result = dataApi.filter((ticket) => Number(ticket.times.tiba) > Number(start[1]) && Number(ticket.times.tiba) >= Number(end[1]))
+			setDataTicketFilter(result)
+			// console.log("arrived",result)
+			
+		}
+		else if (filter.airlines !== "") {
+			const result = dataApi.filter((ticket) => String(ticket.Maskapai.nameMaskapai).toLocaleLowerCase() === String(filter.airlines).toLocaleLowerCase())
+			setDataTicketFilter(result)
+			// console.log("airlines",result)
+			
+		} else {
+			console.log("not found")
+		}
+	}
 
+	const dataSearch = useSelector((state) => {
+		const arr = state.search.data.split(',')
+		return { from: arr[0], to: arr[1], Class: arr[2], time: arr[3], status: state.search.search}
+	});
+
+	const getSchedule = () => {
+		if (dataSearch.status) {
+			axios({
+				method: 'get',
+				url: `${process.env.REACT_APP_API}/search?from=${dataSearch.from}&to=${dataSearch.to}&Class=${dataSearch.Class}`
+			}).then(result => {
+				setDataApi(result.data.result)
+				setDataTicketFilter(result.data.result)
+			})
+			.catch((error) => console.log(error))
+		}
 	}
 
 	useEffect(() => {
 		loadData()
-		return () => {
-		}
 	}, [filter])
 
 	useEffect(() => {
-		// setDataTicketFilter(standarResponApi)
-		setDataApi(standarResponApi)
-	}, [])
-
-	console.log(dataTicketFilter)
+		getSchedule()
+	}, [props])
 
 	return (
 		<div className="section">
@@ -89,7 +126,7 @@ const SearchResult = () => {
 						<div className="d-flex text-white mb-2">
 							<div>
 								<p className="fw-bolder m-0"><small>From</small></p>
-								<h5 className="fw-bolder m-0">Medan</h5>
+								<h5 className="fw-bolder m-0">{dataSearch.from}</h5>
 							</div>
 							<div className="mt-auto ms-3 me-3">
 								<svg
@@ -107,7 +144,7 @@ const SearchResult = () => {
 							</div>
 							<div>
 								<p className="fw-bolder m-0"><small>To</small></p>
-								<h5 className="fw-bolder m-0">Medan</h5>
+								<h5 className="fw-bolder m-0">{dataSearch.to}</h5>
 							</div>
 						</div>
 						<div className="text-white">
@@ -119,7 +156,7 @@ const SearchResult = () => {
 							<svg width={5} height={5} viewBox="0 0 5 5" fill="none" xmlns="http://www.w3.org/2000/svg">
 									<circle cx="2.5" cy="2.5" r="2.5" fill="white" />
 								</svg>
-							<small className="ms-3 me-3">Economy</small>
+							<small className="ms-3 me-3">{dataSearch.Class}</small>
 						</div>
 					</div>
 				</div>
@@ -153,7 +190,12 @@ const SearchResult = () => {
 					</div>
 					<div>
 						{
-							dataTicketFilter.map((ticket, i) => <Card data={ticket} key={i} />)
+							dataTicketFilter.map((ticket, i) => {
+								console.log(ticket)
+								return (
+									<Card data={ticket} key={i} />
+								)
+							})
 						}
 					</div>
 				</div>
