@@ -5,6 +5,16 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
 
 function Cards(props) {
+  const [allData, setAllData] = useState({});
+
+  function handleChange (e) {
+    let name = e.target.name;
+    let value = e.target.value
+    const q = { ...allData, ...{ [name]:value }} 
+    setAllData(q)
+    console.log(allData)
+  }
+
   return (
     <div className="mt-4 card p-4">
       <div className="card pass-details-box p-3 align-items-center justify-content-between">
@@ -30,12 +40,12 @@ function Cards(props) {
         </select>
       </div>
       <div className="user-box mt-3 pt-4 d-grid">
-        <input type="username" name="username" required />
+        <input type="text" name="namePassenger" onChange={handleChange} required />
         <label>Full Name</label>
       </div>
       <div className="user-box mt-3 pt-4">
         <label className="lh-1">Nationality</label>
-        <select name="destination" id="destination" className="mt-2 w-100">
+        <select name="destination" id="destination" onChange={handleChange} className="mt-2 w-100">
           <option value={props.negara}>{props.negara}</option>
         </select>
       </div>
