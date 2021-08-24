@@ -13,6 +13,33 @@ const Tools = () => {
 		console.log(data);
 		// dispatch(searchSuccess(data));
 	};
+
+// 	const [allData, setAllData] = useState([]);
+//   const [filteredData, setFilteredData] = useState(allData);
+
+
+//   const handleSearch = (event) => {
+//     let value = event.target.value;
+//     let result = [];
+//     result = allData.filter((data) => {
+//       return data.kota.search(value) !== -1;
+//     });
+//     setFilteredData(result);
+//   };
+
+const baseUrl = `${process.env.REACT_APP_API}/destination/all`
+
+const handleSearch = (data) => {
+    console.log(data)
+		try {
+			axios.get(baseUrl, data).then((res) => {
+				console.log(res.data);
+			});
+		} catch (error) {
+			console.log(error)
+		}
+	};
+
 	return (
 		<div>
 			<Container className="tools d-flex">
@@ -26,6 +53,7 @@ const Tools = () => {
 							placeholder="Where do you want to go?"
 							className="search"
 							aria-label="Search"
+							// onChange={(event) => handleSearch(event)}
 							{...register('search')}
 						/>
 
