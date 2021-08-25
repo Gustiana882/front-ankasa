@@ -1,5 +1,5 @@
 import './style/Menus.scoped.css';
-import { Container, Button, Nav } from 'react-bootstrap';
+import { Button, Nav } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import React from 'react';
@@ -21,7 +21,7 @@ const Menus = () => {
 						</Link>
 					</li>
 				</ul>
-				<button className="toggle-btn">toggle</button>
+
 				{isAuth ? <MenusAfterLogin /> : <SignupButton />}
 			</Nav>
 		</div>
