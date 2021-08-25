@@ -2,7 +2,8 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
 	isLoading: false,
-	userLoading: false,
+	imageUpload: '',
+	imagePreview: '',
 };
 
 const profileSlice = createSlice({
@@ -10,15 +11,26 @@ const profileSlice = createSlice({
 	initialState,
 	reducers: {
 		updatePending: (state) => {
-			state.isLoading = true;
+			state.isLoading = false;
 		},
 		updateSuccess: (state) => {
 			state.isLoading = false;
+		},
+		updateImage: (state, { payload }) => {
+			state.imageUpload = payload;
+		},
+		previewImage: (state, { payload }) => {
+			state.imagePreview = payload;
 		},
 	},
 });
 
 const { reducer, actions } = profileSlice;
-export const { updatePending, updateSuccess } = actions;
+export const {
+	updatePending,
+	updateSuccess,
+	updateImage,
+	previewImage,
+} = actions;
 
 export default reducer;

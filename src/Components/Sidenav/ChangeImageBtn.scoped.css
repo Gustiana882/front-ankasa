@@ -53,9 +53,6 @@ p {
 	font-size: 12px;
 	color: #2395ff;
 }
-.btn-change-img input {
-	/* display: none; */
-}
 
 .pay-card {
 	background: #2395ff;
@@ -78,4 +75,14 @@ label {
 	border-radius: 10px;
 	font-size: 12px;
 	cursor: pointer;
+	margin-bottom: 20px;
+}
+
+.btn-wrapper {
+	display: flex;
+
+	height: 100px;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }

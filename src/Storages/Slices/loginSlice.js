@@ -6,6 +6,7 @@ const initialState = {
 	error: '',
 	token: '',
 	email: '',
+	user: '',
 };
 
 const loginSlice = createSlice({
@@ -34,6 +35,9 @@ const loginSlice = createSlice({
 			state.isAuth = false;
 			state.token = '';
 		},
+		getUser: (state, { payload }) => {
+			state.user = payload;
+		},
 	},
 });
 
@@ -45,6 +49,7 @@ export const {
 	logout,
 	getEmail,
 	getToken,
+	getUser,
 } = actions;
 
 export default reducer;

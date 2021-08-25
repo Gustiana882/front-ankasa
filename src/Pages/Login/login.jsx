@@ -10,11 +10,12 @@ import {
 	loginFail,
 	getEmail,
 	getToken,
+	getUser,
 } from '../../Storages/Slices/loginSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { Spinner } from 'react-bootstrap';
 import { useHistory } from 'react-router';
-const url = `${process.env.REACT_APP_API}/login`;
+import { useEffect, useState } from 'react';
 
 const schema = yup.object().shape({
 	email: yup
@@ -28,11 +29,16 @@ const schema = yup.object().shape({
 });
 
 const Login = () => {
+	const { email } = useSelector((state) => state.loginReducer);
+	const { token } = useSelector((state) => state.loginReducer);
+	const url = `${process.env.REACT_APP_API}/login`;
+	const urlGetUser = `${process.env.REACT_APP_API}/user/${email}`;
 	const { isLoading } = useSelector((state) => state.loginReducer);
-	console.log(isLoading);
 	const dispatch = useDispatch();
 	const history = useHistory();
 	const { register, handleSubmit } = useForm({ resolver: yupResolver(schema) });
+
+	const [user, setUser] = useState();
 
 	const onSubmit = (data) => {
 		try {
@@ -54,6 +60,21 @@ const Login = () => {
 		}
 		dispatch(loginPending());
 	};
+
+	useEffect(() => {
+		axios
+			.get(urlGetUser, {
+				headers: {
+					token: token,
+				},
+			})
+			.then((res) => {
+				setUser(res.data.result);
+				dispatch(getUser(res.data.result));
+			});
+	}, [urlGetUser, dispatch, token]);
+
+	console.log(user);
 
 	return (
 		<div>
