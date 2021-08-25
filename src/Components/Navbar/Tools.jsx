@@ -1,18 +1,12 @@
 import React from 'react';
-import { Container, Dropdown } from 'react-bootstrap';
-import { FaFilter, FaSearch } from 'react-icons/fa';
+import { Container } from 'react-bootstrap';
+import { FaSearch } from 'react-icons/fa';
 import './style/Tools.scoped.css';
 import { useForm } from 'react-hook-form';
-import { useDispatch } from 'react-redux';
-import { searchSuccess } from './searchSlice';
 
 const Tools = () => {
-	const dispatch = useDispatch();
 	const { register, handleSubmit } = useForm();
-	const onSubmit = (data) => {
-		console.log(data);
-		// dispatch(searchSuccess(data));
-	};
+	const onSubmit = (data) => {};
 	return (
 		<div>
 			<Container className="tools d-flex">

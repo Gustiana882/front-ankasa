@@ -50,7 +50,6 @@ const Login = () => {
 					dispatch(getToken(token));
 					dispatch(getEmail(email));
 					history.push('/home');
-					console.log(msg);
 				} else if (msg === 'wrong password or email') {
 					dispatch(loginFail('wrong password or email'));
 				} else {
@@ -76,8 +75,6 @@ const Login = () => {
 			});
 	}, [urlGetUser, dispatch, token]);
 
-	console.log(user);
-
 	return (
 		<div>
 			<div className="blueBanner">
@@ -89,13 +86,21 @@ const Login = () => {
 			<aside>
 				<div className="formBanner">
 					<div className="formTitle">
-						<img
-							src="https://res.cloudinary.com/rizkazn/image/upload/v1629439821/logo_lgffvi.jpg"
-							alt=""
-						/>
-						<span className="text-logo">
-							<b> Ankasa</b>
-						</span>
+						<Link to="/home" style={{ textDecoration: 'none' }}>
+							<img
+								src="https://res.cloudinary.com/rizkazn/image/upload/v1629439821/logo_lgffvi.jpg"
+								alt=""
+							/>
+						</Link>
+						<Link
+							to="/home"
+							style={{ textDecoration: 'none', color: '#414141' }}
+						>
+							<span className="text-logo">
+								<b> Ankasa</b>
+							</span>
+						</Link>
+
 						<div className="login-box">
 							<h4>
 								<b>Login</b>

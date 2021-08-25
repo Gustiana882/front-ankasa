@@ -1,4 +1,4 @@
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
 import Login from './Pages/Login/login.jsx';
 import SearchResult from './Pages/SearchResult/SearchResult.jsx';
 import FlightDetail from './Pages/Flight_Detail/FlightDetails';
@@ -10,11 +10,10 @@ import Profile from './Pages/Profile/Profile.jsx';
 import Notification from './Pages/Notification/Notification';
 import Chat from './Pages/Chat/Chat';
 import { useSelector } from 'react-redux';
-import { Redirect } from 'react-router';
 
 function Routers() {
 	const { isAuth } = useSelector((state) => state.loginReducer);
-	console.log(isAuth);
+
 	return (
 		<BrowserRouter>
 			<Switch>
@@ -25,7 +24,9 @@ function Routers() {
 				<Route exact path="/profile">
 					{isAuth ? <Profile /> : <Redirect to="/" />}
 				</Route>
-				<Route exact path="/flightdetail/:flightId" component={FlightDetail} />
+				<Route path="/flightdetail/:code">
+					{isAuth ? <FlightDetail /> : <Redirect to="/" />}
+				</Route>
 				<Route exact path="/search" component={SearchResult} />
 				<Route exact path="/home" component={Explore} />
 				<Route exact path="/forgotpassword" component={ForgotPassword} />

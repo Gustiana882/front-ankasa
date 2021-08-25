@@ -7,28 +7,25 @@ import NavbarHeader from '../../Components/Navbar/NavbarHeader';
 import Profile from '../../Components/Sidenav/sidenav';
 import MbCard from '../../Components/MyBookingCard/MbCard';
 import axios from 'axios';
+import { useSelector } from 'react-redux';
 
 function Flight(props) {
+	const { token } = useSelector((state) => state.loginReducer);
+	const [Mybooking, setMybooking] = useState([]);
 
-	const [Mybooking, setMybooking] = useState([])
-	const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiYWRtaW5AZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjI5ODUwODczLCJleHAiOjE2Mjk5MzcyNzN9.LaoJbWNL4oz01mzej8fQr22aRWgsYyABZ16jj6PJO3E'
-
-	const getMybooking = () => {
+	useEffect(() => {
 		axios({
-		  method: 'get',
-		  url: `${process.env.REACT_APP_API}/my-booking`,
-		  headers: {
-			  'token': token,
-		  }
-		}).then(result => {
-		  setMybooking(result.data.result)
+			method: 'get',
+			url: `${process.env.REACT_APP_API}/my-booking`,
+			headers: {
+				token: token,
+			},
 		})
-		.catch((error) => console.log(error))
-	  }
-	
-	  useEffect(() => {
-		getMybooking()
-	  }, [])
+			.then((result) => {
+				setMybooking(result.data.result);
+			})
+			.catch((error) => console.log(error));
+	}, [token]);
 	return (
 		<div>
 			<div className="header">
@@ -37,12 +34,12 @@ function Flight(props) {
 
 			<Container fluid="md" style={{ marginTop: '100px' }}>
 				<Row>
-					<div className="col-4 card-mod">
+					<div className="col-12 col-md-6 col-lg-4 card-mod">
 						<Profile />
 					</div>
 
-					<div className="col-8">
-						<MbCard data={Mybooking}/>
+					<div className="col-12 col-md-6 col-lg-8">
+						<MbCard data={Mybooking} />
 					</div>
 				</Row>
 			</Container>

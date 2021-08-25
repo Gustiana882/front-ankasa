@@ -23,9 +23,12 @@ const Menus = () => {
 						</Button>
 					</li>
 					<li>
-						<Link to="/mybooking" style={{ textDecoration: 'none' }}>
-							<Button className="menu-button">My Booking</Button>
-						</Link>
+						<Button
+							className="menu-button"
+							onClick={() => history.push('/mybooking')}
+						>
+							My Booking
+						</Button>
 					</li>
 				</ul>
 

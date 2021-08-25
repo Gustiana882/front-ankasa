@@ -5,12 +5,10 @@ import Footer from '../../Components/Footer/Footer';
 import SidenavFilter from '../../Components/SidenavFilter/SidenavFilter';
 import Card from '../../Components/CardSearch/CardSearch';
 import { useState, useEffect } from 'react';
-import { useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import axios from 'axios';
 
 const SearchResult = (props) => {
-	const history = useHistory();
 	const [dataApi, setDataApi] = useState([]);
 	const [dataTicketFilter, setDataTicketFilter] = useState([]);
 	const [filter, setFilter] = useState({
@@ -22,20 +20,14 @@ const SearchResult = (props) => {
 	});
 
 	const loadData = () => {
-		console.log(filter);
-
 		if (filter.transit !== '') {
-			console.log('filter transit');
 			const result = dataApi.filter(
 				(ticket) =>
 					String(ticket.times.transit).toLocaleLowerCase() ===
 					String(filter.transit).toLocaleLowerCase()
 			);
 			setDataTicketFilter(result);
-			console.log('data', dataTicketFilter);
-			console.log('transit', result);
 		} else if (filter.departure !== '0-0') {
-			console.log('filter defature');
 			const start = String(filter.departure).split('-');
 			const end = String(filter.departure).split('-');
 			const result = dataApi.filter(
@@ -44,9 +36,7 @@ const SearchResult = (props) => {
 					Number(ticket.times.berangkat.split(':')[0]) >= Number(end[0])
 			);
 			setDataTicketFilter(result);
-			console.log('depature', result);
 		} else if (filter.arrived !== '0-0') {
-			console.log('filter arrived');
 			const start = String(filter.arrived).split('-');
 			const end = String(filter.arrived).split('-');
 			const result = dataApi.filter(
@@ -55,7 +45,6 @@ const SearchResult = (props) => {
 					Number(ticket.times.tiba.split(':')[0]) >= Number(end[1])
 			);
 			setDataTicketFilter(result);
-			console.log('arrived', result);
 		} else if (filter.airlines !== '') {
 			console.log('filter airlinds');
 			const result = dataApi.filter(
@@ -64,7 +53,6 @@ const SearchResult = (props) => {
 					String(filter.airlines).toLocaleLowerCase()
 			);
 			setDataTicketFilter(result);
-			console.log('airlines', result);
 		} else {
 			setDataTicketFilter(dataApi);
 		}
@@ -76,7 +64,7 @@ const SearchResult = (props) => {
 			from: arr[0],
 			to: arr[1],
 			Class: arr[2],
-			time: arr[3],
+			time: String(arr[3]).replace('GMT+0700 (Western Indonesia Time)', ''),
 			status: state.search.search,
 		};
 	});
@@ -169,7 +157,7 @@ const SearchResult = (props) => {
 							</div>
 						</div>
 						<div className="text-white">
-							<small className="me-3">Monday, 20 july 20</small>
+							<small className="me-3">{dataSearch.time}</small>
 							<svg
 								width={5}
 								height={5}
@@ -224,7 +212,6 @@ const SearchResult = (props) => {
 					</div>
 					<div>
 						{dataTicketFilter.map((ticket, i) => {
-							console.log(ticket);
 							return <Card data={ticket} key={i} />;
 						})}
 					</div>

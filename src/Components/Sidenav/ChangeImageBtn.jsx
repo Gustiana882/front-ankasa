@@ -37,7 +37,7 @@ const ChangeImageBtn = () => {
 						{...register('image')}
 						hidden
 					/>
-					<label for="upload-btn">choose Photo</label>
+					<label htmlFor="upload-btn">choose Photo</label>
 					<button type="submit" className="btn-change-img poppins-bold">
 						Select Photo
 					</button>

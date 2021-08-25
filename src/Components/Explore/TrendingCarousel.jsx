@@ -4,7 +4,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { useState, useEffect } from 'react';
 import { FaAngleRight } from 'react-icons/fa';
-import axios from 'axios'
+import axios from 'axios';
 
 const TrendingCarousel = () => {
 	const settings = {
@@ -42,27 +42,25 @@ const TrendingCarousel = () => {
 		],
 	};
 
-	const [city, setCity] = useState([])
-	const [country, setCountry] = useState([])
-	const [image, setImage] = useState([])
-	
+	const [city, setCity] = useState([]);
+	const [country, setCountry] = useState([]);
+	const [image, setImage] = useState([]);
+
 	useEffect(() => {
-		axios.get(`${process.env.REACT_APP_API}/destination/all`)
-		.then((res) => {
-			const { result } = res.data
-			console.log(result)
+		axios.get(`${process.env.REACT_APP_API}/destination/all`).then((res) => {
+			const { result } = res.data;
 
 			let arrayCity = [];
-				result.forEach(datum => arrayCity.push(datum.city))
-			if (arrayCity) setCity(arrayCity)
+			result.forEach((datum) => arrayCity.push(datum.city));
+			if (arrayCity) setCity(arrayCity);
 
 			let arrayCount = [];
-				result.forEach(datum => arrayCount.push(datum.country))
-			if (arrayCount) setCountry(arrayCount)
+			result.forEach((datum) => arrayCount.push(datum.country));
+			if (arrayCount) setCountry(arrayCount);
 
 			let arrayImg = [];
-				result.forEach(datum => arrayImg.push(datum.image))
-			if (arrayImg) setImage(arrayImg)
+			result.forEach((datum) => arrayImg.push(datum.image));
+			if (arrayImg) setImage(arrayImg);
 		});
 	}, []);
 
@@ -182,6 +180,6 @@ const TrendingCarousel = () => {
 			</div>
 		</div>
 	);
-}
+};
 
-export default TrendingCarousel
+export default TrendingCarousel;

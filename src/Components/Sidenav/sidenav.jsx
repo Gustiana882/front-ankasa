@@ -17,7 +17,6 @@ function Cards(props) {
 	const { token } = useSelector((state) => state.loginReducer);
 	const { email } = useSelector((state) => state.loginReducer);
 	const { imagePreview } = useSelector((state) => state.profileReducer);
-	console.log(imagePreview);
 	const url = `${process.env.REACT_APP_API}/user/${email}`;
 	const location = useLocation();
 

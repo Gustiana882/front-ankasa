@@ -6,14 +6,13 @@ import Footer from '../../Components/Footer/Footer';
 import NavbarHeader from '../../Components/Navbar/NavbarHeader';
 import ContactDetail from '../../Components/Flight_Detail/Contact_Detail';
 import PassengerDetail from '../../Components/Flight_Detail/Passenger_Details';
-import { useParams } from 'react-router';
 import { useSelector } from 'react-redux';
+import { useParams } from 'react-router';
 
 function Flight(props) {
 	const [form, setForm] = useState({ insurance: false });
-	const { flightId } = useParams();
+	const { code } = useParams();
 	const { token } = useSelector((state) => state.loginReducer);
-	console.log(flightId);
 
 	const [schedule, setSchedule] = useState([
 		{
@@ -38,7 +37,7 @@ function Flight(props) {
 			},
 		},
 	]);
-	const id = props.match.params.code;
+	// const id = props.match.params.code;
 
 	const onSubmit = () => {
 		console.log(form);
@@ -59,7 +58,7 @@ function Flight(props) {
 	const getSchedule = () => {
 		axios({
 			method: 'get',
-			url: `${process.env.REACT_APP_API}/schedule/${flightId}`,
+			url: `${process.env.REACT_APP_API}/schedule/${code}`,
 		})
 			.then((result) => {
 				setSchedule(result.data.result);
@@ -77,8 +76,6 @@ function Flight(props) {
 	useEffect(() => {
 		getSchedule();
 	}, []);
-
-	console.log(form);
 
 	return (
 		<div className="color">
@@ -118,7 +115,10 @@ function Flight(props) {
 										onClick={(e) =>
 											setForm({
 												...form,
-												...{ [e.target.name]: !form.insurance },
+												...{
+													[e.target.name]: !form.insurance,
+													totalPrice: Number(form.totalPrice) + 2,
+												},
 											})
 										}
 									/>
@@ -220,7 +220,7 @@ function Flight(props) {
 							<div className="d-flex align-items-center mt-4 justify-content-between">
 								<h6 className="m-0 poppins-bold">Total Payment</h6>
 								<h6 className="m-0 poppins-bold color-blue" name="totalPrice">
-									$ {schedule[0].price.dewasa},00
+									$ {form.totalPrice},00
 								</h6>
 							</div>
 						</div>
