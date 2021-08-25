@@ -1,13 +1,13 @@
 import './sidenav.scoped.css';
 import React, { useState } from 'react';
-// import { Link } from "react-router-dom"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
 import { useDispatch } from 'react-redux';
 import { logout } from '../../Storages/Slices/loginSlice';
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import { useForm } from 'react-hook-form';
+import { useLocation } from 'react-router';
+import ChangeImageBtn from './ChangeImageBtn';
 
 function Cards(props) {
 	const [image, setImage] = useState('');
@@ -16,7 +16,10 @@ function Cards(props) {
 	const dispatch = useDispatch();
 	const { token } = useSelector((state) => state.loginReducer);
 	const { email } = useSelector((state) => state.loginReducer);
+	const { imagePreview } = useSelector((state) => state.profileReducer);
+	console.log(imagePreview);
 	const url = `${process.env.REACT_APP_API}/user/${email}`;
+	const location = useLocation();
 
 	useEffect(() => {
 		axios
@@ -32,35 +35,18 @@ function Cards(props) {
 			});
 	}, [url, token]);
 
-	const {
-		register,
-		handleSubmit,
-		formState: { errors },
-		reset,
-	} = useForm();
-
-	const onSubmit = async (data) => {
-		console.log(data);
-		props.callback(data);
-	};
-
 	return (
 		<div className="col">
 			<div className="card h-100">
 				<div className="mx-auto mt-5 mb-3">
-					<img className="rounded-image" src={image} alt="" />
+					<img
+						className="rounded-image"
+						src={imagePreview ? imagePreview : image}
+						alt=""
+					/>
 				</div>
-				<div className="mx-auto" href="#">
-					<form onSubmit={handleSubmit(onSubmit)}>
-						{/* <input
-							type="file"
-							className="btn-change-img poppins-bold"
-							{...register('image')}
-						/> */}
-						<button type="submit" className="btn-change-img poppins-bold">
-							Change Photo
-						</button>
-					</form>
+				<div className="mx-auto">
+					{location.pathname === '/profile' ? <ChangeImageBtn /> : <span />}
 				</div>
 				<h3 className="m-0 mt-3 poppins-bold mx-auto">{name}</h3>
 				<h6 className="m-0 mt-3 poppins-reguler mx-auto">{city}</h6>

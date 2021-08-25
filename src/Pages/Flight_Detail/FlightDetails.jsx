@@ -6,10 +6,12 @@ import Footer from "../../Components/Footer/Footer";
 import NavbarHeader from "../../Components/Navbar/NavbarHeader";
 import ContactDetail from "../../Components/Flight_Detail/Contact_Detail";
 import PassengerDetail from "../../Components/Flight_Detail/Passenger_Details";
-import { set } from "react-hook-form";
+// import { set } from "react-hook-form";
+import { useSelector, useDispatch } from 'react-redux';
 
 function Flight(props) {
 
+  const { token } = useSelector((state) => state.loginReducer);
   const [form, setForm] = useState({ insurance : false })
   const [schedule, setSchedule] = useState([{
     Maskapai: {
@@ -34,9 +36,6 @@ function Flight(props) {
   }])
   const id = props.match.params.code
 
-  let token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiYWRtaW5AZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjI5ODUwODczLCJleHAiOjE2Mjk5MzcyNzN9.LaoJbWNL4oz01mzej8fQr22aRWgsYyABZ16jj6PJO3E'
-
-
 
   const onSubmit = () => {
       console.log(form)
@@ -59,7 +58,7 @@ function Flight(props) {
   const getSchedule = () => {
     axios({
       method: 'get',
-      url: `${process.env.REACT_APP_API}/schedule/32`
+      url: `${process.env.REACT_APP_API}/schedule/${id}`
     }).then(result => {
       setSchedule(result.data.result)
       setForm({...form, ...{totalPrice: result.data.result[0].price.dewasa, idSchedule: result.data.result[0].id}})
@@ -71,7 +70,7 @@ function Flight(props) {
     getSchedule()
   }, [])
 
-  console.log(form)
+  console.log(id)
 
   return (
     <div className="color">

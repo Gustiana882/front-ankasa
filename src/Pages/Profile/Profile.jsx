@@ -32,13 +32,11 @@ import { Spinner } from 'react-bootstrap';
 const Profile = () => {
 	const dispatch = useDispatch();
 	const { email } = useSelector((state) => state.loginReducer);
-	console.log(email);
 	const { token } = useSelector((state) => state.loginReducer);
-	console.log(token);
-	const { isLoading } = useSelector((state) => state.profileReducer);
+	const { imageUpload } = useSelector((state) => state.profileReducer);
+	console.log(imageUpload);
 
-	const [getImage, setImage] = useState([]);
-	const url = `${process.env.REACT_APP_API}/profile`;
+	const url = `${process.env.REACT_APP_API}/profile/${email}`;
 	const urlGetUser = `${process.env.REACT_APP_API}/user/${email}`;
 	const [user, setUser] = useState([
 		{ image: '', name: '', phone: '', city: '', address: '', postcode: '' },
@@ -46,15 +44,30 @@ const Profile = () => {
 
 	const onSubmitForm = async (user) => {
 		console.log(user);
+
 		try {
-			axios.put(url, user).then((res) => {
-				console.log(res.data);
-				dispatch(updateSuccess());
-			});
+			let formData = new FormData();
+			formData.append('image', imageUpload);
+			formData.append('email', user.email);
+			formData.append('phone', user.phone);
+			formData.append('name', user.name);
+			formData.append('city', user.city);
+			formData.append('address', user.address);
+			formData.append('postcode', user.postcode);
+			axios
+				.put(url, formData, {
+					headers: {
+						token: token,
+						'Content-type': 'multipart/form-data',
+					},
+				})
+				.then((res) => {
+					console.log(res.data);
+					alert('profile update success');
+				});
 		} catch (error) {
 			console.error(error.message);
 		}
-		dispatch(updatePending());
 	};
 
 	const { register, handleSubmit, reset } = useForm();
@@ -87,9 +100,7 @@ const Profile = () => {
 							<div className="user-box">
 								<input
 									type="email"
-									defaultValue={
-										user[0] ? user[0].email : console.log('loading')
-									}
+									defaultValue={email}
 									{...register('email')}
 								/>
 
@@ -98,9 +109,7 @@ const Profile = () => {
 							<div className="user-box">
 								<input
 									type="tel"
-									defaultValue={
-										user[0] ? user[0].phone : console.log('loading')
-									}
+									defaultValue={user[0].phone}
 									{...register('phone')}
 								/>
 								<label>Phone</label>
@@ -115,7 +124,7 @@ const Profile = () => {
 							<div className="user-box">
 								<input
 									type="username"
-									defaultValue={user[0] ? user[0].name : console.log('loading')}
+									defaultValue={user[0].name}
 									{...register('name')}
 								/>
 								<label>Username</label>
@@ -136,9 +145,7 @@ const Profile = () => {
 							<div className="user-box">
 								<input
 									type="text"
-									defaultValue={
-										user[0] ? user[0].address : console.log('loading')
-									}
+									defaultValue={user[0].address}
 									{...register('address')}
 								/>
 								<label>Address</label>
@@ -147,19 +154,13 @@ const Profile = () => {
 								<input
 									type="number"
 									min="0"
-									defaultValue={
-										user[0] ? user[0].postcode : console.log('loading')
-									}
+									defaultValue={user[0].postcode}
 									{...register('postcode')}
 								/>
 								<label>Post Code</label>
 							</div>
 							<button type="submit" className="btn button-save float-end">
-								{isLoading ? (
-									<Spinner variant="primary" animation="border" />
-								) : (
-									<span>Save</span>
-								)}
+								<span>Save</span>
 							</button>
 						</div>
 					</div>

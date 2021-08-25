@@ -7,11 +7,12 @@ import NavbarHeader from '../../Components/Navbar/NavbarHeader';
 import Profile from '../../Components/Sidenav/sidenav';
 import MbCard from '../../Components/MyBookingCard/MbCard';
 import axios from 'axios';
+import { useSelector, useDispatch } from 'react-redux';
 
 function Flight(props) {
 
+	const { token } = useSelector((state) => state.loginReducer);
 	const [Mybooking, setMybooking] = useState([])
-	const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiYWRtaW5AZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjI5ODUwODczLCJleHAiOjE2Mjk5MzcyNzN9.LaoJbWNL4oz01mzej8fQr22aRWgsYyABZ16jj6PJO3E'
 
 	const getMybooking = () => {
 		axios({
@@ -37,11 +38,11 @@ function Flight(props) {
 
 			<Container fluid="md" style={{ marginTop: '100px' }}>
 				<Row>
-					<div className="col-4 card-mod">
+					<div className="col-12 col-lg-4 card-mod mx-4">
 						<Profile />
 					</div>
 
-					<div className="col-8">
+					<div className="col-12 col-lg-8">
 						<MbCard data={Mybooking}/>
 					</div>
 				</Row>
