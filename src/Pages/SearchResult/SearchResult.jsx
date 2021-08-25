@@ -22,7 +22,8 @@ const SearchResult = (props) => {
 	});
 
 	const loadData = () => {
-		console.log(filter.departure);
+		console.log(filter);
+
 		if (filter.transit !== '') {
 			console.log('filter transit');
 			const result = dataApi.filter(
@@ -31,8 +32,8 @@ const SearchResult = (props) => {
 					String(filter.transit).toLocaleLowerCase()
 			);
 			setDataTicketFilter(result);
-			// console.log("data", dataTicketFilter)
-			// console.log("transit",result)
+			console.log('data', dataTicketFilter);
+			console.log('transit', result);
 		} else if (filter.departure !== '0-0') {
 			console.log('filter defature');
 			const start = String(filter.departure).split('-');
@@ -43,7 +44,7 @@ const SearchResult = (props) => {
 					Number(ticket.times.berangkat.split(':')[0]) >= Number(end[0])
 			);
 			setDataTicketFilter(result);
-			// console.log("depature",result)
+			console.log('depature', result);
 		} else if (filter.arrived !== '0-0') {
 			console.log('filter arrived');
 			const start = String(filter.arrived).split('-');
@@ -54,7 +55,7 @@ const SearchResult = (props) => {
 					Number(ticket.times.tiba.split(':')[0]) >= Number(end[1])
 			);
 			setDataTicketFilter(result);
-			// console.log("arrived",result)
+			console.log('arrived', result);
 		} else if (filter.airlines !== '') {
 			console.log('filter airlinds');
 			const result = dataApi.filter(
@@ -63,31 +64,31 @@ const SearchResult = (props) => {
 					String(filter.airlines).toLocaleLowerCase()
 			);
 			setDataTicketFilter(result);
-			// console.log("airlines",result)
+			console.log('airlines', result);
 		} else {
 			setDataTicketFilter(dataApi);
 		}
 	};
 
-	// const dataSearch = useSelector((state) => {
-	// 	const arr = state.search.data.split(',');
-	// 	return {
-	// 		from: arr[0],
-	// 		to: arr[1],
-	// 		Class: arr[2],
-	// 		time: arr[3],
-	// 		status: state.search.search,
-	// 	};
-	// });
+	const dataSearch = useSelector((state) => {
+		const arr = state.search.data.split(',');
+		return {
+			from: arr[0],
+			to: arr[1],
+			Class: arr[2],
+			time: arr[3],
+			status: state.search.search,
+		};
+	});
 
 	const getSchedule = () => {
-		// console.log(dataSearch.status);
-		if (true) {
+		console.log(dataSearch.status);
+		if (dataSearch.status) {
 			axios({
 				method: 'get',
-				url: `${
-					process.env.REACT_APP_API
-				}/search?from=ID&to=MY&Class=First Class`,
+				url: `${process.env.REACT_APP_API}/search?from=${dataSearch.from}&to=${
+					dataSearch.to
+				}&Class=${dataSearch.Class}`,
 			})
 				.then((result) => {
 					setDataApi(result.data.result);
@@ -144,7 +145,7 @@ const SearchResult = (props) => {
 								<p className="fw-bolder m-0">
 									<small>From</small>
 								</p>
-								<h5 className="fw-bolder m-0" />
+								<h5 className="fw-bolder m-0">{dataSearch.from}</h5>
 							</div>
 							<div className="mt-auto ms-3 me-3">
 								<svg
@@ -164,7 +165,7 @@ const SearchResult = (props) => {
 								<p className="fw-bolder m-0">
 									<small>To</small>
 								</p>
-								<h5 className="fw-bolder m-0" />
+								<h5 className="fw-bolder m-0">{dataSearch.to}</h5>
 							</div>
 						</div>
 						<div className="text-white">
@@ -188,7 +189,7 @@ const SearchResult = (props) => {
 							>
 								<circle cx="2.5" cy="2.5" r="2.5" fill="white" />
 							</svg>
-							<small className="ms-3 me-3" />
+							<small className="ms-3 me-3">{dataSearch.Class}</small>
 						</div>
 					</div>
 				</div>
@@ -223,6 +224,7 @@ const SearchResult = (props) => {
 					</div>
 					<div>
 						{dataTicketFilter.map((ticket, i) => {
+							console.log(ticket);
 							return <Card data={ticket} key={i} />;
 						})}
 					</div>

@@ -3,7 +3,7 @@ import { Card, Col, Container, Dropdown, Row } from 'react-bootstrap';
 import './mbCard.scoped.css';
 import { useState } from 'react';
 
-const MbCard = () => {
+const MbCard = (props) => {
 	return (
 		<div>
 			<Container fluid>
@@ -29,15 +29,76 @@ const MbCard = () => {
 					</Card>
 				</Col>
 
-				<Col>
+				{
+					props.data.map((value, id) => {
+						return (
+							<Col>
+								<Card className="card">
+									<Card.Text>
+										<span>Monday, 20 July '20' - {value.schedule.times.berangkat}</span>
+									</Card.Text>
+									<Card.Text className="text-row1">
+										<span>
+											<b>
+												{value.schedule.tujuanAwal.kota}
+												<img
+													src="https://res.cloudinary.com/rizkazn/image/upload/v1629481935/Vector_opjk1b.jpg"
+													style={{
+														paddingLeft: '20px',
+														paddingRight: '20px',
+													}}
+													alt=""
+												/>
+												{value.schedule.tujuanAkhir.kota}
+											</b>
+										</span>
+									</Card.Text>
+									<Card.Text className="">
+										<span>{value.schedule.Maskapai.nameMaskapai}, {value.schedule.code} </span>
+									</Card.Text>
+									<hr />
+									<br />
+									<Row>
+										<Col sm={3}>
+											<Card.Text>
+												<span>
+													<b>Status</b>
+												</span>
+											</Card.Text>
+										</Col>
+										<Col sm={5}>
+											<span className="status">Waiting for payment</span>
+										</Col>
+										<Col sm={4}>
+											<Dropdown>
+												<Dropdown.Toggle
+													style={{
+														float: 'right',
+														borderStyle: 'none',
+														outline: 'none',
+														background: 'none',
+														color: '#2395FF',
+													}}
+												>
+													View Details
+												</Dropdown.Toggle>
+											</Dropdown>
+										</Col>
+									</Row>
+								</Card>
+							</Col>
+						)
+					})
+				}
+				{/* <Col>
 					<Card className="card">
 						<Card.Text>
-							<span>Monday, 20 July '20' - 12:33</span>
+							<span>Monday, 20 July '20' - {value.schedule.times.berangkat}</span>
 						</Card.Text>
 						<Card.Text className="text-row1">
 							<span>
 								<b>
-									FROM
+									{value.schedule.tujuanAwal.kota}
 									<img
 										src="https://res.cloudinary.com/rizkazn/image/upload/v1629481935/Vector_opjk1b.jpg"
 										style={{
@@ -46,12 +107,12 @@ const MbCard = () => {
 										}}
 										alt=""
 									/>
-									TO
+									{value.schedule.tujuanAkhir.kota}
 								</b>
 							</span>
 						</Card.Text>
 						<Card.Text className="">
-							<span>MASKAPAI, KODE MASKAPAI </span>
+							<span>{value.schedule.Maskapai.nameMaskapai}, {value.schedule.code} </span>
 						</Card.Text>
 						<hr />
 						<br />
@@ -83,7 +144,7 @@ const MbCard = () => {
 							</Col>
 						</Row>
 					</Card>
-				</Col>
+				</Col> */}
 			</Container>
 		</div>
 	);

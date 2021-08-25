@@ -53,6 +53,8 @@ const Login = () => {
 					console.log(msg);
 				} else if (msg === 'wrong password or email') {
 					dispatch(loginFail('wrong password or email'));
+				} else {
+					dispatch(loginFail('invalid password or email'));
 				}
 			});
 		} catch (error) {

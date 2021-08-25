@@ -21,11 +21,20 @@
   .text-logo {
     font-size:20px; 
   }
+
+  .baground-img {
+    background-color: #2395FF;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    width: 57.54vw;
+}
+  .img-airplane{
+    padding-left: 11vw;
+  }
+
   aside {
-    float: right;
-    width: 30%;
-    padding-left: 10px;
-    justify-content: center;
+    margin-left: 7vw;
   }
   .formTitle {
     font-family: Poppins;
@@ -122,22 +131,12 @@
     height: 24px;
   }
 
-  @media screen and (max-width: 441px) {
-    .blueBanner {
-      display: none;
+  @media only screen and (max-width: 768px) {
+    .baground-img {
+        display: none;
     }
-    .login-box {
-      position: relative;
-      margin: 0px;
-      padding: 0px;
+
+    .formBanner {
+        width: 100%;
     }
-    .formTitle {
-      margin: 0px;
-      padding-left: 10px;
-      padding-bottom: 10px;
-    }
-    aside {
-      padding: 0;
-      width: 100%;
-    }
-  }
+}

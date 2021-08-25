@@ -1,39 +1,31 @@
 import React from "react";
 import "./Register.scoped.css"
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useHistory } from "react-router-dom";
+import ilustration from "../../Assets/illustration.png";
+import { useForm } from 'react-hook-form';
+import axios from 'axios'
+
+const baseUrl = `${process.env.REACT_APP_API}/register`
 
 const Register = () => {
-  const [username, setUsername] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const { register, handleSubmit } = useForm();
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-
-    switch (name) {
-      case "username":
-        setUsername(value);
-        break;
-      case "email":
-        setEmail(value);
-        break;
-      case "password":
-        setPassword(value);
-        break;
-      default:
-        break;
-    }
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  };
+  const onSubmit = (data) => {
+    console.log(data)
+		try {
+			axios.post(baseUrl, data).then((res) => {
+				console.log(res.data);
+			});
+		} catch (error) {
+			console.log(error)
+		}
+	};
 
   const history = useHistory();
 
   function handleClick() {
-    history.push("/login");
+    history.push("/");
   }
 
   useEffect(() => {
@@ -53,47 +45,24 @@ const Register = () => {
   return (
     <body>
       <div className="register-pict register-color">
-        <img
-          src="https://res.cloudinary.com/dvehyvk3d/image/upload/v1629369063/vector_01_1_ffcpvw.png"
-          alt=""
-        />
-        <img
-          className="position-absolute"
-          src="https://res.cloudinary.com/dvehyvk3d/image/upload/v1629386181/tiketing/center_o0uo24.png"
-          alt=""
-        />
-        <img
-          className="register-pict-airplane-up"
-          src="https://res.cloudinary.com/dvehyvk3d/image/upload/v1629386181/tiketing/upper_rtqdcr.png"
-          alt=""
-        />
-        <img
-          className="register-pict-airplane-bottom"
-          src="https://res.cloudinary.com/dvehyvk3d/image/upload/v1629386181/tiketing/bottom_ewmviz.png"
-          alt=""
-        />
-        <img
-          className="register-pict-airplane-right"
-          src="https://res.cloudinary.com/dvehyvk3d/image/upload/v1629386181/tiketing/left_yflfdd.png"
-          alt=""
-        />
+        <img className="img-airplane" src={ilustration} alt="" />
       </div>
       <div className="register-layout px-5">
-        <div className="register-logo fw-bold">
+        <div className="register-logo">
           <img
             src="https://res.cloudinary.com/dvehyvk3d/image/upload/v1629369063/vector_02_wqpjtu.png"
             alt=""
           />
-          Ankasa
+          <b className="register-font21">Ankasa</b>
         </div>
-        <div className="register d-flex flex-column">
+        <div className="register d-flex flex-column w-100">
           <h3 className="fw-bold">Register</h3>
+          <form onSubmit={handleSubmit(onSubmit)}>
           <div className="user-box">
             <input
               type="username"
               name="username"
-              value={username}
-              onChange={handleChange}
+              {...register('name')}
               required
             />
             <label>Full Name</label>
@@ -102,20 +71,18 @@ const Register = () => {
             <input
               type="email"
               name="email"
-              value={email}
-              onChange={handleChange}
+              {...register('email')}
               required
             />
             <label>Email</label>
           </div>
-          <div className="d-flex">
+          <div className="d-flex eye-pass">
             <div className="user-box">
               <input
                 type="password"
                 name="password"
                 id="password"
-                value={password}
-                onChange={handleChange}
+                {...register('password')}
                 required
               />
               <label>Password</label>
@@ -124,11 +91,12 @@ const Register = () => {
           </div>
           <button
             type="submit"
-            onClick={handleSubmit}
+            handleOnSubmit={handleSubmit}
             className="register-button-signup register-color"
           >
             Sign Up
           </button>
+          </form>
           <div className="register-checkbox-layout">
             <input type="checkbox" className="register-checkbox" />
             <label className="register-font13">

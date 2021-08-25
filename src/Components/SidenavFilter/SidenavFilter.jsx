@@ -12,12 +12,17 @@ const SidenavFilter = (props) => {
         airlines: [],
     })
 
+    // const handelChange = (e) => {
+    //     const name = e.target.name 
+    //     const value = e.target.value
+    //     const data = filter[name]
+    //     data.push(value)
+    //     setFilter({...filter, ...{ [name]: data }})
+    // }
     const handelChange = (e) => {
         const name = e.target.name 
         const value = e.target.value
-        const data = filter[name]
-        data.push(value)
-        setFilter({...filter, ...{ [name]: data }})
+        setFilter({...filter, ...{ [name]: value }})
     }
     props.change(filter)
 
@@ -44,13 +49,13 @@ const SidenavFilter = (props) => {
                                 <ListGroup.Item className="border-0">
                                     <div className="d-flex">
                                         <label className="me-auto lable">Transit</label>
-                                        <Form.Check aria-label="option 1" name="transit" value="1" onChange={(e) => handelChange(e)} />
+                                        <Form.Check aria-label="option 1" name="transit" value="1 transit" onChange={(e) => handelChange(e)} />
                                     </div>
                                 </ListGroup.Item>
                                 <ListGroup.Item className="border-0">
                                     <div className="d-flex">
                                         <label className="me-auto lable">Transit 2+</label>
-                                        <Form.Check aria-label="option 1" name="transit" value="2" onChange={(e) => handelChange(e)} />
+                                        <Form.Check aria-label="option 1" name="transit" value="2+ transit" onChange={(e) => handelChange(e)} />
                                     </div>
                                 </ListGroup.Item>
                             </ListGroup>
