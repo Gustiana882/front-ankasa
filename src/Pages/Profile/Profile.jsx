@@ -5,36 +5,15 @@ import Footer from '../../Components/Footer/Footer';
 import Menu from '../../Components/Navbar/MenusAfterLogin';
 import Header from '../../Components/Navbar/NavbarHeader';
 import axios from 'axios';
-import * as yup from 'yup';
-import { yupResolver } from '@hookform/resolvers/yup';
-import { useParams } from 'react-router';
 import { useForm } from 'react-hook-form';
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import {
-	updatePending,
-	updateSuccess,
-} from '../../Storages/Slices/profileSlice';
-import { Spinner } from 'react-bootstrap';
-
-// const schema = yup.object().shape({
-// 	email: yup
-// 		.string()
-// 		.email()
-// 		.required(),
-// 	name: yup.string().required(),
-// 	phone: yup.string().required(),
-// 	city: yup.string().required(),
-// 	address: yup.string().required(),
-// 	postcode: yup.string().required(),
-// });
 
 const Profile = () => {
 	const dispatch = useDispatch();
 	const { email } = useSelector((state) => state.loginReducer);
 	const { token } = useSelector((state) => state.loginReducer);
 	const { imageUpload } = useSelector((state) => state.profileReducer);
-	console.log(imageUpload);
 
 	const url = `${process.env.REACT_APP_API}/profile/${email}`;
 	const urlGetUser = `${process.env.REACT_APP_API}/user/${email}`;
@@ -43,8 +22,6 @@ const Profile = () => {
 	]);
 
 	const onSubmitForm = async (user) => {
-		console.log(user);
-
 		try {
 			let formData = new FormData();
 			formData.append('image', imageUpload);
@@ -62,7 +39,6 @@ const Profile = () => {
 					},
 				})
 				.then((res) => {
-					console.log(res.data);
 					alert('profile update success');
 				});
 		} catch (error) {
@@ -86,7 +62,7 @@ const Profile = () => {
 	}, [urlGetUser, reset, dispatch, token]);
 
 	return (
-		<body>
+		<div>
 			<header />
 			<Header />
 			<Menu />
@@ -132,14 +108,7 @@ const Profile = () => {
 							<div className="user-box pt-4">
 								<label className="lh-1">City</label>
 								<select name="posCode" id="posCode">
-									<option
-										defaultValue={
-											user[0] ? user[0].city : console.log('loading')
-										}
-										{...register('city')}
-									>
-										Medan
-									</option>
+									<option {...register('city')}>Medan</option>
 								</select>
 							</div>
 							<div className="user-box">
@@ -167,12 +136,12 @@ const Profile = () => {
 				</form>
 			</section>
 			<aside>
-				<Sidenav user={user[0]} callback={(img) => console.log(img)} />
+				<Sidenav />
 			</aside>
 			<footer>
 				<Footer />
 			</footer>
-		</body>
+		</div>
 	);
 };
 

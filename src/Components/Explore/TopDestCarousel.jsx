@@ -2,9 +2,8 @@ import './style/TopDestCarousel.scoped.css';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import axios from 'axios'
+import axios from 'axios';
 import { useState, useEffect } from 'react';
-import { FaAngleRight } from 'react-icons/fa';
 
 const TopDestCarousel = () => {
 	const settings = {
@@ -42,22 +41,20 @@ const TopDestCarousel = () => {
 		],
 	};
 
-	const [city, setCity] = useState([])
-	const [image, setImage] = useState([])
+	const [city, setCity] = useState([]);
+	const [image, setImage] = useState([]);
 
 	useEffect(() => {
-		axios.get(`${process.env.REACT_APP_API}/destination/all`)
-		.then((res) => {
-			const { result } = res.data
-			console.log(result)
+		axios.get(`${process.env.REACT_APP_API}/destination/all`).then((res) => {
+			const { result } = res.data;
 
 			let arrayCity = [];
-				result.forEach(datum => arrayCity.push(datum.city))
-			if (arrayCity) setCity(arrayCity)
+			result.forEach((datum) => arrayCity.push(datum.city));
+			if (arrayCity) setCity(arrayCity);
 
 			let arrayImg = [];
-				result.forEach(datum => arrayImg.push(datum.image))
-			if (arrayImg) setImage(arrayImg)
+			result.forEach((datum) => arrayImg.push(datum.image));
+			if (arrayImg) setImage(arrayImg);
 		});
 	}, []);
 
@@ -69,10 +66,7 @@ const TopDestCarousel = () => {
 						<div>
 							<div className="card-box">
 								<div className="circle">
-									<img
-										src={image[0]}
-										alt=""
-									/>
+									<img src={image[0]} alt="" />
 								</div>
 								<p>{city[0]}</p>
 							</div>
@@ -80,10 +74,7 @@ const TopDestCarousel = () => {
 						<div>
 							<div className="card-box">
 								<div className="circle">
-									<img
-										src={image[1]}
-										alt=""
-									/>
+									<img src={image[1]} alt="" />
 								</div>
 								<p>{city[1]}</p>
 							</div>
@@ -91,10 +82,7 @@ const TopDestCarousel = () => {
 						<div>
 							<div className="card-box">
 								<div className="circle">
-									<img
-										src={image[2]}
-										alt=""
-									/>
+									<img src={image[2]} alt="" />
 								</div>
 								<p>{city[2]}</p>
 							</div>
@@ -102,10 +90,7 @@ const TopDestCarousel = () => {
 						<div>
 							<div className="card-box">
 								<div className="circle">
-									<img
-										src={image[3]}
-										alt=""
-									/>
+									<img src={image[3]} alt="" />
 								</div>
 								<p>{city[3]}</p>
 							</div>
@@ -113,10 +98,7 @@ const TopDestCarousel = () => {
 						<div>
 							<div className="card-box">
 								<div className="circle">
-									<img
-										src={image[4]}
-										alt=""
-									/>
+									<img src={image[4]} alt="" />
 								</div>
 								<p>{city[4]}</p>
 							</div>
@@ -124,10 +106,7 @@ const TopDestCarousel = () => {
 						<div>
 							<div className="card-box">
 								<div className="circle">
-									<img
-										src={image[5]}
-										alt=""
-									/>
+									<img src={image[5]} alt="" />
 								</div>
 								<p>{city[5]}</p>
 							</div>
@@ -135,10 +114,7 @@ const TopDestCarousel = () => {
 						<div>
 							<div className="card-box">
 								<div className="circle">
-									<img
-										src={image[6]}
-										alt=""
-									/>
+									<img src={image[6]} alt="" />
 								</div>
 								<p>{city[6]}</p>
 							</div>
@@ -146,10 +122,7 @@ const TopDestCarousel = () => {
 						<div>
 							<div className="card-box">
 								<div className="circle">
-									<img
-										src={image[7]}
-										alt=""
-									/>
+									<img src={image[7]} alt="" />
 								</div>
 								<p>{city[7]}</p>
 							</div>
@@ -157,10 +130,7 @@ const TopDestCarousel = () => {
 						<div>
 							<div className="card-box">
 								<div className="circle">
-									<img
-										src={image[8]}
-										alt=""
-									/>
+									<img src={image[8]} alt="" />
 								</div>
 								<p>{city[8]}</p>
 							</div>
@@ -168,10 +138,7 @@ const TopDestCarousel = () => {
 						<div>
 							<div className="card-box">
 								<div className="circle">
-									<img
-										src={image[9]}
-										alt=""
-									/>
+									<img src={image[9]} alt="" />
 								</div>
 								<p>{city[9]}</p>
 							</div>

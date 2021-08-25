@@ -6,11 +6,12 @@ import './style/MenusAfterLogin.scoped.css';
 import { useDispatch } from 'react-redux';
 import { logout } from '../../Storages/Slices/loginSlice';
 import { Dropdown } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import axios from 'axios';
 
 const MenusAfterLogin = () => {
+	const history = useHistory()
 	const dispatch = useDispatch();
 	const { email } = useSelector((state) => state.loginReducer);
 	const url = `${process.env.REACT_APP_API}/user/${email}`;
@@ -37,12 +38,16 @@ const MenusAfterLogin = () => {
 			<Nav className="me-auto menu-after-login">
 				<Nav>
 					<Container className="menu-icon">
-						<FaBell />
+						<Link to='/notifikasi' className="menu-icon">
+							<FaBell  />
+						</Link>
 					</Container>
 				</Nav>
 				<Nav>
 					<Container className="menu-icon">
-						<FaEnvelope />
+						<Link to='/chat' className="menu-icon">
+							<FaEnvelope />
+						</Link>
 					</Container>
 				</Nav>
 				<Dropdown>

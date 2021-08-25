@@ -1,55 +1,46 @@
 import React from 'react';
 import { FaAngleRight } from 'react-icons/fa';
 import './style/SearchFlight.scoped.css';
-import { Controller, useForm } from 'react-hook-form';
+
 import { useState, useEffect } from 'react';
 import 'react-calendar/dist/Calendar.css';
-import { Dropdown } from 'react-bootstrap';
+
 import 'react-datepicker/dist/react-datepicker.css';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 import DatePicker from 'react-datepicker';
 import { search } from '../../Storages/Slices/flashData';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 const SearchFlight = (props) => {
-	// const {
-	// 	register,
-	// 	handleSubmit,
-	// 	formState: { errors },
-	// 	control,
-	// } = useForm();
-	const history = useHistory()
+	const history = useHistory();
 	const dispatch = useDispatch();
 	const [startDate, setStartDate] = useState(new Date());
-	const [value, onChange] = useState(new Date());
-	const [destination, setDestination] = useState([])
-	const [from, setFrom] = useState("")
-	const [to, setTo] = useState("")
-	const [Class, setClass] = useState("Economy")
-	const num = [1,2,3,4,5]
+	const [destination, setDestination] = useState([]);
+	const [from, setFrom] = useState('');
+	const [to, setTo] = useState('');
+	const [Class, setClass] = useState('Economy');
+	const num = [1, 2, 3, 4, 5];
 
 	const getDestination = () => {
-        axios({
-            method: 'get',
-            url: `${process.env.REACT_APP_API}/destination/all`
-        }).then(result => setDestination(result.data.result))
-		.catch((error) => console.log(error))
-    }
+		axios({
+			method: 'get',
+			url: `${process.env.REACT_APP_API}/destination/all`,
+		}).then((result) => setDestination(result.data.result));
+	};
 
 	useEffect(() => {
-		getDestination()
-	},[])
+		getDestination();
+	}, []);
 
 	const searchClick = () => {
-		// console.log({ from, to, Class, date: startDate, })
-		if (from === "" || to === "") {
-			return alert('from to not null')
+		if (from === '' || to === '') {
+			return alert('from to not null');
 		}
-		const date = new Date(startDate)
-		dispatch(search(`${from},${to},${Class},${date.getTime()}`))
-		history.push(`/search`)
-	}
+
+		dispatch(search(`${from},${to},${Class},${startDate}`));
+		history.push(`/search`);
+	};
 
 	return (
 		<div>
@@ -67,10 +58,16 @@ const SearchFlight = (props) => {
 						<ul>
 							<li className="from">From</li>
 							<li className="city">
-								<select className="form-select border-0" name="from" onChange={(e) => setFrom(e.target.value)}>
+								<select
+									className="form-select border-0"
+									name="from"
+									onChange={(e) => setFrom(e.target.value)}
+								>
 									<option selected>city</option>
 									{destination.map((des, i) => (
-										<option value={des.country} key={i}>{des.city}</option>
+										<option value={des.country} key={i}>
+											{des.city}
+										</option>
 									))}
 								</select>
 							</li>
@@ -87,14 +84,20 @@ const SearchFlight = (props) => {
 					<div className="destination">
 						<ul>
 							<li className="from">To</li>
-								<li className="city">
-									<select className="form-select border-0" name="to" onChange={(e) => setTo(e.target.value)}>
-										<option selected>city</option>
-										{destination.map((des, i) => (
-											<option value={des.country} key={i}>{des.city}</option>
-										))}
-									</select>
-								</li>
+							<li className="city">
+								<select
+									className="form-select border-0"
+									name="to"
+									onChange={(e) => setTo(e.target.value)}
+								>
+									<option selected>city</option>
+									{destination.map((des, i) => (
+										<option value={des.country} key={i}>
+											{des.city}
+										</option>
+									))}
+								</select>
+							</li>
 							<li className="country">Japan</li>
 						</ul>
 					</div>
@@ -132,22 +135,20 @@ const SearchFlight = (props) => {
 				<div className="person-box">
 					<p>How many person?</p>
 					<div className="person-btn">
-						{/* <div className="person">
-							Child <FaAngleRight className="angle-right" />
-						</div>
-						<div className="person">
-							Adult <FaAngleRight className="angle-right" />
-						</div> */}
 						<select className="person form-select border-0" name="to">
 							<option selected>Child</option>
 							{num.map((jum, i) => (
-								<option value={jum} key={i}>{jum}</option>
+								<option value={jum} key={i}>
+									{jum}
+								</option>
 							))}
 						</select>
 						<select className="person form-select border-0" name="to">
 							<option selected>Adult</option>
 							{num.map((jum, i) => (
-								<option value={jum} key={i}>{jum}</option>
+								<option value={jum} key={i}>
+									{jum}
+								</option>
 							))}
 						</select>
 					</div>

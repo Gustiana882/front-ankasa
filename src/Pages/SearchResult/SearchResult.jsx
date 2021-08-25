@@ -1,26 +1,24 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react-hooks/exhaustive-deps */
-import "./SearchResult.scoped.css"
-import NavbarHeader from '../../Components/Navbar/NavbarHeader'
-import Footer from "../../Components/Footer/Footer"
-import SidenavFilter from "../../Components/SidenavFilter/SidenavFilter"
-import Card from "../../Components/CardSearch/CardSearch"
-import { useState, useEffect } from "react"
-import { useHistory } from "react-router-dom"
+import './SearchResult.scoped.css';
+import NavbarHeader from '../../Components/Navbar/NavbarHeader';
+import Footer from '../../Components/Footer/Footer';
+import SidenavFilter from '../../Components/SidenavFilter/SidenavFilter';
+import Card from '../../Components/CardSearch/CardSearch';
+import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import axios from "axios"
+import axios from 'axios';
 
 const SearchResult = (props) => {
-
-	const history = useHistory()
-	const [dataApi, setDataApi] =useState([])
-	const [dataTicketFilter, setDataTicketFilter] = useState([])
+	const [dataApi, setDataApi] = useState([]);
+	const [dataTicketFilter, setDataTicketFilter] = useState([]);
 	const [filter, setFilter] = useState({
-		transit: "",
-		facilities: "",
-		departure: "0-0",
-		arrived: "0-0",
-		airlines: "",
-	})
+		transit: '',
+		facilities: '',
+		departure: '0-0',
+		arrived: '0-0',
+		airlines: '',
+	});
 
 	// const filterTransit = () => {
 	// 	const result = dataTicketFilter.filter((ticket) => String(ticket.times.transit).toLocaleLowerCase() === String(filter.transit).toLocaleLowerCase())
@@ -49,40 +47,41 @@ const SearchResult = (props) => {
 	}
 
 	const dataSearch = useSelector((state) => {
-		const arr = state.search.data.split(',')
-		return { from: arr[0], to: arr[1], Class: arr[2], time: arr[3], status: state.search.search}
+		const arr = state.search.data.split(',');
+		return {
+			from: arr[0],
+			to: arr[1],
+			Class: arr[2],
+			time: String(arr[3]).replace('GMT+0700 (Western Indonesia Time)', ''),
+			status: state.search.search,
+		};
 	});
 
 	const getSchedule = () => {
-		console.log(dataSearch.status)
+		console.log(dataSearch.status);
 		if (dataSearch.status) {
 			axios({
 				method: 'get',
-				url: `${process.env.REACT_APP_API}/search?from=${dataSearch.from}&to=${dataSearch.to}&Class=${dataSearch.Class}`
-			}).then(result => {
-				setDataApi(result.data.result)
-				setDataTicketFilter(result.data.result)
+				url: `${process.env.REACT_APP_API}/search?from=${dataSearch.from}&to=${
+					dataSearch.to
+				}&Class=${dataSearch.Class}`,
 			})
-			.catch((error) => console.log(error))
+				.then((result) => {
+					setDataApi(result.data.result);
+					setDataTicketFilter(result.data.result);
+				})
+				.catch((error) => console.log(error));
 		} else {
-			axios({
-				method: 'get',
-				url: `${process.env.REACT_APP_API}/schedule`
-			}).then(result => {
-				setDataApi(result.data.result)
-				setDataTicketFilter(result.data.result)
-			})
-			.catch((error) => console.log(error))
 		}
-	}
+	};
 
 	useEffect(() => {
-		loadData()
-	}, [filter])
+		loadData();
+	}, [filter]);
 
 	useEffect(() => {
-		getSchedule()
-	}, [])
+		getSchedule();
+	}, []);
 
 	console.log(filter)
 
@@ -121,7 +120,9 @@ const SearchResult = (props) => {
 					<div className="ms-3">
 						<div className="d-flex text-white mb-2">
 							<div>
-								<p className="fw-bolder m-0"><small>From</small></p>
+								<p className="fw-bolder m-0">
+									<small>From</small>
+								</p>
 								<h5 className="fw-bolder m-0">{dataSearch.from}</h5>
 							</div>
 							<div className="mt-auto ms-3 me-3">
@@ -139,12 +140,14 @@ const SearchResult = (props) => {
 								</svg>
 							</div>
 							<div>
-								<p className="fw-bolder m-0"><small>To</small></p>
+								<p className="fw-bolder m-0">
+									<small>To</small>
+								</p>
 								<h5 className="fw-bolder m-0">{dataSearch.to}</h5>
 							</div>
 						</div>
 						<div className="text-white">
-							<small className="me-3">Monday, 20 july 20</small>
+							<small className="me-3">{dataSearch.time}</small>
 							<svg
 								width={5}
 								height={5}
@@ -155,9 +158,15 @@ const SearchResult = (props) => {
 								<circle cx="2.5" cy="2.5" r="2.5" fill="white" />
 							</svg>
 							<small className="ms-3 me-3">6 Passenger</small>
-							<svg width={5} height={5} viewBox="0 0 5 5" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<circle cx="2.5" cy="2.5" r="2.5" fill="white" />
-								</svg>
+							<svg
+								width={5}
+								height={5}
+								viewBox="0 0 5 5"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<circle cx="2.5" cy="2.5" r="2.5" fill="white" />
+							</svg>
 							<small className="ms-3 me-3">{dataSearch.Class}</small>
 						</div>
 					</div>
@@ -192,13 +201,9 @@ const SearchResult = (props) => {
 						</span>
 					</div>
 					<div>
-						{
-							dataTicketFilter.map((ticket, i) => {
-								return (
-									<Card data={ticket} key={i} />
-								)
-							})
-						}
+						{dataTicketFilter.map((ticket, i) => {
+							return <Card data={ticket} key={i} />;
+						})}
 					</div>
 				</div>
 			</div>

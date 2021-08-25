@@ -1,6 +1,6 @@
 import './style/Menus.scoped.css';
 import { Button, Nav } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import React from 'react';
 import SignupButton from './SignupButton';
@@ -23,9 +23,12 @@ const Menus = () => {
 						</Button>
 					</li>
 					<li>
-						<Link to="/mybooking" style={{ textDecoration: 'none' }}>
-							<Button className="menu-button">My Booking</Button>
-						</Link>
+						<Button
+							className="menu-button"
+							onClick={() => history.push('/mybooking')}
+						>
+							My Booking
+						</Button>
 					</li>
 				</ul>
 

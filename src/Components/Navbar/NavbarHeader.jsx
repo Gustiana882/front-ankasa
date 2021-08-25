@@ -49,7 +49,7 @@ const NavbarHeader = () => {
 				</div>
 				<div className="navbar-inside">
 					<Navbar className="basic-navbar" id="basic-navbar-nav">
-						<Tools className="tools" />
+						<Tools className="tools"/>
 						<div className="menus">
 							<Menus />
 						</div>
