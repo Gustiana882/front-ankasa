@@ -1,17 +1,14 @@
 import 'bootstrap/dist/css/bootstrap.css';
-import { Navbar, Container } from 'react-bootstrap';
+import { Navbar } from 'react-bootstrap';
 import './style/NavbarHeader.scoped.css';
 import Tools from './Tools';
-import MenusAfterLogin from './MenusAfterLogin';
 import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
 import Menus from './Menus';
-import { useLocation } from 'react-router';
-import { useHistory } from 'react-router';
+import { useState } from 'react';
+import { FaBars } from 'react-icons/fa';
 
 const NavbarHeader = () => {
-	// const location = useLocation();
-	// const { isAuth } = useSelector((state) => state.login);
+	const [showMenus, setShowMenus] = useState(false);
 
 	return (
 		<div>
@@ -25,11 +22,44 @@ const NavbarHeader = () => {
 						<span>Ankasa</span>
 					</Navbar.Brand>
 				</Link>
+				<div className="menus-dropdown" id={showMenus ? 'hidden' : 'show'}>
+					<ul>
+						<Link
+							to="/search"
+							style={{ textDecoration: 'none', color: 'black' }}
+						>
+							<li>Find Ticket</li>
+						</Link>
 
+						<Link
+							to="/mybooking"
+							style={{ textDecoration: 'none', color: 'black' }}
+						>
+							<li>My Booking</li>
+						</Link>
+						<li>Notifications</li>
+						<li>Messages</li>
+						<Link
+							to="/profile"
+							style={{ textDecoration: 'none', color: 'black' }}
+						>
+							<li>My Profile</li>
+						</Link>
+					</ul>
+				</div>
 				<div className="navbar-inside">
 					<Navbar className="basic-navbar" id="basic-navbar-nav">
-						<Tools />
-						<Menus />
+						<Tools className="tools" />
+						<div className="menus">
+							<Menus />
+						</div>
+
+						<button
+							className="toggle-btn"
+							onClick={() => setShowMenus(!showMenus)}
+						>
+							<FaBars className="bars" />
+						</button>
 					</Navbar>
 				</div>
 			</Navbar>

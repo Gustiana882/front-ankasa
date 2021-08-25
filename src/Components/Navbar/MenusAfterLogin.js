@@ -1,21 +1,18 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
 import { Container, Nav } from 'react-bootstrap';
-import { FaShoppingCart, FaBell, FaEnvelope } from 'react-icons/fa';
+import { FaBell, FaEnvelope } from 'react-icons/fa';
 import './style/MenusAfterLogin.scoped.css';
 import { useDispatch } from 'react-redux';
 import { logout } from '../../Storages/Slices/loginSlice';
-// import { logout } from '../Logins/loginSlice';
 import { Dropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import axios from 'axios';
-import { useHistory } from 'react-router';
+
 const MenusAfterLogin = () => {
-	const [user, setUser] = useState('');
 	const dispatch = useDispatch();
 	const { email } = useSelector((state) => state.loginReducer);
-	const history = useHistory();
 	const url = `${process.env.REACT_APP_API}/user/${email}`;
 	const [image, setImage] = useState('');
 	const { token } = useSelector((state) => state.loginReducer);

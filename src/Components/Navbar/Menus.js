@@ -21,6 +21,7 @@ const Menus = () => {
 						</Link>
 					</li>
 				</ul>
+				<button className="toggle-btn">toggle</button>
 				{isAuth ? <MenusAfterLogin /> : <SignupButton />}
 			</Nav>
 		</div>
