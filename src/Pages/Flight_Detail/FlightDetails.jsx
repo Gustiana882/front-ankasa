@@ -103,7 +103,7 @@ function Flight(props) {
                     defaultValue
                     name = 'insurance'
                     id="flexCheckDefault"
-                    onClick = {(e) => setForm({...form, ...{ [e.target.name]: !form.insurance }})}
+                    onClick = {(e) => setForm({...form, ...{ [e.target.name]: !form.insurance, totalPrice: Number(form.totalPrice)+2 }})}
                   />
                   <label
                     className="form-check-label poppins-bold"
@@ -184,7 +184,7 @@ function Flight(props) {
               </div>
               <div className="d-flex align-items-center mt-4 justify-content-between">
                 <h6 className="m-0 poppins-bold">Total Payment</h6>
-                <h6 className="m-0 poppins-bold color-blue" name="totalPrice">$ {schedule[0].price.dewasa},00</h6>
+                <h6 className="m-0 poppins-bold color-blue" name="totalPrice">$ {form.totalPrice},00</h6>
               </div>
             </div>
           </div>

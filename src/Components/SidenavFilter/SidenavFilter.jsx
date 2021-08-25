@@ -24,7 +24,39 @@ const SidenavFilter = (props) => {
         const value = e.target.value
         setFilter({...filter, ...{ [name]: value }})
     }
-    props.change(filter)
+    // props.change(filter)
+
+    const filterTransit = (e) => {
+		const result = props.dataTicketFilter.filter((ticket) => String(ticket.times.transit).toLocaleLowerCase() === String(e.target.value).toLocaleLowerCase())
+		props.change(result)
+	}
+
+	const filterDeparture = (e) => {
+        const time = String(e.target.value).split('-')
+		const result = props.dataTicketFilter.filter((ticket) => {
+            return Number(ticket.times.berangkat.split(':')[0]) > Number(time[0]) && Number(ticket.times.berangkat.split(':')[0]) <= Number(time[1])
+        })
+		props.change(result)
+	}
+
+	const filterArrived = (e) => {
+		const time = String(e.target.value).split('-')
+		const result = props.dataTicketFilter.filter((ticket) => {
+            return Number(ticket.times.tiba.split(':')[0]) > Number(time[0]) && Number(ticket.times.tiba.split(':')[0]) <= Number(time[1])
+        })
+		props.change(result)
+	}
+
+	const filterAirlines = (e) => {
+		const result = props.dataTicketFilter.filter((ticket) => String(ticket.Maskapai.nameMaskapai).toLocaleLowerCase() === String(e.target.value).toLocaleLowerCase())
+		props.change(result)
+	}
+
+    const filterPrice = (e) => {
+        console.log(e.target.value)
+		const result = props.dataTicketFilter.filter((ticket) =>  Number(ticket.price.dewasa) >= Number(145) && Number(ticket.price.dewasa) <= Number(e.target.value))
+		props.change(result)
+	}
 
     return (
         <>
@@ -43,13 +75,13 @@ const SidenavFilter = (props) => {
                                 <ListGroup.Item className="border-0">
                                     <div className="d-flex">
                                         <label className="me-auto lable">Direct</label>
-                                        <Form.Check aria-label="option 1" name="transit" value="Direct" onChange={(e) => handelChange(e)} />
+                                        <Form.Check aria-label="option 1" name="transit" value="Direct" onChange={filterTransit} />
                                     </div>
                                 </ListGroup.Item>
                                 <ListGroup.Item className="border-0">
                                     <div className="d-flex">
                                         <label className="me-auto lable">Transit</label>
-                                        <Form.Check aria-label="option 1" name="transit" value="1 transit" onChange={(e) => handelChange(e)} />
+                                        <Form.Check aria-label="option 1" name="transit" value="1 transit" onChange={filterTransit} />
                                     </div>
                                 </ListGroup.Item>
                                 <ListGroup.Item className="border-0">
@@ -103,25 +135,25 @@ const SidenavFilter = (props) => {
                                 <ListGroup.Item className="border-0">
                                     <div className="d-flex">
                                         <label className="me-auto lable">00:00 - 06:00</label>
-                                        <Form.Check aria-label="option 1" name="departure" value="0-6" onChange={(e) => handelChange(e)} />
+                                        <Form.Check aria-label="option 1" name="departure" value="0-6" onChange={filterDeparture} />
                                     </div>
                                 </ListGroup.Item>
                                 <ListGroup.Item className="border-0">
                                     <div className="d-flex">
                                         <label className="me-auto lable">06:00 - 12:00</label>
-                                        <Form.Check aria-label="option 1" name="departure" value="6-12" onChange={(e) => handelChange(e)} />
+                                        <Form.Check aria-label="option 1" name="departure" value="6-12" onChange={filterDeparture} />
                                     </div>
                                 </ListGroup.Item>
                                 <ListGroup.Item className="border-0">
                                     <div className="d-flex">
                                         <label className="me-auto lable">12:00 - 18:00</label>
-                                        <Form.Check aria-label="option 1" name="departure" value="12-18" onChange={(e) => handelChange(e)} />
+                                        <Form.Check aria-label="option 1" name="departure" value="12-18" onChange={filterDeparture} />
                                     </div>
                                 </ListGroup.Item>
                                 <ListGroup.Item className="border-0">
                                     <div className="d-flex">
                                         <label className="me-auto lable">18:00 - 24:00</label>
-                                        <Form.Check aria-label="option 1" name="departure" value="18-24" onChange={(e) => handelChange(e)} />
+                                        <Form.Check aria-label="option 1" name="departure" value="18-24" onChange={filterDeparture} />
                                     </div>
                                 </ListGroup.Item>
                             </ListGroup>
@@ -139,25 +171,25 @@ const SidenavFilter = (props) => {
                                 <ListGroup.Item className="border-0">
                                     <div className="d-flex">
                                         <label className="me-auto lable">00:00 - 06:00</label>
-                                        <Form.Check aria-label="option 1" name="arrived" value="0-6" onChange={(e) => handelChange(e)} />
+                                        <Form.Check aria-label="option 1" name="arrived" value="0-6" onChange={filterArrived} />
                                     </div>
                                 </ListGroup.Item>
                                 <ListGroup.Item className="border-0">
                                     <div className="d-flex">
                                         <label className="me-auto lable">06:00 - 12:00</label>
-                                        <Form.Check aria-label="option 1" name="arrived" value="6-12" onChange={(e) => handelChange(e)} />
+                                        <Form.Check aria-label="option 1" name="arrived" value="6-12" onChange={filterArrived} />
                                     </div>
                                 </ListGroup.Item>
                                 <ListGroup.Item className="border-0">
                                     <div className="d-flex">
                                         <label className="me-auto lable">12:00 - 18:00</label>
-                                        <Form.Check aria-label="option 1" name="arrived" value="12-18" onChange={(e) => handelChange(e)} />
+                                        <Form.Check aria-label="option 1" name="arrived" value="12-18" onChange={filterArrived} />
                                     </div>
                                 </ListGroup.Item>
                                 <ListGroup.Item className="border-0">
                                     <div className="d-flex">
                                         <label className="me-auto lable">18:00 - 24:00</label>
-                                        <Form.Check aria-label="option 1" name="arrived" value="18-24" onChange={(e) => handelChange(e)} />
+                                        <Form.Check aria-label="option 1" name="arrived" value="18-24" onChange={filterArrived} />
                                     </div>
                                 </ListGroup.Item>
                             </ListGroup>
@@ -172,24 +204,17 @@ const SidenavFilter = (props) => {
                         </Accordion.Toggle>
                         <Accordion.Collapse eventKey="airlines">
                         <ListGroup>
-                                <ListGroup.Item className="border-0">
-                                    <div className="d-flex">
-                                        <label className="me-auto lable">Garuda Indonesia</label>
-                                        <Form.Check aria-label="option 1" name="airlines" value="Garuda Indonesia" onChange={(e) => handelChange(e)} />
-                                    </div>
-                                </ListGroup.Item>
-                                <ListGroup.Item className="border-0">
-                                    <div className="d-flex">
-                                        <label className="me-auto lable">Air Asia</label>
-                                        <Form.Check aria-label="option 1" name="airlines" value="Air Asia" onChange={(e) => handelChange(e)} />
-                                    </div>
-                                </ListGroup.Item>
-                                <ListGroup.Item className="border-0">
-                                    <div className="d-flex">
-                                        <label className="me-auto lable">Lion Air</label>
-                                        <Form.Check aria-label="option 1" name="airlines" value="" onChange={(e) => handelChange(e)} />
-                                    </div>
-                                </ListGroup.Item>
+                                {
+                                    props.dataTicketFilter.map((val, i) => {
+                                            return (<ListGroup.Item className="border-0">
+                                                <div className="d-flex">
+                                                    <label className="me-auto lable">{val.Maskapai.nameMaskapai}</label>
+                                                    <Form.Check aria-label="option 1" name="airlines" value={val.Maskapai.nameMaskapai} onChange={filterAirlines} />
+                                                </div>
+                                            </ListGroup.Item>)
+                                        }
+                                    )
+                                }
                             </ListGroup>
                         </Accordion.Collapse>
                         <div className="line"></div>
@@ -208,7 +233,7 @@ const SidenavFilter = (props) => {
                                             <p className="text-muted m-0">Lowest</p>
                                             <p className="text-muted m-0">Highest</p>
                                         </label>
-                                        <input type="range" className="form-range" min="0" max="5" />
+                                        <input type="range" className="form-range" name="price" min="145" max="300" onChange={filterPrice} />
                                         <label className="form-label d-flex justify-content-between">
                                             <p className="text-primary fw-bold">$ 145,00</p>
                                             <p className="text-primary fw-bold">$ 300,00</p>

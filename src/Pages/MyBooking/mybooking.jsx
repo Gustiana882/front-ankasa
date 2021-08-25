@@ -38,11 +38,11 @@ function Flight(props) {
 
 			<Container fluid="md" style={{ marginTop: '100px' }}>
 				<Row>
-					<div className="col-12 col-lg-4 card-mod mx-4">
+					<div className="col-sm-12 col-md-6  col-lg-4 card-mod">
 						<Profile />
 					</div>
 
-					<div className="col-12 col-lg-8">
+					<div className="col-sm-12 col-md-6 col-lg-8">
 						<MbCard data={Mybooking}/>
 					</div>
 				</Row>

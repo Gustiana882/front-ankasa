@@ -20,7 +20,7 @@ const CardSearch = (props) => {
 				<div className="d-flex align-items-center justify-content-between flex-wrap">
 					<div className="d-flex align-items-center justify-content-between me-4 mt-3" style={{width: '128px'}}>
 						<div className="dest">
-							<h5 className="m-0 dest mt-2">{data.tujuanAkhir.negara}</h5>
+							<h5 className="m-0 dest mt-2">{data.tujuanAwal.negara}</h5>
 							<p className="m-0"><small className="time">{data.times.berangkat}</small></p>
 						</div>
 						<svg
@@ -37,7 +37,7 @@ const CardSearch = (props) => {
 							/>
 						</svg>
 						<div className="dest">
-							<h5 className="m-0 dest mt-2">{data.tujuanAwal.negara}</h5>
+							<h5 className="m-0 dest mt-2">{data.tujuanAkhir.negara}</h5>
 							<p className="m-0"><small className="time">{data.times.tiba}</small></p>
 						</div>
 					</div>
@@ -53,7 +53,7 @@ const CardSearch = (props) => {
 						</div>
 					</div>
 					<div className="d-flex me-4 mt-3">
-						<p className="text-primary dest m-0">$ {data.price.adult},00</p>
+						<p className="text-primary dest m-0">$ {data.price.dewasa},00</p>
 						<span className="text-secondary"> /pax</span>
 					</div>
 					<div className="ms-auto me-4 mt-3">

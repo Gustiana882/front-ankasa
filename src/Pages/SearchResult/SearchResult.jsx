@@ -22,43 +22,30 @@ const SearchResult = (props) => {
 		airlines: "",
 	})
 
+	// const filterTransit = () => {
+	// 	const result = dataTicketFilter.filter((ticket) => String(ticket.times.transit).toLocaleLowerCase() === String(filter.transit).toLocaleLowerCase())
+	// 	return result
+	// }
+
+	// const filterDeparture = () => {
+	// 	const result = dataTicketFilter.filter((ticket) => String(ticket.times.transit).toLocaleLowerCase() === String(filter.transit).toLocaleLowerCase())
+	// 	return result
+	// }
+
+	// const filterArrived = () => {
+	// 	const start = String(filter.arrived).split('-')
+	// 	const end = String(filter.arrived).split('-')
+	// 	const result = dataTicketFilter.filter((ticket) => Number(ticket.times.tiba.split(':')[0]) > Number(start[1]) && Number(ticket.times.tiba.split(':')[0]) >= Number(end[1]))
+	// 	return result
+	// }
+
+	// const filterAirlines = () => {
+	// 	const result = dataTicketFilter.filter((ticket) => String(ticket.Maskapai.nameMaskapai).toLocaleLowerCase() === String(filter.airlines).toLocaleLowerCase())
+	// 	return result
+	// }
+
 	const loadData = () => {
-		console.log(filter.departure)
-		if (filter.transit !== "") {
-			console.log('filter transit')
-			const result = dataApi.filter((ticket) => String(ticket.times.transit).toLocaleLowerCase() === String(filter.transit).toLocaleLowerCase())
-			setDataTicketFilter(result)
-			// console.log("data", dataTicketFilter)
-			// console.log("transit",result)
-			
-		}
-		else if (filter.departure !== "0-0") {
-			console.log('filter defature')
-			const start = String(filter.departure).split('-')
-			const end = String(filter.departure).split('-')
-			const result = dataApi.filter((ticket) => Number(ticket.times.berangkat.split(':')[0]) > Number(start[0]) && Number(ticket.times.berangkat.split(':')[0]) >= Number(end[0]))
-			setDataTicketFilter(result)
-			// console.log("depature",result)
-			
-		}
-		else if (filter.arrived !== "0-0") {
-			console.log('filter arrived')
-			const start = String(filter.arrived).split('-')
-			const end = String(filter.arrived).split('-')
-			const result = dataApi.filter((ticket) => Number(ticket.times.tiba.split(':')[0]) > Number(start[1]) && Number(ticket.times.tiba.split(':')[0]) >= Number(end[1]))
-			setDataTicketFilter(result)
-			// console.log("arrived",result)
-			
-		}
-		else if (filter.airlines !== "") {
-			console.log('filter airlinds')
-			const result = dataApi.filter((ticket) => String(ticket.Maskapai.nameMaskapai).toLocaleLowerCase() === String(filter.airlines).toLocaleLowerCase())
-			setDataTicketFilter(result)
-			// console.log("airlines",result)
-			
-		} else {
-			setDataTicketFilter(dataApi)
-		}
+		
 	}
 
 	const dataSearch = useSelector((state) => {
@@ -77,7 +64,16 @@ const SearchResult = (props) => {
 				setDataTicketFilter(result.data.result)
 			})
 			.catch((error) => console.log(error))
-		} else {}
+		} else {
+			axios({
+				method: 'get',
+				url: `${process.env.REACT_APP_API}/schedule`
+			}).then(result => {
+				setDataApi(result.data.result)
+				setDataTicketFilter(result.data.result)
+			})
+			.catch((error) => console.log(error))
+		}
 	}
 
 	useEffect(() => {
@@ -87,6 +83,8 @@ const SearchResult = (props) => {
 	useEffect(() => {
 		getSchedule()
 	}, [])
+
+	console.log(filter)
 
 	return (
 		<div className="section">
@@ -168,7 +166,7 @@ const SearchResult = (props) => {
 
 			<div className="d-flex container">
 				<div className="box-left d-none d-md-block">
-					<SidenavFilter change={setFilter} />
+					<SidenavFilter change={setDataTicketFilter} dataTicketFilter={dataApi}/>
 				</div>
 				<div className="box-right p-3">
 					<div className="d-flex justify-content-between mb-4">
