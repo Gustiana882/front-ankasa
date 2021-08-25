@@ -4,6 +4,7 @@ const initialState = {
 	isLoading: false,
 	imageUpload: '',
 	imagePreview: '',
+	randomImage: '',
 };
 
 const profileSlice = createSlice({
@@ -31,6 +32,7 @@ export const {
 	updateSuccess,
 	updateImage,
 	previewImage,
+	randomImage,
 } = actions;
 
 export default reducer;

@@ -15,7 +15,10 @@ function Routers() {
 	return (
 		<BrowserRouter>
 			<Switch>
-				<Route exact path="/mybooking" component={MyBooking} />
+				<Route exact path="/mybooking">
+					{isAuth ? <MyBooking /> : <Redirect to="/" />}
+				</Route>
+
 				<Route exact path="/profile">
 					{isAuth ? <Profile /> : <Redirect to="/" />}
 				</Route>

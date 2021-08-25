@@ -1,14 +1,11 @@
 import './sidenav.scoped.css';
 import React, { useState } from 'react';
-// import { Link } from "react-router-dom"
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
 import { useDispatch } from 'react-redux';
 import { logout } from '../../Storages/Slices/loginSlice';
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import { useForm } from 'react-hook-form';
-import { updateImage } from '../../Storages/Slices/profileSlice';
 import { useLocation } from 'react-router';
 import ChangeImageBtn from './ChangeImageBtn';
 

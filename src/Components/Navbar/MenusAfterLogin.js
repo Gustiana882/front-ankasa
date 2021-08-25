@@ -15,7 +15,10 @@ const MenusAfterLogin = () => {
 	const { email } = useSelector((state) => state.loginReducer);
 	const url = `${process.env.REACT_APP_API}/user/${email}`;
 	const [image, setImage] = useState('');
+
 	const { token } = useSelector((state) => state.loginReducer);
+	const randomImageUrl =
+		'https://res.cloudinary.com/calvin-cloud/image/upload/v1626501995/users/user_meodkb.png';
 
 	useEffect(() => {
 		axios
@@ -45,7 +48,7 @@ const MenusAfterLogin = () => {
 				<Dropdown>
 					<Nav className="photo-box">
 						<Dropdown.Toggle variant="none">
-							<img src={image} alt="profile" />
+							<img src={image ? image : randomImageUrl} alt="profile" />
 						</Dropdown.Toggle>
 					</Nav>
 

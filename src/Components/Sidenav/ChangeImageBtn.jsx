@@ -33,6 +33,7 @@ const ChangeImageBtn = () => {
 						type="file"
 						className="btn-change-img poppins-bold"
 						id="upload-btn"
+						required
 						{...register('image')}
 						hidden
 					/>
