@@ -9,6 +9,7 @@ import ContactDetail from '../../Components/Flight_Detail/Contact_Detail';
 import PassengerDetail from '../../Components/Flight_Detail/Passenger_Details';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router';
+import { toast } from 'react-toastify';
 
 function Flight(props) {
 	const [form, setForm] = useState({ insurance: false });
@@ -49,9 +50,12 @@ function Flight(props) {
 			data: form,
 		})
 			.then((res) => {
+				toast.success("Booking ticket berhasil")
 				console.log(res);
 			})
 			.catch((err) => {
+				toast.error("Gagal booking ticket")
+
 				console.log(err);
 			});
 	};
@@ -71,7 +75,9 @@ function Flight(props) {
 					},
 				});
 			})
-			.catch((error) => console.log(error));
+			.catch((error) => {
+				console.log(error)
+			});
 	};
 
 	useEffect(() => {

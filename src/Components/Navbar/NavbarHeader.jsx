@@ -6,12 +6,14 @@ import { Link } from 'react-router-dom';
 import Menus from './Menus';
 import { useState } from 'react';
 import { FaBars } from 'react-icons/fa';
+import Alert from '../Toats/Toats';
 
 const NavbarHeader = () => {
 	const [showMenus, setShowMenus] = useState(false);
 
 	return (
 		<div>
+			<Alert />
 			<Navbar expand="sm" className="header">
 				<Link to="/home" style={{ textDecoration: 'none' }}>
 					<Navbar.Brand className="brand">

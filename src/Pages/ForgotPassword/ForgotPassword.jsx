@@ -3,6 +3,8 @@ import logo from '../../Assets/logo.svg';
 import ilustration from '../../Assets/illustration.png';
 import { useState } from 'react';
 import FormData from 'form-data';
+import { toast } from 'react-toastify';
+import Alert from '../../Components/Toats/Toats';
 
 const ForgotPassword = () => {
 	const [handleChange, sethandleChange] = useState('');
@@ -10,10 +12,16 @@ const ForgotPassword = () => {
 	const send = () => {
 		let formData = new FormData();
 		formData.append('email', handleChange);
+		if (handleChange !== ''){
+			toast.info('reset password success, check your email')
+		} else {
+			toast.error('input tidak boleh kosong')
+		}
 	};
 
 	return (
 		<>
+		<Alert />
 			<div className="d-flex">
 				<div className="baground-img">
 					<img src={ilustration} alt="" />

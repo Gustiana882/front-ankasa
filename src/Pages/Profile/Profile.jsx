@@ -8,6 +8,7 @@ import axios from 'axios';
 import { useForm } from 'react-hook-form';
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { toast } from 'react-toastify';
 
 const Profile = () => {
 	const dispatch = useDispatch();
@@ -39,10 +40,10 @@ const Profile = () => {
 					},
 				})
 				.then((res) => {
-					alert('profile update success');
+					toast.success("Edit profile success")
 				});
 		} catch (error) {
-			console.error(error.message);
+			toast.error("Edit profile error")
 		}
 	};
 

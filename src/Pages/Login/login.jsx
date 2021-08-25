@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import './login.scoped.css';
 import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
@@ -16,6 +17,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Spinner } from 'react-bootstrap';
 import { useHistory } from 'react-router';
 import { useEffect, useState } from 'react';
+import Alert from '../../Components/Toats/Toats';
+import { toast } from 'react-toastify';
 
 const schema = yup.object().shape({
 	email: yup
@@ -51,8 +54,10 @@ const Login = () => {
 					dispatch(getEmail(email));
 					history.push('/home');
 				} else if (msg === 'wrong password or email') {
+					toast.warn('wrong password or email')
 					dispatch(loginFail('wrong password or email'));
 				} else {
+					toast.warn('wrong password or email')
 					dispatch(loginFail('invalid password or email'));
 				}
 			});
@@ -77,6 +82,7 @@ const Login = () => {
 
 	return (
 		<div>
+			<Alert />
 			<div className="blueBanner">
 				<img
 					src="https://res.cloudinary.com/rizkazn/image/upload/v1629439835/ankasaBanner_kmjq8m.jpg"

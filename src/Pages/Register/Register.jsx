@@ -5,16 +5,20 @@ import { useHistory } from 'react-router-dom';
 import ilustration from '../../Assets/illustration.png';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
+import { toast } from 'react-toastify';
+import Alert from '../../Components/Toats/Toats';
 
 const baseUrl = `${process.env.REACT_APP_API}/register`;
 
 const Register = () => {
 	const { register, handleSubmit } = useForm();
-
-	const onSubmit = (data) => {
+	
+	const onSubmit = async (data) => {
 		try {
 			axios.post(baseUrl, data).then((res) => {
 				if (res.data.result[0].msg === 'register success') history.push('/');
+				console.log('ok')
+				toast.warn('email is already login')
 			});
 		} catch (error) {
 			console.log(error);
@@ -42,6 +46,7 @@ const Register = () => {
 
 	return (
 		<body>
+			<Alert />
 			<div className="register-pict register-color">
 				<img className="img-airplane" src={ilustration} alt="" />
 			</div>

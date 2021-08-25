@@ -6,12 +6,11 @@ import './style/MenusAfterLogin.scoped.css';
 import { useDispatch } from 'react-redux';
 import { logout } from '../../Storages/Slices/loginSlice';
 import { Dropdown } from 'react-bootstrap';
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import axios from 'axios';
 
 const MenusAfterLogin = () => {
-	const history = useHistory()
 	const dispatch = useDispatch();
 	const { email } = useSelector((state) => state.loginReducer);
 	const url = `${process.env.REACT_APP_API}/user/${email}`;
