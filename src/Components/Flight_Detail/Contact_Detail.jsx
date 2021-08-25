@@ -5,14 +5,11 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
 
 function Cards(props) {
-  const [allData, setAllData] = useState({});
 
   function handleChange (e) {
     let name = e.target.name;
     let value = e.target.value
-    const q = { ...allData, ...{ [name]:value }} 
-    setAllData(q)
-    props.callback(allData)
+    props.callback({ [name]:value })
   }
 
 

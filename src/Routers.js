@@ -18,7 +18,7 @@ function Routers() {
                 <Route exact path="/mybooking" component={MyBooking} />
                 <Route exact path="/notification" component={Notification} />
                 <Route exact path="/profile" component={Profile} />
-                <Route exact path="/flightdetail" component={FlightDetail} />
+                <Route exact path="/flightdetail/:code" component={FlightDetail} />
                 <Route exact path="/search" component={SearchResult} />
                 <Route exact path="/home" component={Explore} />
                 <Route exact path="/forgotpassword" component={ForgotPassword} />

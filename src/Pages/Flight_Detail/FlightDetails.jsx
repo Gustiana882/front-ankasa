@@ -1,5 +1,5 @@
 import "./flight.scoped.css";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
 import Footer from "../../Components/Footer/Footer";
@@ -9,27 +9,42 @@ import PassengerDetail from "../../Components/Flight_Detail/Passenger_Details";
 import { set } from "react-hook-form";
 
 function Flight(props) {
-  const [allData, setAllData] = useState({
-    idSchedule : '1',
-                  namePerson: '',
-                  emailPerson: '',
-                  phonePerson: '',
-                  namePassenger: '',
-                  nationality: 'KK',
-                  totalPrice: 22,
-                  insurance: true
-  });
-  const [allPass, setPass] = useState({});
 
-  let token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiYWRtaW5AbWFpbC5jb20iLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2Mjk3Nzg4NTksImV4cCI6MTYyOTg2NTI1OX0.E2HHKy4hH4I7SylLRkhKd5bqVnZ5QyXMi1_Imvy6eIQ'
+  const [form, setForm] = useState({ insurance : false })
+  const [schedule, setSchedule] = useState([{
+    Maskapai: {
+      image: '',
+      nameMaskapai: ''
+    },
+    tujuanAwal: {
+      kota: '',
+      negara: '',
+    },
+    tujuanAkhir: {
+      kota: '',
+      negara: '',
+    },
+    times: {
+      berangkat: '',
+      tiba: '',
+    },
+    price: {
+      dewasa: ''
+    }
+  }])
+  const id = props.match.params.code
+
+  let token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoiYWRtaW5AZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNjI5ODUwODczLCJleHAiOjE2Mjk5MzcyNzN9.LaoJbWNL4oz01mzej8fQr22aRWgsYyABZ16jj6PJO3E'
+
+
 
   const onSubmit = () => {
-		
+      console.log(form)
 			axios({
         method: 'POST',
-        url: `http://44.195.208.127:8000/booking`,
+        url: `${process.env.REACT_APP_API}/booking`,
         headers: {'token': token},
-        data: allData
+        data: form
       }).then(
         (res) => {
           console.log(res)
@@ -40,7 +55,23 @@ function Flight(props) {
         }
       )
 	};
-  console.log(allData)
+
+  const getSchedule = () => {
+    axios({
+      method: 'get',
+      url: `${process.env.REACT_APP_API}/schedule/32`
+    }).then(result => {
+      setSchedule(result.data.result)
+      setForm({...form, ...{totalPrice: result.data.result[0].price.dewasa, idSchedule: result.data.result[0].id}})
+    })
+    .catch((error) => console.log(error))
+  }
+
+  useEffect(() => {
+    getSchedule()
+  }, [])
+
+  console.log(form)
 
   return (
     <div className="color">
@@ -56,20 +87,12 @@ function Flight(props) {
             <h5 className="m-0 poppins-bold text-white">Contact Person Details</h5>
 
             <ContactDetail 
-              callback = {
-                (e) => {
-                  setAllData({ ...allData, ...e})
-                }
-              }
+              callback = { (data) => setForm({...form, ...data}) }
             />
             <h5 className="mt-5 poppins-bold">Passenger Details</h5>
 
             <PassengerDetail 
-              callback = {
-                (e) => {
-                  setAllData({ ...allData, ...e})
-                }
-              }
+              callback = { (data) => setForm({...form, ...data}) }
             />
             <h5 className="mt-5 poppins-bold">Passenger Details</h5>
             <div className="mt-4 card p-4">
@@ -79,7 +102,9 @@ function Flight(props) {
                     className="form-check-input"
                     type="checkbox"
                     defaultValue
+                    name = 'insurance'
                     id="flexCheckDefault"
+                    onClick = {(e) => setForm({...form, ...{ [e.target.name]: !form.insurance }})}
                   />
                   <label
                     className="form-check-label poppins-bold"
@@ -113,19 +138,21 @@ function Flight(props) {
               <div className="d-flex align-items-center">
                 <img
                   className="me-4"
-                  src="https://res.cloudinary.com/dyli6i0pw/image/upload/v1629488179/Assets%20Ticket/garuda-indonesia-logo-BD82882F07-seeklogo_1_qgp0yz.png"
+                  src={schedule[0].Maskapai.image}
                   alt=""
+                  width={100}
+                  height={50}
                 />
-                <h6 className="m-0 poppins-reguler">Nama Maskapai</h6>
+                <h6 className="m-0 poppins-reguler">{schedule[0].Maskapai.nameMaskapai}</h6>
               </div>
               <div className="d-flex align-items-center mt-4">
-                <h6 className="m-0 poppins-bold">Medan (IDN)</h6>
+                <h6 className="m-0 poppins-bold">{schedule[0].tujuanAwal.kota} ({schedule[0].tujuanAwal.negara})</h6>
                 <img
                   className="mx-4"
                   src="https://res.cloudinary.com/dyli6i0pw/image/upload/v1629488283/Assets%20Ticket/Vector_bhe8gh.png"
                   alt=""
                 />
-                <h6 className="m-0 poppins-bold">Tokyo (JPN)</h6>
+                <h6 className="m-0 poppins-bold">{schedule[0].tujuanAkhir.kota} ({schedule[0].tujuanAkhir.negara})</h6>
               </div>
               <div className="d-flex align-items-center mt-4">
                 <h6 className="m-0 poppins-reguler font-mini">Tanggal</h6>
@@ -135,10 +162,10 @@ function Flight(props) {
                   alt=""
                 />
                 <h6 className="m-0 poppins-reguler font-mini">
-                  Jam keberangkatan
+                  {schedule[0].times.berangkat}
                 </h6>
                 <h6 className="m-0 poppins-reguler mx-2 font-mini">-</h6>
-                <h6 className="m-0 poppins-reguler font-mini">Jam sampai</h6>
+                <h6 className="m-0 poppins-reguler font-mini">{schedule[0].times.tiba}</h6>
               </div>
               <div className="d-flex align-items-center mt-4">
                 <img
@@ -158,7 +185,7 @@ function Flight(props) {
               </div>
               <div className="d-flex align-items-center mt-4 justify-content-between">
                 <h6 className="m-0 poppins-bold">Total Payment</h6>
-                <h6 className="m-0 poppins-bold color-blue" name="totalPrice">$ 145,00</h6>
+                <h6 className="m-0 poppins-bold color-blue" name="totalPrice">$ {schedule[0].price.dewasa},00</h6>
               </div>
             </div>
           </div>
