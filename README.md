@@ -19,6 +19,13 @@
   
 ```
 
+### `Backend ticketing repository`
+ <a href="https://github.com/Gustiana882/back-ticketing" target="blank">https://github.com/Gustiana882/back-ticketing</a>
+
+```bash
+
+   git clone https://github.com/Gustiana882/back-ticketing.git
+
 ### Install dependencies
 ```bash
 
