@@ -10,6 +10,24 @@
     <a href="https://www.arkademy.com/auth/signup">Join With Us</a>
     ·
 </p>
+<hr/>
+
+<p align="center"><img src="https://user-images.githubusercontent.com/55304067/132936029-85c866dc-8249-4f8a-a61e-e87f5ad27036.png" width="500px" alt="Arkademylogo.svg" /></p>
+<h3 align="center">
+  Home pages
+</h3>
+<p align="center"><img src="https://user-images.githubusercontent.com/55304067/132936087-7fe9612c-8e82-43f4-8f45-9fae3536f15e.png" width="500px" alt="Arkademylogo.svg" /></p>
+<h3 align="center">
+  Login pages
+</h3>
+<p align="center"><img src="https://user-images.githubusercontent.com/55304067/132936103-3389b590-16e2-47bd-9123-88200d17e03f.png" width="500px" alt="Arkademylogo.svg" /></p>
+<h3 align="center">
+  Search pages
+</h3>
+<p align="center"><img src="https://user-images.githubusercontent.com/55304067/132936118-c576d560-8eac-4f54-8049-9297e5116033.png" width="500px" alt="Arkademylogo.svg" /></p>
+<h3 align="center">
+  Profile pages
+</h3>
 
 ## Clone the repository
 
@@ -55,7 +73,7 @@ You will also see any lint errors in the console.
   yarn run build
   
 ```
-## for developer
+## for Developer
 
 ### standar request login 
 ```bash
