@@ -20,6 +20,10 @@
 <h3 align="center">
   Login pages
 </h3>
+<p align="center"><img src="https://user-images.githubusercontent.com/55304067/133192629-28fd3a55-fd10-48da-96cd-9a4f9f6173f6.png" width="500px" alt="Arkademylogo.svg" /></p>
+<h3 align="center">
+  Register pages
+</h3>
 <p align="center"><img src="https://user-images.githubusercontent.com/55304067/132936103-3389b590-16e2-47bd-9123-88200d17e03f.png" width="500px" alt="Arkademylogo.svg" /></p>
 <h3 align="center">
   Search pages
