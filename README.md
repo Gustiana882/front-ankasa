@@ -39,7 +39,7 @@
 </p>
 
 
-## Built With
+## 💻 Built with
 
 [![Express.js](https://img.shields.io/badge/Express.js-4.x-orange.svg?style=rounded-square)](https://expressjs.com/en/starter/installing.html)
 [![Node.js](https://img.shields.io/badge/Node.js-v.12.13-green.svg?style=rounded-square)](https://nodejs.org/)
@@ -47,142 +47,32 @@
 [![Redis](https://img.shields.io/badge/Redis-v.6.2-red.svg?style=rounded-square)](https://redis.io/)
 
 
-### Clone The Repository
+## 🛠️ Installation Steps
+
+1. Clone the repository
 
 ```bash
-
-  git clone https://github.com/Gustiana882/front-ticketing.git
-  
+git clone https://github.com/Gustiana882/front-ticketing.git
 ```
 
-### Install Dependencies
-```bash
-
-  yarn install
-  
-```
-
-### Run App
-```bash
-
-  cd front-ticketing
-
-  yarn start
-  
-```
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `yarn build`
+2. Install dependencies
 
 ```bash
-
-  yarn run build
-  
+npm install
 ```
-## for Developer
 
-### standar request login 
+3. Run the app
+
 ```bash
-  {
-    "email": "user",
-    "password":"user1234"
-  }
+npm start
 ```
 
-### standar request register
-```bash
-  {
-    "name": "user",
-    "email": "user@mail.com",
-    "password": "user1234"
-```
-
-### standar response ticket API
-```bash
-  [
-    { 
-      "id" : "1",
-      "uuid": "AB-221",
-      "image": "img.jpg",
-      "maskapai" : "Garuda Indonesia",
-      "from": "Indonesi",
-      "to": "Tokyo",
-      "time": [
-          {
-            "depature": "00:00",
-            "arrived": "04:00",
-            "transit": "1",
-          },
-          {
-            "depature": "06:00",
-            "arrived": "10:00",
-            "transit": "2",
-          }
-        ],
-       "price": [
-          {
-            "idclass": 3,
-            "class": "Economy",
-            "adult": 1200000,
-            "child": 800000,
-          },
-          {
-            "idclass": 2,
-            "class": "Business",
-            "adult": 1800000,
-            "child": 1200000,
-          },
-          {
-            "idclass": 1,
-            "class": "FirstClass",
-            "adult": 2300000,
-            "child": 1500000,
-          }
-        ],
-       "date": "Monday, 20 july 20",
-       "chairsAmount": 108,
-       "gate": 221,
-       "terminal": "A",
-    }
-  ]
-```
-
-### standar request booking ticket
-```bash
-{
-  "title": "Mr.",
-  "name": "Budi",
-  "nationallity": "Indonesia",
-  "userId": 1,
-  "idTicket": "AB-221",
-  "Price": 3000000,
-  "statusPay": false,
-}
-  
-```
-
-### standar response destination
-```bash
-[
-  {
-    "id": 1,
-    "city": "Jakarta",
-    "country": "Indonesia",
-    "image": "image"
-   }
-]
-```
 
 ### `Backend Ticketing Repository`
  <a href="https://github.com/Gustiana882/back-ticketing" target="blank">https://github.com/Gustiana882/back-ticketing</a>
 
 ```bash
-   git clone https://github.com/Gustiana882/back-ticketing.git
+git clone https://github.com/Gustiana882/back-ticketing.git
 ```
 
 ### Contributors
@@ -194,3 +84,7 @@ You will also see any lint errors in the console.
   <img src="https://avatars.githubusercontent.com/u/79564390?s=60&amp;v=4" class="avatar avatar-user" alt="wsaefulloh" width="38" height="38">
 </a>
 
+<hr>
+<p align="center">
+Developed with ❤️ in Indonesia 	🇮🇩
+</p>
