@@ -166,3 +166,13 @@ You will also see any lint errors in the console.
    }
 ]
 ```
+
+### Contributors
+<a href = "https://github.com/Gustiana882/front-ticketing/graphs/contributors">
+  <img src="https://avatars.githubusercontent.com/u/83713045?s=60&amp;v=4" class="avatar avatar-user" alt="calvinrahmat" width="38" height="38">
+  <img src="https://avatars.githubusercontent.com/u/55304067?s=60&amp;v=4" class="avatar avatar-user" alt="Gustiana882" width="38" height="38">
+  <img src="https://avatars.githubusercontent.com/u/53255114?s=60&amp;v=4" class="avatar avatar-user" alt="firyal-salsa" width="38" height="38">
+  <img src="https://avatars.githubusercontent.com/u/70585701?s=60&amp;v=4" class="avatar avatar-user" alt="rizkazn" width="38" height="38">
+  <img src="https://avatars.githubusercontent.com/u/79564390?s=60&amp;v=4" class="avatar avatar-user" alt="wsaefulloh" width="38" height="38">
+</a>
+
