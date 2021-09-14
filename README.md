@@ -2,7 +2,7 @@
   App Ticketing
 </h1>
 
-<p align="center"><img src="https://www.arkademy.com/img/logo%20arkademy.1c82cf5c.svg" width="300px" alt="Arkademylogo.svg" /></p>
+<p align="center"><img src="https://www.arkademy.com/img/logo%20arkademy.1c82cf5c.svg" width="200px" alt="Arkademylogo.svg" /></p>
 
 <p align="center">
     <a href="https://www.arkademy.com/" target="blank">Our Website</a>
@@ -32,11 +32,22 @@
 <h3 align="center">
   Profile pages
 </h3>
+<p align="center">
+    <a href="http://www.ankasa.online/" target="blank">View Demo</a>
+  · <a href="https://github.com/Gustiana882/front-ticketing/issues">Report Bug</a>
+  · <a href="https://github.com/Gustiana882/front-ticketing/pulls">Request Feature</a>
+</p>
 
-## Demo project
-<a href="http://www.ankasa.online/">View Demo</a>
 
-## Clone the repository
+## Built With
+
+[![Express.js](https://img.shields.io/badge/Express.js-4.x-orange.svg?style=rounded-square)](https://expressjs.com/en/starter/installing.html)
+[![Node.js](https://img.shields.io/badge/Node.js-v.12.13-green.svg?style=rounded-square)](https://nodejs.org/)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-v.13.3-blue.svg?style=rounded-square)](https://www.postgresql.org/)
+[![Redis](https://img.shields.io/badge/Redis-v.6.2-red.svg?style=rounded-square)](https://redis.io/)
+
+
+### Clone The Repository
 
 ```bash
 
@@ -44,21 +55,14 @@
   
 ```
 
-### `Backend ticketing repository`
- <a href="https://github.com/Gustiana882/back-ticketing" target="blank">https://github.com/Gustiana882/back-ticketing</a>
-
-```bash
-   git clone https://github.com/Gustiana882/back-ticketing.git
-```
-
-### Install dependencies
+### Install Dependencies
 ```bash
 
   yarn install
   
 ```
 
-### run app
+### Run App
 ```bash
 
   cd front-ticketing
@@ -172,6 +176,13 @@ You will also see any lint errors in the console.
     "image": "image"
    }
 ]
+```
+
+### `Backend Ticketing Repository`
+ <a href="https://github.com/Gustiana882/back-ticketing" target="blank">https://github.com/Gustiana882/back-ticketing</a>
+
+```bash
+   git clone https://github.com/Gustiana882/back-ticketing.git
 ```
 
 ### Contributors
