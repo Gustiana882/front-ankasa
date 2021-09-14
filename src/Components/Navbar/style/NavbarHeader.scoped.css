@@ -1,0 +1,58 @@
+.header {
+	display: flex;
+	height: 100px;
+	width: 100vw;
+
+	display: flex;
+	justify-content: space-around;
+	z-index: 9999;
+	position: fixed; /* Set the navbar to fixed position */
+	top: 0px; /* Position the navbar at the top of the page */
+	background-color: white;
+}
+
+.toggle-btn {
+	display: none;
+}
+
+#show {
+	display: none;
+}
+#hidden {
+	display: none;
+}
+
+@media only screen and (max-width: 867px) {
+	.toggle-btn {
+		display: block;
+	}
+	.menus {
+		display: none;
+	}
+	#hidden {
+		position: absolute;
+		left: 0;
+		top: 69px;
+		height: 230px;
+		width: 100%;
+		background-color: white;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+	#hidden li {
+		list-style: none;
+		margin: 20px;
+		text-align: center;
+	}
+}
+
+.bars {
+	font-size: 30px;
+}
+
+button {
+	background-color: white;
+	border: none;
+}

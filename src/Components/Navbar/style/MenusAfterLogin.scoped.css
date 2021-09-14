@@ -1,0 +1,25 @@
+.menu-after-login {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-left: auto;
+	width: 100%;
+}
+.menu-icon {
+	margin-top: auto;
+	margin-bottom: auto;
+	font-size: 20px;
+	color: #9b9b9b;
+}
+.photo-box {
+	height: 60px;
+	width: 60px;
+	display: flex;
+	align-items: center;
+	border-radius: 50%;
+}
+
+img {
+	width: 60px;
+	clip-path: circle();
+}

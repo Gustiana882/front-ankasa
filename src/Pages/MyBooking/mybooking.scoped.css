@@ -1,0 +1,19 @@
+@font-face {
+    font-family: Poppins;
+    src: url(../../Assets/Fonts/Poppins/OFL.txt) 
+} 
+.card-mod {
+    position: relative;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-clip: border-box;
+    border: none !important;
+    border-radius: 15px !important;
+    background-color: #fff;
+    box-shadow: 0px 8px 25px rgb(209, 211, 214);
+    margin-top: 20px;
+    padding: 30px 30px 30px 30px;
+}
