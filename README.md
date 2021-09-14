@@ -2,7 +2,7 @@
   App Ticketing
 </h1>
 
-<p align="center"><img src="https://www.arkademy.com/img/logo%20arkademy.1c82cf5c.svg" width="500px" alt="Arkademylogo.svg" /></p>
+<p align="center"><img src="https://www.arkademy.com/img/logo%20arkademy.1c82cf5c.svg" width="300px" alt="Arkademylogo.svg" /></p>
 
 <p align="center">
     <a href="https://www.arkademy.com/" target="blank">Our Website</a>
@@ -32,6 +32,9 @@
 <h3 align="center">
   Profile pages
 </h3>
+
+## Demo project
+<a href="http://www.ankasa.online/">View Demo</a>
 
 ## Clone the repository
 
