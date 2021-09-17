@@ -28,9 +28,21 @@
 <h3 align="center">
   Search pages
 </h3>
+<p align="center"><img src="https://user-images.githubusercontent.com/55304067/133744440-8769150c-e7ca-4dba-b600-979970fb918c.png" width="500px" alt="Arkademylogo.svg" /></p>
+<h3 align="center">
+  Booking pages
+</h3>
 <p align="center"><img src="https://user-images.githubusercontent.com/55304067/132936118-c576d560-8eac-4f54-8049-9297e5116033.png" width="500px" alt="Arkademylogo.svg" /></p>
 <h3 align="center">
   Profile pages
+</h3>
+<p align="center"><img src="https://user-images.githubusercontent.com/55304067/133744630-ce310d36-9ee3-4dd3-b136-31d5790c940a.png" width="500px" alt="Arkademylogo.svg" /></p>
+<h3 align="center">
+  Notif pages
+</h3>
+<p align="center"><img src="https://user-images.githubusercontent.com/55304067/133744607-a04da0ac-9eb3-440a-89f6-051ac8c07b03.png" width="500px" alt="Arkademylogo.svg" /></p>
+<h3 align="center">
+  Chat pages
 </h3>
 <p align="center">
     <a href="http://www.ankasa.online/" target="blank">View Demo</a>
