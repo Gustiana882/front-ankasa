@@ -45,7 +45,7 @@
   Chat pages
 </h3>
 <p align="center">
-    <a href="http://www.ankasa.online/" target="blank">View Demo</a>
+    <a href="http://ankasa.online/" target="blank">View Demo</a>
   · <a href="https://github.com/Gustiana882/front-ticketing/issues">Report Bug</a>
   · <a href="https://github.com/Gustiana882/front-ticketing/pulls">Request Feature</a>
 </p>
