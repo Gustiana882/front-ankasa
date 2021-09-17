@@ -24,7 +24,7 @@
 <h3 align="center">
   Register pages
 </h3>
-<p align="center"><img src="https://user-images.githubusercontent.com/55304067/132936103-3389b590-16e2-47bd-9123-88200d17e03f.png" width="500px" alt="Arkademylogo.svg" /></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/55304067/133755724-c1c1f223-252c-46eb-aa20-3014f2e719a0.png" width="500px" alt="Arkademylogo.svg" /></p>
 <h3 align="center">
   Search pages
 </h3>
