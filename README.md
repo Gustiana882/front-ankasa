@@ -40,7 +40,7 @@
 <h3 align="center">
   Notif pages
 </h3>
-<p align="center"><img src="https://user-images.githubusercontent.com/55304067/133946851-09b27c8e-5ed2-4f34-ab99-5cdf34a7de6a.png" width="500px" alt="Arkademylogo.svg" /></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/55304067/133946944-d3753dd1-9351-41e4-ae84-00b2fb336caf.png" width="500px" alt="Arkademylogo.svg" /></p>
 <h3 align="center">
   History pages
 </h3>
