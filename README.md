@@ -40,9 +40,9 @@
 <h3 align="center">
   Notif pages
 </h3>
-<p align="center"><img src="https://user-images.githubusercontent.com/55304067/133744607-a04da0ac-9eb3-440a-89f6-051ac8c07b03.png" width="500px" alt="Arkademylogo.svg" /></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/55304067/133946851-09b27c8e-5ed2-4f34-ab99-5cdf34a7de6a.png" width="500px" alt="Arkademylogo.svg" /></p>
 <h3 align="center">
-  Chat pages
+  History pages
 </h3>
 <p align="center">
     <a href="https://ankasa.glitch.me/home" target="blank">View Demo</a>
