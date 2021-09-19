@@ -12,15 +12,15 @@
 </p>
 <hr/>
 
-<p align="center"><img src="https://user-images.githubusercontent.com/55304067/132936029-85c866dc-8249-4f8a-a61e-e87f5ad27036.png" width="500px" alt="Arkademylogo.svg" /></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/55304067/133918516-68825e13-7cb5-4c11-96d2-541642ef34ea.png" width="500px" alt="Arkademylogo.svg" /></p>
 <h3 align="center">
   Home pages
 </h3>
-<p align="center"><img src="https://user-images.githubusercontent.com/55304067/132936087-7fe9612c-8e82-43f4-8f45-9fae3536f15e.png" width="500px" alt="Arkademylogo.svg" /></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/55304067/133918668-d96ea60e-1fe6-44d7-bd50-f94328d4ec76.png" width="500px" alt="Arkademylogo.svg" /></p>
 <h3 align="center">
   Login pages
 </h3>
-<p align="center"><img src="https://user-images.githubusercontent.com/55304067/133192629-28fd3a55-fd10-48da-96cd-9a4f9f6173f6.png" width="500px" alt="Arkademylogo.svg" /></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/55304067/133918703-4bdedf54-05d1-40ce-b1e9-c5d258334bc2.png" width="500px" alt="Arkademylogo.svg" /></p>
 <h3 align="center">
   Register pages
 </h3>
@@ -32,7 +32,7 @@
 <h3 align="center">
   Booking pages
 </h3>
-<p align="center"><img src="https://user-images.githubusercontent.com/55304067/132936118-c576d560-8eac-4f54-8049-9297e5116033.png" width="500px" alt="Arkademylogo.svg" /></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/55304067/133918607-4cc327a3-6eea-4551-98b1-6e1724230cdc.png" width="500px" alt="Arkademylogo.svg" /></p>
 <h3 align="center">
   Profile pages
 </h3>
@@ -45,7 +45,7 @@
   Chat pages
 </h3>
 <p align="center">
-    <a href="https://ankasaapp.netlify.app/" target="blank">View Demo</a>
+    <a href="https://ankasa.glitch.me/home" target="blank">View Demo</a>
   · <a href="https://github.com/Gustiana882/front-ticketing/issues">Report Bug</a>
   · <a href="https://github.com/Gustiana882/front-ticketing/pulls">Request Feature</a>
 </p>
