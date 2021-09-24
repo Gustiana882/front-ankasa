@@ -58,11 +58,6 @@ const TopDestCarousel = () => {
 		});
 	}, []);
 
-	axios.get(`${process.env.REACT_APP_API}/destination/all`).then((res) => {
-		const { result } = res.data;
-		console.log(result)
-	});
-
 	return (
 		<div>
 			<div>
