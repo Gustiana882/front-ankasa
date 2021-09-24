@@ -45,7 +45,7 @@ const TopDestCarousel = () => {
 	const [image, setImage] = useState([]);
 
 	useEffect(() => {
-		axios.get('https://back.ankasa.online/destination/all').then((res) => {
+		axios.get(`${process.env.REACT_APP_API}/destination/all`).then((res) => {
 			const { result } = res.data;
 
 			let arrayCity = [];
@@ -57,6 +57,11 @@ const TopDestCarousel = () => {
 			if (arrayImg) setImage(arrayImg);
 		});
 	}, []);
+
+	axios.get(`${process.env.REACT_APP_API}/destination/all`).then((res) => {
+		const { result } = res.data;
+		console.log(result)
+	});
 
 	return (
 		<div>
