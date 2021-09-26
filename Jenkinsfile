@@ -30,32 +30,32 @@ pipeline {
             }
         }
 
-        stage('Build Image') {
-            steps {
-                script{
-                    builderImage = docker.build("${imageName}")
-                }
-            }
-        }
+        // stage('Build Image') {
+        //     steps {
+        //         script{
+        //             builderImage = docker.build("${imageName}")
+        //         }
+        //     }
+        // }
 
-        stage('Test Image') {
-            steps {
-                script{
-                    builderImage.inside {
-                        sh "echo 'pass'"
-                    }
-                }
-            }
-        }
+        // stage('Test Image') {
+        //     steps {
+        //         script{
+        //             builderImage.inside {
+        //                 sh "echo 'pass'"
+        //             }
+        //         }
+        //     }
+        // }
 
-        stage('Push Image') {
-            steps {
-                script{
-                    builderImage.push()
-                }
-                sh "docker image prune -f"
-            }
-        }
+        // stage('Push Image') {
+        //     steps {
+        //         script{
+        //             builderImage.push()
+        //         }
+        //         sh "docker image prune -f"
+        //     }
+        // }
 
         stage('Deployment') {
             steps {
@@ -68,7 +68,7 @@ pipeline {
                                 transfers: [
                                     sshTransfer(
                                         sourceFiles: "deploy.yaml",
-                                        execCommand: "cd /home/devops/frontend; kubectl apply -f deploy.yaml",
+                                        execCommand: "cd /home/devops/frontend; echo 'test'",
                                         // execTimeout: 120000,
                                     )
                                 ]
