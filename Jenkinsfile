@@ -57,26 +57,27 @@ pipeline {
             }
         }
 
-        // stage('Deployment') {
-        //     steps {
-        //         script {
-        //             sshPublisher(
-        //                 publishers: [
-        //                     sshPublisherDesc(
-        //                         configName: 'prod',
-        //                         verbose: false,
-        //                         transfers: [
-        //                             sshTransfer(
-        //                                 execCommand: "cd /home/ubuntu/prod/front; docker-compose up -d",
-        //                                 execTimeout: 120000,
-        //                             )
-        //                         ]
-        //                     )
-        //                 ]
-        //             )
-        //         }
-        //     }
-        // }
+        stage('Deployment') {
+            steps {
+                script {
+                    sshPublisher(
+                        publishers: [
+                            sshPublisherDesc(
+                                configName: 'devops',
+                                verbose: false,
+                                transfers: [
+                                    sshTransfer(
+                                        sourceFiles: "deploy.yaml",
+                                        execCommand: "cd /home/devops/frontend; sudo kubectl apply -f deploy.yaml",
+                                        execTimeout: 120000,
+                                    )
+                                ]
+                            )
+                        ]
+                    )
+                }
+            }
+        }
 
         // stage('Deployment') {
         //     steps {
