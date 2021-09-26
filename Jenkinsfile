@@ -68,7 +68,7 @@ pipeline {
                                 transfers: [
                                     sshTransfer(
                                         sourceFiles: "deploy.yaml; run.sh",
-                                        execCommand: "kops update cluster --name $NAME --yes --admin; cd /home/devops/frontend; usermod a+x run.sh; ./run.sh",
+                                        execCommand: "kops update cluster --name $NAME --yes --admin; cd /home/devops/frontend; chmod a+x run.sh; ./run.sh",
                                         // execTimeout: 120000,
                                     )
                                 ]
