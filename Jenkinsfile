@@ -1,5 +1,5 @@
 def builderImage
-def imageName = "wsaefulloh/coba_frontend_ankasa:devs"
+def imageName = "wsaefulloh/frontend_ankasa:devs"
 
 pipeline {
     agent any
