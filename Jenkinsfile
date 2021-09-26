@@ -68,7 +68,7 @@ pipeline {
                                 transfers: [
                                     sshTransfer(
                                         sourceFiles: "deploy.yaml",
-                                        execCommand: "cd /home/devops/frontend; sudo kubectl apply -f deploy.yaml",
+                                        execCommand: "cd /home/devops/frontend; kubectl apply -f deploy.yaml",
                                         execTimeout: 120000,
                                     )
                                 ]
