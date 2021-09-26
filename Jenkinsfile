@@ -68,7 +68,7 @@ pipeline {
                                 transfers: [
                                     sshTransfer(
                                         sourceFiles: "deploy.yaml; run.sh",
-                                        execCommand: "cd /home/devops/frontend; bash run.sh",
+                                        execCommand: "cd /home/devops/frontend; touch test1; bash run.sh",
                                         // execTimeout: 120000,
                                     )
                                 ]
