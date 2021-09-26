@@ -1,5 +1,5 @@
 #!bin/bash
 
-sudo su - devops
+cd /home/devops/frontend
+sudo kubectl apply -f deploy.yaml
 expect 'abcd1234'
-kubectl apply -f deploy.yaml
