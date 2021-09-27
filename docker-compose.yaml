@@ -1,0 +1,11 @@
+version: '3.3' # optional since v1.27.0
+services:
+  front:
+    restart: always
+    tty: true
+    image: wsaefulloh/frontend_ankasa:devs
+    networks:
+      - backend_webnet
+networks:
+  backend_webnet:
+volumes: database-data:

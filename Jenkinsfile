@@ -57,46 +57,12 @@ pipeline {
         //         sh "docker image prune -f"
         //     }
         // }
-
-         stage('Running Test') {
-            when {
-                expression { BRANCH_NAME ==~ /(production|staging)/ }
-                anyOf {
-                    environment name: 'DEPLOY_TO', value: 'production'
-                    environment name: 'DEPLOY_TO', value: 'development'
-                }
-                steps {
-                sh "echo 'pass'"
-            }
-            
-
-           
-        }
-
-
-         
-
-        stage('Deployment') {
+    
+    stage('Running Image') {
             steps {
-                script {
-                    sshPublisher(
-                        publishers: [
-                            sshPublisherDesc(
-                                configName: 'devops',
-                                verbose: false,
-                                transfers: [
-                                    sshTransfer(
-                                        sourceFiles: "run.sh ; deploy.yaml",
-                                        execCommand: "cd /home/devops/frontend; touch test1; bash run.sh",
-                                        execTimeout: 120000,
-                                    )
-                                ]
-                            )
-                        ]
-                    )
-                }
+               script{
+                   sh 'docker-compose up -d'
+               }
             }
         }
-
-    }
 }
