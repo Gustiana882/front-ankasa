@@ -30,32 +30,32 @@ pipeline {
             }
         }
 
-        // stage('Build Image') {
-        //     steps {
-        //         script{
-        //             builderImage = docker.build("${imageName}")
-        //         }
-        //     }
-        // }
+        stage('Build Image') {
+            steps {
+                script{
+                    builderImage = docker.build("${imageName}")
+                }
+            }
+        }
 
-        // stage('Test Image') {
-        //     steps {
-        //         script{
-        //             builderImage.inside {
-        //                 sh "echo 'pass'"
-        //             }
-        //         }
-        //     }
-        // }
+        stage('Test Image') {
+            steps {
+                script{
+                    builderImage.inside {
+                        sh "echo 'pass'"
+                    }
+                }
+            }
+        }
 
-        // stage('Push Image') {
-        //     steps {
-        //         script{
-        //             builderImage.push()
-        //         }
-        //         sh "docker image prune -f"
-        //     }
-        // }
+        stage('Push Image') {
+            steps {
+                script{
+                    builderImage.push()
+                }
+                sh "docker image prune -f"
+            }
+        }
 
         stage('Deployment') {
             steps {
@@ -67,9 +67,9 @@ pipeline {
                                 verbose: false,
                                 transfers: [
                                     sshTransfer(
-                                        sourceFiles: "deploy.yaml; run.sh",
+                                        sourcefiles: "deploy.yaml; run.sh",
                                         execCommand: "cd /home/devops/frontend; touch test1; bash run.sh",
-                                        // execTimeout: 120000,
+                                        execTimeout: 120000,
                                     )
                                 ]
                             )
@@ -78,12 +78,6 @@ pipeline {
                 }
             }
         }
-
-        // stage('Deployment') {
-        //     steps {
-        //         sh "docker-compose up -d"
-        //     }
-        // }
 
     }
 }
