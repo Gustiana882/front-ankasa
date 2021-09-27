@@ -3,7 +3,8 @@ def imageName = "wsaefulloh/frontend_ankasa:devs"
 
 pipeline {
     agent any
-    environment{}
+
+    
 
     // parameters {
     //     booleanParam(name: "RUNTEST", defaultValue: "true", description: "Running testing")
@@ -57,24 +58,6 @@ pipeline {
         //         sh "docker image prune -f"
         //     }
         // }
-
-         stage('Running Test') {
-            when {
-                expression { BRANCH_NAME ==~ /(production|staging)/ }
-                anyOf {
-                    environment name: 'DEPLOY_TO', value: 'production'
-                    environment name: 'DEPLOY_TO', value: 'development'
-                }
-                steps {
-                sh "echo 'pass'"
-            }
-            
-
-           
-        }
-
-
-         
 
         stage('Deployment') {
             steps {
