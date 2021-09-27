@@ -58,10 +58,10 @@ pipeline {
         // }
     
     stage('Running Image') {
+        stage(‘Build’) {
             steps {
-               script{
-                   sh 'cd /var/lib/jenkins/workspace/"Frontend Deploy" ; docker-compose up -d'
-               }
+                sh '/usr/local/bin/docker-compose up --build'
+                }
             }
         }
     }
