@@ -9,53 +9,53 @@ pipeline {
     // }
 
     stages {
-        stage('Installing package') {
-            steps {
-                nodejs("node14"){
-                    sh 'yarn install'
-                }
-            }
-        }
+        // stage('Installing package') {
+        //     steps {
+        //         nodejs("node14"){
+        //             sh 'yarn install'
+        //         }
+        //     }
+        // }
 
-        stage('Running Test') {
+        // stage('Running Test') {
 
-            // when {
-            //     expression {
-            //         params.RUNTEST
-            //     }
-            // }
+        //     // when {
+        //     //     expression {
+        //     //         params.RUNTEST
+        //     //     }
+        //     // }
 
-            steps {
-                sh "echo 'pass'"
-            }
-        }
+        //     steps {
+        //         sh "echo 'pass'"
+        //     }
+        // }
 
-        stage('Build Image') {
-            steps {
-                script{
-                    builderImage = docker.build("${imageName}")
-                }
-            }
-        }
+        // stage('Build Image') {
+        //     steps {
+        //         script{
+        //             builderImage = docker.build("${imageName}")
+        //         }
+        //     }
+        // }
 
-        stage('Test Image') {
-            steps {
-                script{
-                    builderImage.inside {
-                        sh "echo 'pass'"
-                    }
-                }
-            }
-        }
+        // stage('Test Image') {
+        //     steps {
+        //         script{
+        //             builderImage.inside {
+        //                 sh "echo 'pass'"
+        //             }
+        //         }
+        //     }
+        // }
 
-        stage('Push Image') {
-            steps {
-                script{
-                    builderImage.push()
-                }
-                sh "docker image prune -f"
-            }
-        }
+        // stage('Push Image') {
+        //     steps {
+        //         script{
+        //             builderImage.push()
+        //         }
+        //         sh "docker image prune -f"
+        //     }
+        // }
 
         stage('Deployment') {
             steps {
