@@ -59,11 +59,16 @@ pipeline {
         // }
 
          stage('Running Test') {
-             if (env.BRANCH_NAME ==~ /(development)/){
+            when {
+                expression { BRANCH_NAME ==~ /(production|staging)/ }
+                anyOf {
+                    environment name: 'DEPLOY_TO', value: 'production'
+                    environment name: 'DEPLOY_TO', value: 'development'
+                }
                 steps {
                 sh "echo 'pass'"
             }
-            }
+            
 
            
         }
