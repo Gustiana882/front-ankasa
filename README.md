@@ -12,38 +12,38 @@
 </p>
 <hr/>
 
-<p align="center"><img src="https://user-images.githubusercontent.com/55304067/133918516-68825e13-7cb5-4c11-96d2-541642ef34ea.png" width="500px" alt="Arkademylogo.svg" /></p>
-<h3 align="center">
-  Home pages
-</h3>
-<p align="center"><img src="https://user-images.githubusercontent.com/55304067/133918668-d96ea60e-1fe6-44d7-bd50-f94328d4ec76.png" width="500px" alt="Arkademylogo.svg" /></p>
-<h3 align="center">
-  Login pages
-</h3>
-<p align="center"><img src="https://user-images.githubusercontent.com/55304067/133918703-4bdedf54-05d1-40ce-b1e9-c5d258334bc2.png" width="500px" alt="Arkademylogo.svg" /></p>
-<h3 align="center">
-  Register pages
-</h3>
-<p align="center"><img src="https://user-images.githubusercontent.com/55304067/133755724-c1c1f223-252c-46eb-aa20-3014f2e719a0.png" width="500px" alt="Arkademylogo.svg" /></p>
-<h3 align="center">
-  Search pages
-</h3>
-<p align="center"><img src="https://user-images.githubusercontent.com/55304067/133744440-8769150c-e7ca-4dba-b600-979970fb918c.png" width="500px" alt="Arkademylogo.svg" /></p>
-<h3 align="center">
-  Booking pages
-</h3>
-<p align="center"><img src="https://user-images.githubusercontent.com/55304067/133918607-4cc327a3-6eea-4551-98b1-6e1724230cdc.png" width="500px" alt="Arkademylogo.svg" /></p>
-<h3 align="center">
-  Profile pages
-</h3>
-<p align="center"><img src="https://user-images.githubusercontent.com/55304067/133744630-ce310d36-9ee3-4dd3-b136-31d5790c940a.png" width="500px" alt="Arkademylogo.svg" /></p>
-<h3 align="center">
-  Notif pages
-</h3>
-<p align="center"><img src="https://user-images.githubusercontent.com/55304067/133946944-d3753dd1-9351-41e4-ae84-00b2fb336caf.png" width="500px" alt="Arkademylogo.svg" /></p>
-<h3 align="center">
-  History pages
-</h3>
+<table>
+  <tr>
+    <th>
+      <img src="https://user-images.githubusercontent.com/55304067/134828719-fed515d9-db65-42f8-a562-a8a69fa865f8.png" width="300px" alt="Arkademylogo.svg" />
+    </th>
+    <th>
+      <img src="https://user-images.githubusercontent.com/55304067/133918703-4bdedf54-05d1-40ce-b1e9-c5d258334bc2.png" width="300px" alt="Arkademylogo.svg" />
+    </th>
+    <th>
+      <img src="https://user-images.githubusercontent.com/55304067/134828735-4de67ff2-56d8-4c22-9ab3-26bd14019d9b.png" width="300px" alt="Arkademylogo.svg" />
+    </th>
+  </tr>
+ <tr>
+    <th>
+      <img src="https://user-images.githubusercontent.com/55304067/134828764-8495ceea-04d1-433e-bfb5-060cd5a41653.png" width="300px" alt="Arkademylogo.svg" />
+    </th>
+    <th>
+      <img src="https://user-images.githubusercontent.com/55304067/134828785-7ebe5ce7-a784-4519-8aee-9bb26d7a274c.png" width="300px" alt="Arkademylogo.svg" />
+    </th>
+    <th> 
+      <img src="https://user-images.githubusercontent.com/55304067/134828799-123f485f-b013-4670-864e-ff508fbe3638.png" width="300px" alt="Arkademylogo.svg" />
+   </th>
+  </tr>
+  <tr>
+    <th>
+      <img src="https://user-images.githubusercontent.com/55304067/134828834-40eb194d-1e2a-481e-addc-b20ed18a01e6.png" width="300px" alt="Arkademylogo.svg" />
+    </th>
+    <th>
+      <img src="https://user-images.githubusercontent.com/55304067/134828846-d6e1783b-8cea-4315-893d-cff8e987fbf5.png" width="300px" alt="Arkademylogo.svg" />
+    </th>
+  </tr>
+</table>
 <p align="center">
     <a href="https://ankasa.glitch.me/home" target="blank">View Demo</a>
   · <a href="https://github.com/Gustiana882/front-ticketing/issues">Report Bug</a>
