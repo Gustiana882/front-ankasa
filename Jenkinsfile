@@ -58,11 +58,9 @@ pipeline {
         // }
     
     stage('Running Image') {
-        stage(‘Build’) {
             steps {
                 sh '/usr/local/bin/docker-compose up --build'
                 }
-            }
         }
     }
 }
