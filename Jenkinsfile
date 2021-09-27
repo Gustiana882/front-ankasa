@@ -60,7 +60,7 @@ pipeline {
     stage('Running Image') {
             steps {
                script{
-                   sh 'docker-compose up -d'
+                   sh 'cd /home/ubuntu/docker ; docker-compose up -d'
                }
             }
         }
