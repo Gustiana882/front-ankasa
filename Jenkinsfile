@@ -32,8 +32,8 @@ pipeline {
 
         stage('Clean Image') {
             steps {
-                sh "docker rm \$(sudo docker ps -aq) -f"
-                sh "docker rmi \$(sudo docker images -aq)"
+                sh "docker rm \$(docker ps -aq) -f"
+                sh "docker rmi \$(docker images -aq)"
             }
         }
 
