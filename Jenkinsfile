@@ -75,7 +75,7 @@ pipeline {
                                 transfers: [
                                     sshTransfer(
                                         sourceFiles: "run.sh ; deploy.yaml",
-                                        execCommand: "cd /home/devops/frontend; kubectl apply -f deploy.yaml",
+                                        execCommand: "kops update cluster --name $NAME --yes --admin; cd /home/devops/frontend; kubectl apply -f deploy.yaml",
                                         execTimeout: 120000,
                                     )
                                 ]
