@@ -5,7 +5,7 @@ pipeline {
     agent any
 
     // parameters {
-    //     booleanParam(name: "RUNTEST", defaultValue: "true", description: "Running testing")
+    //     booleanParam(name: "CLEAN", defaultValue: "true", description: "Clean")
     // }
 
     stages {
@@ -30,12 +30,12 @@ pipeline {
             }
         }
 
-        stage('Clean Image') {
-            steps {
-                sh "docker rm \$(docker ps -aq) -f"
-                sh "docker rmi \$(docker images -aq)"
-            }
-        }
+        // stage('Clean Image') {
+        //     steps {
+        //         sh "docker rm \$(docker ps -aq) -f"
+        //         sh "docker rmi \$(docker images -aq)"
+        //     }
+        // }
 
         stage('Build Image') {
             steps {
