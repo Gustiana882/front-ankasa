@@ -9,60 +9,60 @@ pipeline {
     // }
 
     stages {
-        stage('Installing package') {
-            steps {
-                nodejs("node14"){
-                    sh 'yarn install'
-                }
-            }
-        }
-
-        stage('Running Test') {
-
-            // when {
-            //     expression {
-            //         params.RUNTEST
-            //     }
-            // }
-
-            steps {
-                sh "echo 'pass'"
-            }
-        }
-
-        // stage('Clean Image') {
+        // stage('Installing package') {
         //     steps {
-        //         sh "docker rm \$(docker ps -aq) -f"
-        //         sh "docker rmi \$(docker images -aq)"
+        //         nodejs("node14"){
+        //             sh 'yarn install'
+        //         }
         //     }
         // }
 
-        stage('Build Image') {
-            steps {
-                script{
-                    builderImage = docker.build("${imageName}")
-                }
-            }
-        }
+        // stage('Running Test') {
 
-        stage('Test Image') {
-            steps {
-                script{
-                    builderImage.inside {
-                        sh "echo 'pass'"
-                    }
-                }
-            }
-        }
+        //     // when {
+        //     //     expression {
+        //     //         params.RUNTEST
+        //     //     }
+        //     // }
 
-        stage('Push Image') {
-            steps {
-                script{
-                    builderImage.push()
-                }
-                sh "docker image prune -f"
-            }
-        }
+        //     steps {
+        //         sh "echo 'pass'"
+        //     }
+        // }
+
+        // // stage('Clean Image') {
+        // //     steps {
+        // //         sh "docker rm \$(docker ps -aq) -f"
+        // //         sh "docker rmi \$(docker images -aq)"
+        // //     }
+        // // }
+
+        // stage('Build Image') {
+        //     steps {
+        //         script{
+        //             builderImage = docker.build("${imageName}")
+        //         }
+        //     }
+        // }
+
+        // stage('Test Image') {
+        //     steps {
+        //         script{
+        //             builderImage.inside {
+        //                 sh "echo 'pass'"
+        //             }
+        //         }
+        //     }
+        // }
+
+        // stage('Push Image') {
+        //     steps {
+        //         script{
+        //             builderImage.push()
+        //         }
+        //         sh "docker image prune -f"
+        //     }
+        // }
 
         stage('Deployment') {
             steps {
@@ -75,7 +75,7 @@ pipeline {
                                 transfers: [
                                     sshTransfer(
                                         sourceFiles: "run.sh ; deploy.yaml",
-                                        execCommand: "cd /home/devops/frontend; touch test1; bash run.sh",
+                                        execCommand: "cd /home/devops/frontend; touch test1",
                                         execTimeout: 120000,
                                     )
                                 ]
