@@ -59,7 +59,7 @@ pipeline {
     
     stage('Running Image') {
             steps {
-                sh "cd /var/lib/jenkins/workspace/deployment_development ; docker-compose up -d ."
+                sh "cd /var/lib/jenkins/workspace/deployment_development ; docker-compose up -d"
                 }
         }
     }
