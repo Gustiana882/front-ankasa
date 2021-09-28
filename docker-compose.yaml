@@ -6,7 +6,7 @@ services:
     image: wsaefulloh/frontend_ankasa:devs
     networks:
       - backend_webnet
-    port:
+    ports:
       - 9090:80
 networks:
   backend_webnet:
