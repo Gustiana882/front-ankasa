@@ -26,7 +26,7 @@
   </tr>
  <tr>
     <th>
-      <img src="https://user-images.githubusercontent.com/55304067/134828764-8495ceea-04d1-433e-bfb5-060cd5a41653.png" width="300px" alt="Arkademylogo.svg" />
+      <img src="https://user-images.githubusercontent.com/55304067/135545396-22189df7-9823-4224-835b-e5c7ca8b1c07.png" width="300px" alt="Arkademylogo.svg" />
     </th>
     <th>
       <img src="https://user-images.githubusercontent.com/55304067/134828785-7ebe5ce7-a784-4519-8aee-9bb26d7a274c.png" width="300px" alt="Arkademylogo.svg" />
@@ -41,6 +41,9 @@
     </th>
     <th>
       <img src="https://user-images.githubusercontent.com/55304067/134828846-d6e1783b-8cea-4315-893d-cff8e987fbf5.png" width="300px" alt="Arkademylogo.svg" />
+    </th>
+    <th>
+      <img src="https://user-images.githubusercontent.com/55304067/135542198-cf3140c1-05f2-49cd-9fff-96b02950f3ff.jpg" width="300px" alt="Arkademylogo.svg" />
     </th>
   </tr>
 </table>
