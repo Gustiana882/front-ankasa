@@ -48,7 +48,7 @@
   </tr>
 </table>
 <p align="center">
-    <a href="https://ankasa.glitch.me/home" target="blank">View Demo</a>
+    <a href="https://ankasa.online/" target="blank">View Demo</a>
   · <a href="https://github.com/Gustiana882/front-ticketing/issues">Report Bug</a>
   · <a href="https://github.com/Gustiana882/front-ticketing/pulls">Request Feature</a>
 </p>
