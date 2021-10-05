@@ -37,13 +37,13 @@ pipeline {
         //     }
         // }
 
-        stage('Build Image') {
-            steps {
-                script{
-                    builderImage = docker.build("${imageName}")
-                }
-            }
-        }
+//         stage('Build Image') {
+//             steps {
+//                 script{
+//                     builderImage = docker.build("${imageName}")
+//                 }
+//             }
+//         }
 
         stage('Test Image') {
             steps {
