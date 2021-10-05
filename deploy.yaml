@@ -32,7 +32,7 @@ spec:
     spec:
       containers:
         - name: user-service
-          image: wsaefulloh/frontend_ankasa:devs
+          image: calvinrahmat/frontend_ankasa:devs
           ports:
             - containerPort: 80
 
