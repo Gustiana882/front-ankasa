@@ -55,14 +55,14 @@ pipeline {
             }
         }
 
-        stage('Push Image') {
-            steps {
-                script{
-                    builderImage.push()
-                }
-                sh "docker image prune -f"
-            }
-        }
+//         stage('Push Image') {
+//             steps {
+//                 script{
+//                     builderImage.push()
+//                 }
+//                 sh "docker image prune -f"
+//             }
+//         }
 
         stage('Deployment') {
             steps {
