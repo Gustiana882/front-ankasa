@@ -45,15 +45,15 @@ pipeline {
 //             }
 //         }
 
-        stage('Test Image') {
-            steps {
-                script{
-                    builderImage.inside {
-                        sh "echo 'pass'"
-                    }
-                }
-            }
-        }
+//         stage('Test Image') {
+//             steps {
+//                 script{
+//                     builderImage.inside {
+//                         sh "echo 'pass'"
+//                     }
+//                 }
+//             }
+//         }
 
 //         stage('Push Image') {
 //             steps {
