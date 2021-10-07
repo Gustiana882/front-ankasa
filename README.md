@@ -50,7 +50,7 @@
       <img src="https://user-images.githubusercontent.com/55304067/134828846-d6e1783b-8cea-4315-893d-cff8e987fbf5.png" width="300px" alt="Arkademylogo.svg" />
     </th>
     <th>
-      <img src="https://user-images.githubusercontent.com/55304067/136120082-c1dcc20a-185c-4063-bf74-3cf0feda1fcc.jpg" width="300px" alt="Arkademylogo.svg" />
+      <img src="https://user-images.githubusercontent.com/55304067/136363699-e503267f-fe2f-411c-b9c8-b3817beb5e58.jpg" width="300px" alt="Arkademylogo.svg" />
     </th>
   </tr>
 </table>
