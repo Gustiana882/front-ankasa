@@ -40,7 +40,7 @@
 .recent-search {
 	margin-top: 38px;
 	display: flex;
-	width: 319px;
+	width: 100%;
 	justify-content: space-between;
 	background-color: white;
 	border: none;
@@ -163,12 +163,12 @@
 	height: 55px;
 	display: flex;
 	align-items: center;
-	border: 1px solid #dddddd;
+	/* border: 1px solid #dddddd; */
 	box-sizing: border-box;
 	border-radius: 6px;
 	display: flex;
 	justify-content: center;
-	padding-left: 30px;
+	/* padding-left: 30px; */
 }
 
 .person-box {
@@ -224,7 +224,7 @@
 
 .search-flight {
 	height: 57px;
-	width: 319px;
+	width: 100%;
 	border-radius: 10px;
 	background: #2395ff;
 	box-shadow: 0px 8px 10px rgba(35, 149, 255, 0.3);
@@ -244,4 +244,12 @@
 
 .search-flight:hover {
 	background-color: #1f88eb;
+}
+
+@media screen and (max-width: 360px) {
+	.wrapper {
+		margin-top: 50px;
+		padding: 20px;
+    	width: 100%;
+	}
 }

@@ -35,21 +35,23 @@ const Explore = () => {
 							<p className="view-text">View all</p>
 						</div>
 					</div>
+					<div className="trending-carousel">
+						<TrendingCarousel />
+					</div>
 				</Container>
-				<div className="trending-carousel">
-					<TrendingCarousel />
-				</div>
 			</div>
-			<Container className="top-dest-box">
-				<div className="top10-title-box">
-					<p className="top10-title">
-						<span className="title">TOP 10</span> <br />
-						<span className="desc">Top 10 destinations</span>
-					</p>
-				</div>
+			<Container style={{ marginTop: "150px" }}>
+				<div className="top-dest-box">
+					<div className="top10-title-box">
+						<p className="top10-title">
+							<span className="title">TOP 10</span> <br />
+							<span className="desc">Top 10 destinations</span>
+						</p>
+					</div>
 
-				<div className="top-dest-carousel">
-					<TopDestCarousel />
+					<div className="top-dest-carousel">
+						<TopDestCarousel />
+					</div>
 				</div>
 			</Container>
 			<div className="footer">

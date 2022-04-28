@@ -5,7 +5,7 @@ import Tools from './Tools';
 import { Link } from 'react-router-dom';
 import Menus from './Menus';
 import { useState } from 'react';
-import { FaBars } from 'react-icons/fa';
+// import { FaBars } from 'react-icons/fa';
 import Alert from '../Toats/Toats';
 
 const NavbarHeader = () => {
@@ -21,7 +21,7 @@ const NavbarHeader = () => {
 							src="https://res.cloudinary.com/calvin-cloud/image/upload/v1629405150/Ankasa/logo_ankasa_xc7uai.svg"
 							alt=""
 						/>
-						<span>Ankasa</span>
+						<span style={{ fontWeight: "bolder", marginLeft: "3px"}}>Ankasa</span>
 					</Navbar.Brand>
 				</Link>
 				<div className="menus-dropdown" id={showMenus ? 'hidden' : 'show'}>
@@ -60,7 +60,13 @@ const NavbarHeader = () => {
 							className="toggle-btn"
 							onClick={() => setShowMenus(!showMenus)}
 						>
-							<FaBars className="bars" />
+							{/* <FaBars className="bars" /> */}
+							<svg width={28} height={28} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M21 10H7" stroke="black" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
+								<path d="M21 6H3" stroke="black" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
+								<path d="M21 14H3" stroke="black" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
+								<path d="M21 18H7" stroke="black" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
+							</svg>
 						</button>
 					</Navbar>
 				</div>

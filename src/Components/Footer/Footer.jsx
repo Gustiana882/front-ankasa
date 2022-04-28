@@ -11,14 +11,14 @@ const Footer = () => {
                     <div className="about">
                         <div className="img-logo">
                             <img src={logo} alt="" />
-                            <h3>Ankasa</h3>
+                            <h4 style={{ fontWeight: "bolder", marginLeft: "3px"}}>Ankasa</h4>
                         </div>
                         <p>Find your Flight and explore the 
                             <br /> world with us. We will take care of the rest</p>
                     </div>
                     <div className="features">
+                        <h5>Features</h5>
                         <ul>
-                            <h5>Features</h5>
                             <li><p>Find Ticket</p></li>
                             <li><p>My Booking</p></li>
                             <li><p>Chat</p></li>
@@ -27,11 +27,13 @@ const Footer = () => {
                     </div>
                     <div className="download">
                         <h5>Download Angkasa app</h5>
-                        <div>
-                            <img src={appStore} alt="" />
-                        </div>
-                        <div>
-                            <img src={googleStore} alt="" />
+                        <div className='download-card'>
+                            <div>
+                                <img src={appStore} alt="" />
+                            </div>
+                            <div>
+                                <img src={googleStore} alt="" />
+                            </div>
                         </div>
                     </div>
                     <div className="follow">
