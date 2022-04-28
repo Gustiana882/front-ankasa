@@ -52,8 +52,10 @@
     <th>
       <img src="https://user-images.githubusercontent.com/55304067/136363699-e503267f-fe2f-411c-b9c8-b3817beb5e58.jpg" width="300px" alt="Arkademylogo.svg" />
     </th>
+  </tr>
+  <tr>
     <th>
-      ![alt text](https://github.com/Gustiana882/front-ankasa/screnshoot/mobile-eksplor.png "Flow")
+      <img src="https://github.com/Gustiana882/front-ankasa/blob/development/screnshoot/mobile-eksplor.png" width="100px" alt="" />
     </th>
   </tr>
 </table>
