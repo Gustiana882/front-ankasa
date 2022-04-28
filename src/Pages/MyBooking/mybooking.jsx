@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Footer from '../../Components/Footer/Footer';
 import NavbarHeader from '../../Components/Navbar/NavbarHeader';
 import Profile from '../../Components/Sidenav/sidenav';
-import MbCard from '../../Components/MyBookingCard/MbCard';
+import MbCard from '../../Components/MyBookingCard/mbCard';
 import axios from 'axios';
 import { useSelector } from 'react-redux';
 

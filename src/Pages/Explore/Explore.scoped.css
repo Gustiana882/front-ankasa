@@ -1,10 +1,11 @@
 .wrapper {
 	width: 100vw;
+	padding: 16px 0;
 }
 
 .title-hero {
 	display: flex;
-	width: 700px;
+	/* width: 700px; */
 	height: 175px;
 
 	align-items: center;
@@ -94,11 +95,11 @@
 
 .top-dest-box {
 	height: 550px;
-	width: 70%;
-	min-width: 800px;
+	width: 100%;
+	/* min-width: 800px; */
 	background-color: rgba(35, 149, 255, 1);
 	border-radius: 60px;
-	margin-top: 150px;
+	/* margin-top: 150px; */
 	background-image: url('https://res.cloudinary.com/calvin-cloud/image/upload/v1629500250/Ankasa/jumbo_plane_xec8wu.svg');
 	background-repeat: no-repeat;
 	background-position: 0% 100%;
@@ -108,7 +109,7 @@
 .top10-title {
 	font-weight: 500;
 	font-size: 14px;
-	margin-top: 67px;
+	margin-top: 0px;
 	letter-spacing: 0.3em;
 	text-align: center;
 	color: #ffffff;
@@ -143,4 +144,21 @@
 
 .footer {
 	margin-top: 150px;
+}
+
+@media screen and (max-width: 360px) {
+	.SearchFlight{
+		margin-top: 80px;
+		padding: 0 8px;
+		flex-direction: column;
+	}
+
+	.black {
+		font-size: 36px;
+	}
+
+	.top-dest-box {
+		width: 100%;
+		border-radius: 20px;
+	}
 }

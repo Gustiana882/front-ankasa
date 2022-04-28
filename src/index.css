@@ -15,3 +15,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* style datepicker */
+.datePicker {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #dddddd;
+}

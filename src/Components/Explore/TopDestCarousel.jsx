@@ -1,3 +1,4 @@
+import React from 'react';
 import './style/TopDestCarousel.scoped.css';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
@@ -5,14 +6,27 @@ import 'slick-carousel/slick/slick-theme.css';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 
+
 const TopDestCarousel = () => {
+	const [slider, setslider] = useState({ slickNext: function(){}, slickPrev: function(){} })
+
+	function next() {
+		slider.slickNext();
+	}
+
+	function previous() {
+		slider.slickPrev();
+	}
+
 	const settings = {
-		dots: true,
+		dots: false,
+		dotsClass: 'd-none',
 		infinite: true,
 		speed: 500,
 		slidesToShow: 5,
 		slidesToScroll: 1,
 		swipeToSlide: true,
+		arrows: false,
 		responsive: [
 			{
 				breakpoint: 1200,
@@ -62,7 +76,7 @@ const TopDestCarousel = () => {
 		<div>
 			<div>
 				<div className="carousel-box">
-					<Slider {...settings}>
+					<Slider ref={c => setslider(c)} {...settings}>
 						<div>
 							<div className="card-box">
 								<div className="circle">
@@ -145,6 +159,18 @@ const TopDestCarousel = () => {
 						</div>
 					</Slider>
 				</div>
+			</div>
+			<div style={{ marginTop: "25px", display: "flex", justifyContent: "center"}}>
+				<button className='slick-previous' onClick={previous}>
+					<svg width={14} height={18} viewBox="0 0 14 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M11.6005 1.99992L2.40812 11.1923C2.01759 11.5828 2.01759 12.216 2.40812 12.6065L11.6005 21.7989" stroke="white" strokeWidth={4} />
+					</svg>
+				</button>
+				<button className='slick-nexts' onClick={next}>
+					<svg width={14} height={18} viewBox="0 0 14 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M2.39949 1.99992L11.5919 11.1923C11.9824 11.5828 11.9824 12.216 11.5919 12.6065L2.39949 21.7989" stroke="#2395FF" strokeWidth={4} />
+					</svg>
+				</button>
 			</div>
 		</div>
 	);

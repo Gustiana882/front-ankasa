@@ -37,6 +37,7 @@ const TrendingCarousel = () => {
 				settings: {
 					slidesToShow: 2,
 					slidesToScroll: 2,
+					arrows: false,
 				},
 			},
 		],

@@ -7,10 +7,12 @@
 .content {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .img-logo {
     display: flex;
+    margin-bottom: 18px;
 }
 
 .img-logo h3 {
@@ -31,11 +33,21 @@
     padding: 50px;
 }
 
+.features ul {
+    padding: 0;
+    margin: 0;
+}
+
 .features ul li {
     list-style: none;
     color: #6B6B6B;
     font-size: 14px;
     font-weight: 400;
+    margin-right: 10px;
+}
+
+.features ul li p {
+    margin: 0;
 }
 
 .follow span {
@@ -79,11 +91,55 @@
     margin-bottom: 0;
 }
 
+@media screen and (max-width: 360px) {
+	.footer {
+        font-family: 'Poppins', sans-serif;
+        padding: 50px 10px;
+    }
+
+    .about {
+        padding: 0;
+    }
+
+    .features {
+        padding: 25px 0;
+    }
+
+    .features ul {
+        display: flex;
+    }
+
+    .download {
+        padding: 25px 0;
+    }
+
+    .download-card {
+        display: flex;
+    }
+
+    .download-card img {
+        width: 100%;
+    }
+
+    .follow {
+        padding: 25px 0;
+    }
+
+    .copyright {
+        padding: 0;
+        flex-direction: column-reverse;
+    }
+
+    .country{
+        margin-bottom: 10px;
+    }
+}
+
  /* Small devices (landscape phones, 576px and up) */
-@media only screen and (max-width: 576px) {
+/* @media only screen and (max-width: 576px) {
     .footer {
         font-family: 'Poppins', sans-serif;
-        padding: 50px 30px;
+        padding: 8px 30px;
     }
     
     .content {
@@ -113,10 +169,10 @@
     .download {
         padding-left: 40px;
     }
-}
+} */
 
  /* Medium devices (tablets, 768px and up) */
-@media only screen and (max-width: 768px) {
+/* @media only screen and (max-width: 768px) {
     .footer {
         font-family: 'Poppins', sans-serif;
         padding: 50px 30px;
@@ -149,10 +205,10 @@
     .download {
         padding-left: 40px;
     }
-}
+} */
 
  /* Large devices (desktops, 992px and up) */
-@media (max-width: 992px) {
+/* @media (max-width: 992px) {
     .footer {
         font-family: 'Poppins', sans-serif;
         padding: 50px 30px;
@@ -185,4 +241,4 @@
     .download {
         padding-left: 40px;
     }
-}
+} */

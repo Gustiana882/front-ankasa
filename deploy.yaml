@@ -1,0 +1,58 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: frontend
+
+---
+apiVersion: v1
+data:
+  REACT_APP_API: "https://back.ankasa.online"
+
+kind: ConfigMap
+metadata:
+  name: test-service
+  namespace: frontend
+
+---  
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: test-service
+  namespace: frontend
+spec:
+  selector:
+    matchLabels:
+      app: user-services
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: user-services
+    spec:
+      containers:
+        - name: user-service
+          image: wsaefulloh/frontend_ankasa:devs
+          ports:
+            - containerPort: 80
+
+# kubectl describe deployment.testservice -n test
+# kubectl logs -f deployment.testservice -n test
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: test-service
+  namespace: frontend
+  labels:
+    app: user-services
+spec:
+  selector:
+    app: user-services
+  # type: LoadBalancer
+  type: ClusterIP
+  ports:
+    - port: 8081
+      targetPort: 80
+      protocol: TCP
+      name: serviceport
